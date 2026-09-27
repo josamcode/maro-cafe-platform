@@ -1,22 +1,23 @@
 :root {
+  color-scheme: light dark;
   --maro-ink: #0c0b0a;
   --maro-cream: #f4ecdf;
   --maro-gold: #c9a876;
   --maro-gold-deep: #a3814f;
-  --maro-paper: #fbf8f2;
-  --maro-text: #201d18;
-  --maro-muted: #655d51;
-  --maro-border: #d8cdbb;
-  --maro-control-border: #8b7d69;
-  --maro-focus: #79603a;
-  --maro-success: #365b43;
-  --maro-success-bg: #e8eee7;
-  --maro-danger: #9d3529;
-  --maro-danger-bg: #faece7;
+  --maro-paper: light-dark(#fbf8f2, #171512);
+  --maro-text: light-dark(#201d18, #f4ecdf);
+  --maro-muted: light-dark(#655d51, #bdb2a3);
+  --maro-border: light-dark(#d8cdbb, #4c4439);
+  --maro-control-border: light-dark(#8b7d69, #9c8d76);
+  --maro-focus: light-dark(#79603a, #d2b487);
+  --maro-success: light-dark(#365b43, #b0d3b7);
+  --maro-success-bg: light-dark(#e8eee7, #1e3525);
+  --maro-danger: light-dark(#9d3529, #ffafa1);
+  --maro-danger-bg: light-dark(#faece7, #40211c);
   --maro-surface: var(--maro-paper);
-  --maro-surface-soft: var(--maro-cream);
-  --maro-action: var(--maro-ink);
-  --maro-action-text: var(--maro-paper);
+  --maro-surface-soft: light-dark(#f4ecdf, #24201b);
+  --maro-action: light-dark(#0c0b0a, #f4ecdf);
+  --maro-action-text: light-dark(#fbf8f2, #0c0b0a);
   --maro-space-1: 0.25rem;
   --maro-space-2: 0.5rem;
   --maro-space-3: 0.75rem;
@@ -47,4 +48,19 @@
   --maro-shadow-overlay: 0 16px 48px #0c0b0a24;
   --maro-layer-popover: 60;
   --maro-layer-modal: 50;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+@media (max-width: 48rem) {
+  :root {
+    --maro-type-body: 0.9375rem;
+    --maro-type-title: 1.1875rem;
+    --maro-type-section: clamp(1.625rem, 5vw, 2rem);
+    --maro-type-display: clamp(2rem, 7.5vw, 2.625rem);
+  }
 }

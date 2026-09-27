@@ -12,6 +12,8 @@ export function Dialog({
   dir = 'ltr',
   lang = 'en',
   wide = false,
+  open,
+  onOpenChange,
 }: {
   trigger: ReactNode;
   title: string;
@@ -21,9 +23,11 @@ export function Dialog({
   dir?: 'ltr' | 'rtl';
   lang?: 'en' | 'ar';
   wide?: boolean;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }) {
   return (
-    <DialogPrimitive.Root>
+    <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}>
       <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="maro-dialog-overlay" />

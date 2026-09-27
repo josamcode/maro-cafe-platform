@@ -34,9 +34,32 @@ export function Button({
 export function IconButton({
   label,
   className,
+  round = false,
   ...props
-}: Omit<ComponentProps<typeof Button>, 'asChild'> & { label: string }) {
-  return <Button className={cn('maro-icon-button', className)} aria-label={label} {...props} />;
+}: Omit<ComponentProps<typeof Button>, 'asChild'> & { label: string; round?: boolean }) {
+  return (
+    <Button
+      className={cn('maro-icon-button', round && 'maro-icon-button-round', className)}
+      aria-label={label}
+      {...props}
+    />
+  );
+}
+export function DirectionArrow() {
+  return (
+    <svg
+      className="maro-direction-arrow"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      aria-hidden="true"
+    >
+      <path d="M5 19 19 5M5 5h14v14" />
+    </svg>
+  );
 }
 export function FilterChip({
   selected = false,

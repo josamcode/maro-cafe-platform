@@ -42,6 +42,7 @@
 }
 .maro-surface[data-tone='dark'] {
   --maro-surface: var(--maro-ink);
+  --maro-surface-soft: #24201b;
   --maro-text: var(--maro-cream);
   --maro-muted: #c9bca8;
   --maro-action: var(--maro-cream);
@@ -141,7 +142,7 @@
 .maro-button-outline:hover,
 .maro-button-quiet:hover {
   background: var(--maro-surface-soft);
-  color: #201d18;
+  color: var(--maro-text);
 }
 .maro-button-quiet {
   background: transparent;
@@ -151,6 +152,71 @@
   padding: var(--maro-space-3);
   width: var(--maro-control-height);
   flex-shrink: 0;
+}
+.maro-icon-button-round {
+  border-radius: 50%;
+}
+.maro-direction-arrow {
+  flex-shrink: 0;
+}
+.maro-direction-arrow:dir(rtl) {
+  transform: scaleX(-1);
+}
+.maro-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--maro-space-4);
+  min-width: 0;
+}
+.maro-summary-copy {
+  display: grid;
+  gap: var(--maro-space-2);
+  min-width: 0;
+}
+.maro-summary-action {
+  flex-shrink: 0;
+}
+.maro-collection {
+  min-width: 0;
+  display: grid;
+  gap: var(--maro-space-6);
+  align-content: start;
+}
+.maro-collection-media {
+  position: relative;
+  aspect-ratio: 4 / 4.5;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--maro-surface-soft);
+}
+.maro-collection-media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.maro-collection-price {
+  position: absolute;
+  inset-block-end: var(--maro-space-4);
+  inset-inline-start: var(--maro-space-4);
+}
+.maro-starting-price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--maro-space-3);
+  padding: var(--maro-space-2) var(--maro-space-4);
+  background: var(--maro-paper);
+  color: var(--maro-text);
+  border-radius: var(--maro-radius-surface);
+}
+.maro-starting-price > span {
+  font-size: var(--maro-type-caption);
+  color: var(--maro-muted);
+}
+.maro-starting-price .maro-price {
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.5;
 }
 :where(
   .maro-button,
@@ -189,7 +255,7 @@
   border-radius: var(--maro-radius-control);
   padding: var(--maro-space-3) var(--maro-space-4);
   background: var(--maro-paper);
-  color: #201d18;
+  color: var(--maro-text);
   font: inherit;
   font-size: 1rem;
   line-height: 1.5;
@@ -243,14 +309,14 @@
   place-content: center;
 }
 .maro-checkbox:checked {
-  background: var(--maro-ink);
-  border-color: var(--maro-ink);
+  background: var(--maro-action);
+  border-color: var(--maro-action);
 }
 .maro-checkbox:checked::after {
   content: '';
   width: 0.6rem;
   height: 0.35rem;
-  border: solid var(--maro-paper);
+  border: solid var(--maro-action-text);
   border-width: 0 0 2px 2px;
   transform: rotate(-45deg) translateY(-1px);
 }
@@ -260,7 +326,7 @@
   border-radius: 50%;
 }
 .maro-radio:checked {
-  border: 6px solid var(--maro-ink);
+  border: 6px solid var(--maro-action);
 }
 .maro-radio-group {
   margin: 0;
@@ -288,11 +354,11 @@
   transition: inset-inline-start var(--maro-duration) var(--maro-easing);
 }
 .maro-switch:checked {
-  background: var(--maro-ink);
+  background: var(--maro-action);
 }
 .maro-switch:checked::after {
   inset-inline-start: calc(100% - 1rem - 3px);
-  background: var(--maro-paper);
+  background: var(--maro-action-text);
 }
 .maro-select-trigger {
   display: flex;
@@ -333,7 +399,7 @@
   border-radius: var(--maro-radius-control);
 }
 .maro-select-item[data-highlighted] {
-  background: var(--maro-cream);
+  background: var(--maro-surface-soft);
 }
 .maro-select-item[data-state='checked'] {
   font-weight: 600;
@@ -351,9 +417,9 @@
   background: transparent;
 }
 .maro-chip[aria-pressed='true'] {
-  background: var(--maro-ink);
-  color: var(--maro-cream);
-  border-color: var(--maro-ink);
+  background: var(--maro-action);
+  color: var(--maro-action-text);
+  border-color: var(--maro-action);
 }
 .maro-badge {
   display: inline-flex;
@@ -361,8 +427,8 @@
   padding: var(--maro-space-1) var(--maro-space-2);
   border-radius: var(--maro-radius-control);
   font-size: var(--maro-type-caption);
-  background: var(--maro-cream);
-  color: #655d51;
+  background: var(--maro-surface-soft);
+  color: var(--maro-muted);
 }
 .maro-badge[data-tone='success'] {
   color: var(--maro-success);
@@ -448,9 +514,9 @@
 }
 .maro-hero-media-main {
   aspect-ratio: 4 / 5;
-  border-radius: 48% 48% 1.5rem 1.5rem;
+  border-radius: 2rem;
   overflow: hidden;
-  background: var(--maro-cream);
+  background: var(--maro-surface-soft);
 }
 .maro-hero-media-main img,
 .maro-hero-media-detail img {
@@ -468,9 +534,9 @@
   width: 38%;
   aspect-ratio: 4 / 5;
   border: 0.4rem solid var(--maro-paper);
-  border-radius: 5rem 5rem 1rem 1rem;
+  border-radius: 1rem;
   overflow: hidden;
-  background: var(--maro-cream);
+  background: var(--maro-surface-soft);
 }
 .maro-hero-media-caption {
   position: absolute;
@@ -502,7 +568,7 @@
 .maro-product-image {
   aspect-ratio: 4/5;
   overflow: hidden;
-  background: var(--maro-cream);
+  background: var(--maro-surface-soft);
   border-radius: var(--maro-radius-control);
 }
 .maro-product-image img {
@@ -512,7 +578,7 @@
 }
 .maro-skeleton {
   min-height: 5rem;
-  background: var(--maro-cream);
+  background: var(--maro-surface-soft);
   border-radius: var(--maro-radius-control);
 }
 @media (max-width: 40rem) {
@@ -548,5 +614,40 @@
   .maro-chip[aria-pressed='true'],
   .maro-tab[data-state='active'] {
     outline: 2px solid Highlight;
+  }
+}
+
+.maro-collection {
+  position: relative;
+}
+.maro-collection .maro-icon-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 1rem;
+}
+.maro-collection:has(.maro-icon-button:focus-visible) {
+  outline: 2px solid var(--maro-focus);
+  outline-offset: 6px;
+  border-radius: 1rem;
+}
+.maro-collection:hover .maro-icon-button {
+  background: var(--maro-action);
+  color: var(--maro-action-text);
+}
+@media (max-width: 48rem) {
+  .maro-heading[data-size='display']:lang(ar) {
+    font-size: clamp(1.875rem, 7.5vw, 2.5rem);
+    line-height: 1.35;
+  }
+  .maro-collection-media {
+    aspect-ratio: 4 / 3;
+  }
+  .maro-starting-price .maro-price {
+    font-size: 1.375rem;
+  }
+  .maro-hero-media-main {
+    border-radius: 1.5rem;
   }
 }
