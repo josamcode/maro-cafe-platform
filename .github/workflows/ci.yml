@@ -1,0 +1,44 @@
+name: Quality checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: maro
+          POSTGRES_PASSWORD: maro_local_only
+          POSTGRES_DB: maro
+        ports:
+          - 15432:5432
+        options: >-
+          --health-cmd "pg_isready -U maro -d maro"
+          --health-interval 5s --health-timeout 3s --health-retries 12
+      redis:
+        image: redis:7.4-alpine
+        ports:
+          - 16379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s --health-timeout 3s --health-retries 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm env:setup
+      - run: pnpm format:check
+      - run: pnpm check
+      - run: pnpm db:migrate
+      - run: pnpm db:seed
+      - run: pnpm test:integration
+      - run: pnpm exec playwright install --with-deps chrome
+      - run: pnpm test:e2e
