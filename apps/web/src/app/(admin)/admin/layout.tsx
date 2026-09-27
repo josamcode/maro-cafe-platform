@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AdminNavigation } from '../../../features/admin/navigation';
 import { Eye } from 'lucide-react';
 import { Button, Container } from '@maro/ui';
 import { getLocale, getTheme } from '../../../lib/locale';
@@ -27,7 +28,10 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         </Container>
       </header>
       <main id="main-content" className="admin-main">
-        <Container>{children}</Container>
+        <Container>
+          <AdminNavigation locale={locale} />
+          {children}
+        </Container>
       </main>
     </>
   );

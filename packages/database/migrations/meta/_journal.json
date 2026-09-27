@@ -15,6 +15,13 @@
       "when": 1790538688627,
       "tag": "0001_green_bushwacker",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790542045012,
+      "tag": "0002_dashing_morbius",
+      "breakpoints": true
     }
   ]
 }

@@ -14,6 +14,9 @@ importers:
       '@maro/backend':
         specifier: workspace:*
         version: link:packages/backend
+      '@maro/contracts':
+        specifier: workspace:*
+        version: link:packages/contracts
       '@maro/database':
         specifier: workspace:*
         version: link:packages/database

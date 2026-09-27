@@ -1,3 +1,4 @@
+import { IntentObserver } from '../features/insights/observer';
 import type { Metadata } from 'next';
 import { getLocale, getTheme } from '../lib/locale';
 import { DM_Sans, IBM_Plex_Sans_Arabic, Newsreader } from 'next/font/google';
@@ -31,6 +32,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     >
       <body>
         <CatalogProvider initial={await getPublicCatalog().catch(() => null)}>
+          <IntentObserver />
           {children}
         </CatalogProvider>
       </body>

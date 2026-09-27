@@ -1,4 +1,5 @@
 'use client';
+import { trackIntent } from '../insights/track';
 import { useState } from 'react';
 import { Button, Dialog, Price, ProductCard, RadioGroup, Stack, Text } from '@maro/ui';
 import type { Locale } from '../../lib/locale';
@@ -50,7 +51,10 @@ export function MenuProduct({
       details={
         <Dialog
           open={open}
-          onOpenChange={setOpen}
+          onOpenChange={(next) => {
+            setOpen(next);
+            if (next) trackIntent({ kind: 'product_view', productId: item.id });
+          }}
           title={item.name[locale]}
           description={category.name[locale]}
           dir={locale === 'ar' ? 'rtl' : 'ltr'}

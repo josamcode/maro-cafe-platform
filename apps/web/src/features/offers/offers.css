@@ -1,0 +1,30 @@
+.offers-section {
+  margin-block: 1.5rem 2rem;
+}
+.offer-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-block-start: 1px solid var(--maro-border);
+}
+.offer-row .maro-stack {
+  max-width: 48rem;
+}
+.offer-terms {
+  white-space: pre-line;
+}
+.offer-row .maro-text[data-tone='muted'],
+.offer-note {
+  font-size: 0.8125rem;
+}
+@media (max-width: 48rem) {
+  .offer-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .offer-row .maro-heading {
+    font-size: 1.25rem;
+  }
+}

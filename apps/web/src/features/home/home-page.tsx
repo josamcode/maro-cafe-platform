@@ -1,3 +1,4 @@
+import { OfferStrip } from '../offers/offer-strip';
 import Link from 'next/link';
 import { BranchList } from '../branches/branch-list';
 import { AtMaroPrompt } from '../branches/at-maro-prompt';
@@ -71,6 +72,7 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
         </Container>
         <Container>
           <FeaturedProducts locale={locale} />
+          <OfferStrip locale={locale} />
         </Container>
         <section id="at-maro" className="home-atmosphere">
           <Container>

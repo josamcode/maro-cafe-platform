@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import sharp from 'sharp';
+import { requireStaff } from './staff-access.js';
 import { z } from 'zod';
 import type { FastifyInstance, FastifyRequest } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
@@ -24,9 +25,7 @@ export async function registerCatalogRoutes(
   const token = (request: FastifyRequest) =>
     request.headers.authorization?.replace(/^Bearer /, '') ?? '';
   async function staff(request: FastifyRequest) {
-    const user = await auth.authenticate(token(request));
-    if (!user) throw Object.assign(new Error('Sign in required.'), { statusCode: 401 });
-    return user;
+    return requireStaff(auth, request);
   }
   app.get(
     '/v1/catalog',

@@ -26,8 +26,11 @@ import {
   type StaffAuth,
 } from '@maro/backend';
 import { registerCatalogRoutes } from './catalog-routes.js';
+import { registerGrowthRoutes } from './growth-routes.js';
+import type { GrowthService } from '@maro/backend';
 
 export interface AppDependencies {
+  growth?: GrowthService;
   branches: BranchRepository;
   catalog: CatalogRepository;
   checkReady: () => Promise<void>;
@@ -127,6 +130,7 @@ export async function buildApp(
     async () => ({ data: await deps.branches.list() }),
   );
   const catalog = createCatalogService(deps.branches, deps.catalog);
+  if (deps.growth && deps.staffAuth) await registerGrowthRoutes(app, deps.growth, deps.staffAuth);
   if (deps.editor && deps.staffAuth && deps.uploadDir)
     await registerCatalogRoutes(app, deps.editor, deps.staffAuth, deps.uploadDir);
   app.get(

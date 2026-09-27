@@ -1,10 +1,9 @@
 'use client';
-import { useEffect, useState, useTransition } from 'react';
+import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   Button,
   Checkbox,
-  Dialog,
   Disclosure,
   Field,
   Heading,
@@ -27,6 +26,7 @@ import { adminMessages } from './messages';
 import { PhotoPicker } from './photo-picker';
 import { ProductPicker } from './product-picker';
 import { PriceInput } from './price-input';
+import { useEditorExit } from './editor-exit';
 
 export function ProductForm({
   data,
@@ -65,17 +65,9 @@ export function ProductForm({
   const [draft, setDraft] = useState(initial);
   const [error, setError] = useState<number | null>(null);
   const [invalid, setInvalid] = useState(false);
-  const [discard, setDiscard] = useState(false);
   const [busy, start] = useTransition();
   const dirty = JSON.stringify(draft) !== JSON.stringify(initial);
-  useEffect(() => {
-    if (!dirty) return;
-    const warn = (event: BeforeUnloadEvent) => {
-      event.preventDefault();
-    };
-    window.addEventListener('beforeunload', warn);
-    return () => window.removeEventListener('beforeunload', warn);
-  }, [dirty]);
+  const exit = useEditorExit(dirty, locale, '/admin');
   function update<K extends keyof ProductWrite>(key: K, value: ProductWrite[K]) {
     setDraft((previous) => ({ ...previous, [key]: value }));
     setError(null);
@@ -91,11 +83,7 @@ export function ProductForm({
         <Heading as="h1" size="section">
           {product ? product.name[locale] : t.newProduct}
         </Heading>
-        <Button
-          variant="quiet"
-          disabled={busy}
-          onClick={() => (dirty ? setDiscard(true) : router.push('/admin'))}
-        >
+        <Button variant="quiet" disabled={busy} onClick={exit.leave}>
           {t.back}
         </Button>
       </div>
@@ -326,34 +314,14 @@ export function ProductForm({
               <Button type="submit" disabled={busy}>
                 {busy ? t.saving : t.save}
               </Button>
-              <Button
-                variant="outline"
-                disabled={busy}
-                onClick={() => (dirty ? setDiscard(true) : router.push('/admin'))}
-              >
+              <Button variant="outline" disabled={busy} onClick={exit.leave}>
                 {t.cancel}
               </Button>
             </div>
           </Stack>
         </fieldset>
       </form>
-      <Dialog
-        open={discard}
-        onOpenChange={setDiscard}
-        trigger={<span />}
-        title={t.discardTitle}
-        description={t.discardText}
-        closeLabel={t.close}
-        lang={locale}
-        dir={locale === 'ar' ? 'rtl' : 'ltr'}
-      >
-        <Stack>
-          <Button onClick={() => router.push('/admin')}>{t.discard}</Button>
-          <Button variant="outline" onClick={() => setDiscard(false)}>
-            {t.stay}
-          </Button>
-        </Stack>
-      </Dialog>
+      {exit.dialog}
     </>
   );
 }

@@ -1,4 +1,5 @@
 'use client';
+import { trackIntent } from '../insights/track';
 import { useId } from 'react';
 import { Heading, Stack, Text } from '@maro/ui';
 import type { Locale } from '../../lib/locale';
@@ -34,7 +35,17 @@ export function ProductPairing({
           <div className="product-pairing-row" key={item.id}>
             <Text>{item.name[locale]}</Text>
             <div className="product-pairing-actions">
-              <QuickAdd item={item} locale={locale} ready={ready} onAdd={onAdd} showPrices />
+              <QuickAdd
+                item={item}
+                locale={locale}
+                ready={ready}
+                onAdd={(id, variant) => {
+                  const added = onAdd(id, variant);
+                  if (added) trackIntent({ kind: 'pairing_add', productId: id });
+                  return added;
+                }}
+                showPrices
+              />
             </div>
           </div>
         ))}

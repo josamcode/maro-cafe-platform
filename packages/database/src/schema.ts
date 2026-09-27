@@ -1,5 +1,6 @@
 import { sql } from 'drizzle-orm';
 import {
+  date,
   boolean,
   check,
   index,
@@ -11,6 +12,51 @@ import {
   timestamp,
   uuid,
 } from 'drizzle-orm/pg-core';
+
+export const offers = pgTable(
+  'offers',
+  {
+    id: uuid('id').defaultRandom().primaryKey(),
+    version: integer('version').notNull().default(1),
+    content: jsonb('content').$type<Record<string, unknown>>().notNull(),
+    startsOn: date('starts_on').notNull(),
+    endsOn: date('ends_on').notNull(),
+    context: text('context').notNull(),
+    published: boolean('published').notNull().default(false),
+    approvedBy: uuid('approved_by').references(() => staffUsers.id),
+    approvedAt: timestamp('approved_at', { withTimezone: true }),
+  },
+  (t) => [
+    index('offers_schedule_idx').on(t.published, t.startsOn, t.endsOn),
+    check('offer_dates_ordered', sql`${t.endsOn} >= ${t.startsOn}`),
+  ],
+);
+export const offerAudit = pgTable('offer_audit', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  offerId: uuid('offer_id')
+    .notNull()
+    .references(() => offers.id),
+  actorId: uuid('actor_id')
+    .notNull()
+    .references(() => staffUsers.id),
+  before: jsonb('before'),
+  after: jsonb('after').notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+});
+export const intentEvents = pgTable(
+  'intent_events',
+  {
+    id: uuid('id').primaryKey(),
+    kind: text('kind').notNull(),
+    context: text('context').notNull(),
+    branchSlug: text('branch_slug'),
+    productId: uuid('product_id'),
+    offerId: uuid('offer_id'),
+    hasResults: boolean('has_results'),
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index('intent_events_time_idx').on(t.createdAt)],
+);
 
 export const branches = pgTable('branches', {
   id: uuid('id').defaultRandom().primaryKey(),

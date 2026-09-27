@@ -6,7 +6,13 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      testIgnore: '**/admin.spec.ts',
+      testIgnore: ['**/admin.spec.ts', '**/growth.spec.ts'],
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    },
+    {
+      name: 'growth',
+      testMatch: '**/growth.spec.ts',
+      dependencies: ['admin'],
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
     {

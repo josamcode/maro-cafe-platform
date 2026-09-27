@@ -32,9 +32,10 @@ test('featured image and keyboard action open the same product; mobile hero acti
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto('/');
   const actions = page.locator('.home-hero-actions');
-  const menuBox = await actions.getByRole('link').first().boundingBox();
-  const visitBox = await actions.getByRole('link').last().boundingBox();
-  expect(menuBox!.y).toBeCloseTo(visitBox!.y, 0);
+  const [menuY, visitY] = await actions
+    .getByRole('link')
+    .evaluateAll((links) => links.map((link) => link.getBoundingClientRect().y));
+  expect(menuY!).toBeCloseTo(visitY!, 0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   const card = page.locator('.featured-products .maro-product').first();
   await card.click({ position: { x: 24, y: 24 } });
@@ -50,9 +51,12 @@ test('featured image and keyboard action open the same product; mobile hero acti
   ).toBeVisible();
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'Switch to Arabic' }).click();
-  const arMenu = await actions.getByRole('link').first().boundingBox();
-  const arVisit = await actions.getByRole('link').last().boundingBox();
-  expect(arMenu!.y).toBeCloseTo(arVisit!.y, 0);
+  await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
+  // Read both positions in one frame; smooth scrolling changes viewport coordinates.
+  const [arMenuY, arVisitY] = await actions
+    .getByRole('link')
+    .evaluateAll((links) => links.map((link) => link.getBoundingClientRect().y));
+  expect(arMenuY!).toBeCloseTo(arVisitY!, 0);
 });
 
 test('Arabic browser language and a saved light theme override device darkness', async ({

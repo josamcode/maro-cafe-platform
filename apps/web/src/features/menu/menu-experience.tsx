@@ -1,4 +1,6 @@
 'use client';
+import { OfferStrip } from '../offers/offer-strip';
+import { trackIntent } from '../insights/track';
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Search, X, MapPin } from 'lucide-react';
@@ -58,6 +60,15 @@ export function MenuExperience({
     list.scrollBy({ left: target.left + target.width / 2 - bounds.left - bounds.width / 2 });
   }, [category, locale]);
 
+  useEffect(() => {
+    if (!query.trim() || !available) return;
+    const timer = window.setTimeout(
+      () => trackIntent({ kind: 'search_results', hasResults: count > 0 }),
+      800,
+    );
+    return () => window.clearTimeout(timer);
+  }, [query, category, count, available]);
+
   function update(values: Record<string, string>, push = false) {
     const next = new URLSearchParams(window.location.search);
     for (const [key, value] of Object.entries(values)) {
@@ -100,7 +111,8 @@ export function MenuExperience({
         )}
       </div>
       {!inside && <AtMaroPrompt locale={locale} branchSlug={params.get('branch') ?? undefined} />}
-      <div className="menu-tools">
+      <OfferStrip locale={locale} />
+      <div className="menu-tools" id="menu-browse">
         <Field label={t.search}>
           {(props) => (
             <div className="menu-search">

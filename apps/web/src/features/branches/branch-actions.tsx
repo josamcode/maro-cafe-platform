@@ -1,3 +1,5 @@
+'use client';
+import { trackIntent } from '../insights/track';
 import Link from 'next/link';
 import { MapPin, Phone } from 'lucide-react';
 import { Button, Inline } from '@maro/ui';
@@ -20,6 +22,7 @@ export function BranchActions({
       <Button asChild variant={full ? 'default' : 'outline'}>
         <a
           href={branch.maps}
+          onClick={() => trackIntent({ kind: 'directions_click', branchSlug: branch.slug })}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${t.directions} — ${branch.name[locale]}`}

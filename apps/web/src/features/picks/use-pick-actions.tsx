@@ -1,4 +1,5 @@
 'use client';
+import { trackIntent } from '../insights/track';
 import { useState } from 'react';
 import type { Locale } from '../../lib/locale';
 import { getMenuItem } from '../menu/catalog';
@@ -17,6 +18,7 @@ export function usePickActions(locale: Locale) {
         item: getMenuItem(catalog, itemId)!.item.name[locale],
         revision: previous.revision + 1,
       }));
+    if (success) trackIntent({ kind: 'pick_add', productId: itemId });
     return success;
   }
   return {

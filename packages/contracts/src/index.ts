@@ -34,3 +34,4 @@ export const healthSchema = z.object({ status: z.enum(['ok', 'unavailable']) });
 export type Branch = z.infer<typeof branchSchema>;
 export type MenuItem = z.infer<typeof menuItemSchema>;
 export type MenuResponse = z.infer<typeof menuResponseSchema>;
+export * from './growth.js';
