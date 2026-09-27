@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import {
   Button,
+  IconButton,
+  DirectionArrow,
   Dialog,
   EmptyState,
   Field,
@@ -28,11 +30,13 @@ export function MenuBrowser({
   initialCategory = 'all',
   label,
   variant = 'default',
+  compact = false,
 }: {
   locale: Locale;
   initialCategory?: string;
   label?: string;
   variant?: 'default' | 'outline' | 'quiet';
+  compact?: boolean;
 }) {
   const t = homeMessages[locale];
   const [category, setCategory] = useState(initialCategory);
@@ -51,7 +55,15 @@ export function MenuBrowser({
   return (
     <Dialog
       wide
-      trigger={<Button variant={variant}>{label ?? t.explore}</Button>}
+      trigger={
+        compact ? (
+          <IconButton round variant={variant} label={label ?? t.explore}>
+            <DirectionArrow />
+          </IconButton>
+        ) : (
+          <Button variant={variant}>{label ?? t.explore}</Button>
+        )
+      }
       title={t.menuTitle}
       description={t.menuDescription}
       closeLabel={t.close}

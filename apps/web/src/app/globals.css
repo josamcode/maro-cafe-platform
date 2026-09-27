@@ -2,9 +2,6 @@
 @import '@maro/ui/styles.css';
 @source "../../../../packages/ui/src";
 
-:root {
-  color-scheme: light;
-}
 body {
   margin: 0;
   background: var(--maro-paper);

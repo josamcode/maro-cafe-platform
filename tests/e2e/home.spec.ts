@@ -1,5 +1,7 @@
 ﻿import { expect, test } from '@playwright/test';
 
+test.use({ locale: 'ar-EG' });
+
 test('outside journey supports bilingual discovery, menu search and real directions', async ({
   page,
 }) => {
@@ -72,3 +74,34 @@ for (const width of [360, 768, 1440]) {
     }
   });
 }
+
+test('mobile navigation closes on selection and preserves bilingual destinations', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  for (const locale of ['ar', 'en']) {
+    if (locale === 'en') await page.getByRole('button', { name: 'Switch to English' }).click();
+    const trigger = page.getByRole('button', {
+      name: locale === 'ar' ? 'افتح قائمة التصفح' : 'Open navigation',
+    });
+    await trigger.click();
+    const dialog = page.getByRole('dialog');
+    await expect(dialog).toHaveAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr');
+    await page.keyboard.press('Escape');
+    await expect(trigger).toBeFocused();
+    await trigger.click();
+    await dialog
+      .getByRole('link', { name: locale === 'ar' ? 'الفروع' : 'Locations', exact: true })
+      .click();
+    await expect(dialog).not.toBeVisible();
+    await expect(page).toHaveURL(/#branches$/);
+    await expect(page.locator('.home-locations-intro')).toBeInViewport();
+    await expect(page.locator('.home-header')).toBeInViewport();
+    await expect(
+      page.getByRole('link', {
+        name: locale === 'ar' ? 'افتح الاتجاهات — فيصل' : 'Get directions — Faisal',
+      }),
+    ).toHaveAttribute('href', 'https://maps.app.goo.gl/ZaSq4xeTkhSkxjcN6');
+  }
+});

@@ -10,3 +10,12 @@ export async function changeLocale(formData: FormData) {
     maxAge: 60 * 60 * 24 * 365,
   });
 }
+export async function changeTheme(theme: string) {
+  if (theme !== 'light' && theme !== 'dark') return;
+  (await cookies()).set('maro-theme', theme, {
+    path: '/',
+    sameSite: 'lax',
+    httpOnly: true,
+    maxAge: 60 * 60 * 24 * 365,
+  });
+}

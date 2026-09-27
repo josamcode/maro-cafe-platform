@@ -7,19 +7,26 @@ import {
   Heading,
   HeroMedia,
   Inline,
-  Price,
+  CollectionCard,
+  StartingPrice,
+  SummaryRow,
+  Surface,
+  DirectionArrow,
   Section,
   Stack,
   Text,
 } from '@maro/ui';
-import type { Locale } from '../../lib/locale';
+import type { Locale, Theme } from '../../lib/locale';
 import menu from '../../content/menu.snapshot.json';
 import { changeLocale } from './actions';
 import { homeMessages } from './messages';
 import { MenuBrowser } from './menu-browser';
+import { MobileNavigation } from './mobile-navigation';
+import { ThemeControl } from './theme-control';
+import { SocialIcon } from './social-icon';
 import './home.css';
 
-export function HomePage({ locale }: { locale: Locale }) {
+export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
   const t = homeMessages[locale];
   const collections = [
     {
@@ -57,6 +64,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       <header className="home-header">
         <Container>
           <nav className="home-nav" aria-label={t.nav}>
+            <MobileNavigation locale={locale} />
             <Link className="home-wordmark" href="/" aria-label="MARO" lang="en" dir="ltr">
               MARO<span>MINI CAFÉ</span>
             </Link>
@@ -69,12 +77,20 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <a href="#at-maro">{t.story}</a>
               </Button>
             </Inline>
-            <form action={changeLocale}>
-              <input type="hidden" name="locale" value={locale === 'ar' ? 'en' : 'ar'} />
-              <Button type="submit" variant="outline" size="sm" aria-label={t.switchLabel}>
-                <span lang={locale === 'ar' ? 'en' : 'ar'}>{t.language}</span>
-              </Button>
-            </form>
+            <Inline className="home-preferences">
+              <ThemeControl locale={locale} theme={theme} />
+              <form action={changeLocale} className="home-language">
+                <input type="hidden" name="locale" value={locale === 'ar' ? 'en' : 'ar'} />
+                <Button type="submit" variant="quiet" size="sm" aria-label={t.switchLabel}>
+                  <span className="home-language-full" lang={locale === 'ar' ? 'en' : 'ar'}>
+                    {t.language}
+                  </span>
+                  <span className="home-language-short" lang={locale === 'ar' ? 'en' : 'ar'}>
+                    {t.shortLanguage}
+                  </span>
+                </Button>
+              </form>
+            </Inline>
           </nav>
         </Container>
       </header>
@@ -91,7 +107,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </Heading>
                 <Text tone="muted">{t.intro}</Text>
               </Stack>
-              <Inline>
+              <Inline className="home-hero-actions">
                 <MenuBrowser locale={locale} />
                 <Button asChild variant="outline">
                   <a href="#branches">{t.visit}</a>
@@ -131,7 +147,6 @@ export function HomePage({ locale }: { locale: Locale }) {
                   <Heading>{t.picksTitle}</Heading>
                   <Text tone="muted">{t.picksIntro}</Text>
                 </Stack>
-                <MenuBrowser locale={locale} label={t.fullMenu} variant="outline" />
               </div>
               <Grid>
                 {collections.map((collection) => {
@@ -139,8 +154,11 @@ export function HomePage({ locale }: { locale: Locale }) {
                     .find((c) => c.id === collection.id)!
                     .items.flatMap((i) => i.prices.map((p) => p.amount));
                   return (
-                    <article className="home-collection" key={collection.id}>
-                      <div className="home-collection-image">
+                    <CollectionCard
+                      key={collection.id}
+                      name={collection.name}
+                      description={collection.description}
+                      image={
                         <Image
                           src={collection.image}
                           alt={collection.alt}
@@ -148,30 +166,33 @@ export function HomePage({ locale }: { locale: Locale }) {
                           height={1000}
                           sizes="(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw"
                         />
-                      </div>
-                      <Stack gap="sm">
-                        <Heading as="h3" size="title">
-                          {collection.name}
-                        </Heading>
-                        <Text tone="muted">{collection.description}</Text>
-                        <Inline>
-                          <Text tone="muted">{t.from}</Text>
-                          <Price amount={Math.min(...prices)} locale={locale} />
-                        </Inline>
+                      }
+                      price={
+                        <StartingPrice
+                          label={t.from}
+                          amount={Math.min(...prices)}
+                          locale={locale}
+                        />
+                      }
+                      action={
                         <MenuBrowser
                           locale={locale}
                           initialCategory={collection.id}
                           label={collection.name}
                           variant="outline"
+                          compact
                         />
-                      </Stack>
-                    </article>
+                      }
+                    />
                   );
                 })}
               </Grid>
-              <Text tone="muted" className="home-note">
-                {t.collectionNote} {t.menuDescription}
-              </Text>
+              <div className="home-menu-more">
+                <MenuBrowser locale={locale} label={t.fullMenu} variant="outline" />
+                <Text tone="muted" className="home-note">
+                  {t.collectionNote} {t.menuDescription}
+                </Text>
+              </div>
             </Stack>
           </Section>
         </Container>
@@ -202,35 +223,44 @@ export function HomePage({ locale }: { locale: Locale }) {
         </section>
         <Container>
           <Section id="branches">
-            <Stack gap="lg">
-              <Stack gap="sm">
-                <Text tone="eyebrow">{t.branchEyebrow}</Text>
+            <Surface tone="dark" className="home-locations">
+              <Stack className="home-locations-intro">
+                <Text tone="eyebrow">{t.branchCount}</Text>
                 <Heading>{t.branchTitle}</Heading>
-                <Text tone="muted">{t.branchIntro}</Text>
+                <Text>{t.branchIntro}</Text>
+                <Text tone="muted" className="home-note">
+                  {t.mapsHint}
+                </Text>
               </Stack>
-              <Grid>
+              <div className="home-branch-list">
                 {branches.map((branch, index) => (
-                  <article className="home-branch" key={branch.url}>
-                    <Text tone="eyebrow">0{index + 1} / MARO</Text>
-                    <Heading as="h3" size="title">
-                      {branch.name}
-                    </Heading>
-                    <Text tone="muted">{branch.area}</Text>
-                    <Button asChild variant="outline">
-                      <a
-                        href={branch.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${t.directions} — ${branch.name}`}
-                      >
-                        {t.directions}
-                        <span aria-hidden="true">↗</span>
-                      </a>
-                    </Button>
+                  <article key={branch.url}>
+                    <a
+                      className="home-branch"
+                      href={branch.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${t.directions} — ${branch.name}`}
+                    >
+                      <span className="home-branch-number" aria-hidden="true">
+                        {new Intl.NumberFormat(locale === 'ar' ? 'ar-EG' : 'en-EG', {
+                          minimumIntegerDigits: 2,
+                        }).format(index + 1)}
+                      </span>
+                      <SummaryRow
+                        name={branch.name}
+                        description={branch.area}
+                        action={
+                          <span className="home-branch-arrow">
+                            <DirectionArrow />
+                          </span>
+                        }
+                      />
+                    </a>
                   </article>
                 ))}
-              </Grid>
-            </Stack>
+              </div>
+            </Surface>
           </Section>
         </Container>
       </main>
@@ -243,33 +273,43 @@ export function HomePage({ locale }: { locale: Locale }) {
               </span>
               <Text>{t.footer}</Text>
             </Stack>
-            <Inline>
-              <Button asChild variant="quiet">
-                <a href="tel:+201158750004">{t.contact}</a>
-              </Button>
-              <Button asChild variant="quiet">
-                <a
-                  href="https://www.instagram.com/maro_mini_cafe/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t.instagram}
-                </a>
-              </Button>
-              <Button asChild variant="quiet">
-                <a
-                  href="https://www.facebook.com/Marocaffe7/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t.facebook}
-                </a>
-              </Button>
-            </Inline>
+            <Stack gap="sm" className="home-footer-connect">
+              <Text tone="eyebrow">{t.keepInTouch}</Text>
+              <Inline>
+                <Button asChild variant="outline">
+                  <a href="tel:+201158750004">
+                    <SocialIcon kind="phone" />
+                    {t.contact}
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a
+                    href="https://www.instagram.com/maro_mini_cafe/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialIcon kind="instagram" />
+                    {t.instagram}
+                  </a>
+                </Button>
+                <Button asChild variant="outline">
+                  <a
+                    href="https://www.facebook.com/Marocaffe7/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <SocialIcon kind="facebook" />
+                    {t.facebook}
+                  </a>
+                </Button>
+              </Inline>
+            </Stack>
           </div>
-          <Text tone="muted" className="home-note">
-            {t.preview}
-          </Text>
+          <div className="home-footer-bottom">
+            <Text tone="muted" className="home-note">
+              {t.preview}
+            </Text>
+          </div>
         </Container>
       </footer>
     </>

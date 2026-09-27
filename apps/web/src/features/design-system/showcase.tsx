@@ -5,6 +5,11 @@ import {
   Badge,
   Button,
   Checkbox,
+  CollectionCard,
+  DirectionArrow,
+  IconButton,
+  StartingPrice,
+  SummaryRow,
   Container,
   Dialog,
   EmptyState,
@@ -225,6 +230,63 @@ export function DesignSystemShowcase() {
                   )}
                 </div>
               </div>
+            </Stack>
+          </Section>
+          <Section>
+            <Stack gap="lg">
+              <SectionIntro
+                number="01B"
+                title="Compact discovery"
+                description="An action beside the summary, a prominent starting price and a mirrored direction arrow."
+              />
+              <Grid>
+                <CollectionCard
+                  name={t.coffee}
+                  description={t.productDescription}
+                  image={
+                    <Image
+                      src="/home/iced-coffee.jpg"
+                      alt={t.product}
+                      width={960}
+                      height={1280}
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                    />
+                  }
+                  price={
+                    <StartingPrice
+                      label={locale === 'ar' ? 'يبدأ من' : 'From'}
+                      amount={85}
+                      locale={locale}
+                    />
+                  }
+                  action={
+                    <Dialog
+                      dir={dir}
+                      lang={locale}
+                      title={t.dialogTitle}
+                      description={t.previewNotice}
+                      closeLabel={t.close}
+                      trigger={
+                        <IconButton round variant="outline" label={t.details}>
+                          <DirectionArrow />
+                        </IconButton>
+                      }
+                    >
+                      <Text>{t.productDescription}</Text>
+                    </Dialog>
+                  }
+                />
+                <Surface tone="dark">
+                  <Stack>
+                    <SummaryRow
+                      name={t.faisal}
+                      description={t.visitText}
+                      action={<DirectionArrow />}
+                    />
+                    <Text tone="muted">{t.previewNotice}</Text>
+                  </Stack>
+                </Surface>
+              </Grid>
             </Stack>
           </Section>
           <Section id="form-pattern">

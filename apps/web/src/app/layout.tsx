@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getLocale } from '../lib/locale';
+import { getLocale, getTheme } from '../lib/locale';
 import { DM_Sans, IBM_Plex_Sans_Arabic, Newsreader } from 'next/font/google';
 import './globals.css';
 
@@ -19,10 +19,11 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const locale = await getLocale();
+  const [locale, theme] = await Promise.all([getLocale(), getTheme()]);
   return (
     <html
       lang={locale}
+      data-theme={theme}
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className={`${latin.variable} ${arabic.variable} ${display.variable}`}
     >
