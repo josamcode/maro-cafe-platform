@@ -126,6 +126,14 @@ Give guests a persistent shortlist of exact product/variant selections without r
 
 Store validated identities and quantities locally, derive current prices from the catalog adapter, and retain selections through language/theme changes. Recover safely from invalid data and explain actual device-storage failures. No order or visit is inferred from the list. See [My Picks handoff](my-picks.md).
 
+## D017 — Direct addition from menu cards
+
+Date: 2026-09-27. Status: implemented for preview.
+
+Remove the menu card's redundant details arrow. Single-price products expose a plus action; multi-size products expose a separate plus action with each published size name. Both paths use the same picks mutation as the detail dialog, retain keyboard focus and provide brief visual confirmation. Quantity-limit failures appear beside the actions.
+
+Extend ProductCard with a separate details slot for its full-card semantic trigger. Quick actions are sibling buttons layered above that trigger, never nested buttons or whole-card click handlers. Keep the existing dialog accessible from the image, title and remaining card area. Demonstrate the split interaction in the shared workbench.
+
 ## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.

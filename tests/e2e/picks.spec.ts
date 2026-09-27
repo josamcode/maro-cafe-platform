@@ -1,9 +1,54 @@
 import { expect, test, type Page } from '@playwright/test';
 test.use({ locale: 'en-US' });
 
+test('card quick actions add exact variants without opening details in both languages', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 360, height: 844 });
+  for (const locale of ['en', 'ar']) {
+    await page.goto('/menu?q=green%20tea');
+    if (locale === 'ar') {
+      await page.getByRole('button', { name: 'Switch to Arabic' }).click();
+      await page.getByRole('button', { name: 'تبديل المظهر الفاتح والداكن' }).click();
+    }
+    const addName = locale === 'ar' ? /ضيف لاختياراتي/ : /Add to My Picks/;
+    const card = page.locator('.maro-product');
+    await expect(card.getByRole('button', { name: addName })).toHaveCount(1);
+    await card.getByRole('button', { name: addName }).press('Enter');
+    await expect(page.getByRole('dialog')).not.toBeVisible();
+    await expect(page.locator('.picks-launcher')).toHaveAttribute('data-filled', 'true');
+    await page.goto('/menu?q=espresso');
+    const buttons = card.getByRole('button', { name: addName });
+    await expect(buttons).toHaveCount(2);
+    await buttons.filter({ hasText: locale === 'ar' ? 'دبل' : 'Double' }).click();
+    await expect(page.getByRole('dialog')).not.toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+    await card.click({ position: { x: 12, y: 12 } });
+    await expect(page.getByRole('dialog')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await page
+      .getByRole('button', { name: locale === 'ar' ? 'اختياراتي' : 'My Picks', exact: true })
+      .click();
+    const lines = page.locator('.picks-item');
+    await expect(lines).toHaveCount(2);
+    await expect(
+      lines.filter({ hasText: locale === 'ar' ? 'دبل' : 'Double' }).locator('output'),
+    ).toHaveText(locale === 'ar' ? '٢' : '1');
+    await expect(
+      lines.filter({ hasText: locale === 'ar' ? 'شاي اخضر' : 'Green Tea' }).locator('output'),
+    ).toHaveText(locale === 'ar' ? '٢' : '1');
+    await page.keyboard.press('Escape');
+  }
+});
+
 async function addEspresso(page: Page, option: 'Single' | 'Double' = 'Single') {
   await page.goto('/menu?q=espresso');
-  await page.locator('.maro-product').getByRole('button').click();
+  await page
+    .locator('.maro-product')
+    .getByRole('button', { name: /Details/ })
+    .click();
   const dialog = page.getByRole('dialog');
   await dialog.getByRole('radio', { name: new RegExp(option) }).check();
   await dialog.getByRole('button', { name: 'Add to My Picks', exact: true }).click();

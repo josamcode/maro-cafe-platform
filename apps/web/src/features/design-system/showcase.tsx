@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import { Plus } from 'lucide-react';
 import {
   Badge,
   Button,
@@ -274,6 +275,16 @@ export function DesignSystemShowcase() {
                   pricePrefix={locale === 'ar' ? 'يبدأ من' : 'From'}
                   locale={locale}
                   action={
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => setQuantity((value) => Math.min(99, value + 1))}
+                    >
+                      <Plus size={18} aria-hidden="true" />
+                      {locale === 'ar' ? 'ضيف سنجل' : 'Add single'}
+                    </Button>
+                  }
+                  details={
                     <Dialog
                       title={t.dialogTitle}
                       description={t.previewNotice}
@@ -281,9 +292,11 @@ export function DesignSystemShowcase() {
                       dir={dir}
                       lang={locale}
                       trigger={
-                        <IconButton round variant="outline" label={t.details}>
-                          <DirectionArrow />
-                        </IconButton>
+                        <Button
+                          variant="quiet"
+                          className="maro-product-details-trigger"
+                          aria-label={t.details}
+                        />
                       }
                     >
                       <Text>{t.previewNotice}</Text>

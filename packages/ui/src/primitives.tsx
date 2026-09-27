@@ -102,6 +102,7 @@ export function ProductCard({
   price,
   locale,
   action,
+  details,
   pricePrefix,
   compact = false,
 }: {
@@ -111,11 +112,18 @@ export function ProductCard({
   price: number;
   locale: 'ar' | 'en';
   action: ReactNode;
+  details?: ReactNode;
   pricePrefix?: string;
   compact?: boolean;
 }) {
   return (
-    <article className="maro-product" data-compact={compact} data-has-image={Boolean(image)}>
+    <article
+      className="maro-product"
+      data-compact={compact}
+      data-has-image={Boolean(image)}
+      data-has-details={Boolean(details)}
+    >
+      {details}
       {image && <div className="maro-product-image">{image}</div>}
       <Stack gap="sm">
         <Inline>
@@ -128,7 +136,7 @@ export function ProductCard({
           </span>
         </Inline>
         {description && <Text tone="muted">{description}</Text>}
-        {action}
+        {details ? <div className="maro-product-actions">{action}</div> : action}
       </Stack>
     </article>
   );

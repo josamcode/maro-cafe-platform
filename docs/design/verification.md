@@ -73,3 +73,9 @@ September 27, 2026.
 - Lint, workspace type checking and production compilation passed. Web model tests use the web application's Bundler TypeScript configuration; the root NodeNext test configuration excludes those files to avoid applying the backend module resolver to frontend imports. They remain included in web type checking and Vitest execution.
 - Live Chrome review at 390px inspected the Arabic launcher, editable list, quantity/total updates and cashier view. The list uses divided rows without nested card surfaces. The fixed launcher has matching bottom document space, and the dialog keeps its close control accessible.
 - My Picks is a local planning list, not an order or a verified visit. Prices and availability require branch confirmation; storage may be cleared by the browser and concurrent tab edits are last-write-wins. See [My Picks](my-picks.md) for boundaries and future integration.
+
+## Direct card additions
+
+- The 22-scenario E2E suite now covers keyboard addition of single-price products and direct addition of exact sizes without opening a dialog, in both languages with a theme change. The new journey also verifies merged quantities and continued whole-card detail access.
+- Nineteen scenarios passed in the full run. Three existing responsive scenarios initially used an ambiguous button locator after the cards gained multiple actions; naming the details trigger explicitly restored all three on targeted rerun at 360px, 768px and 1440px in both languages and appearances.
+- Lint, workspace type checking and the production build passed. Live Chrome review at 390px confirmed side-by-side Arabic size actions without duplicated size text or a details arrow. Product details and quick additions remain separate sibling controls with shared styling and no nested buttons.

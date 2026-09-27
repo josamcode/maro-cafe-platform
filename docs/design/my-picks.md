@@ -4,7 +4,7 @@ September 27, 2026. Available from the product details and menu at `/menu`.
 
 ## Customer journey
 
-Choose a published product size and select Add to My Picks. The detail dialog closes, focus returns to the product and an accessible live message announces the addition. Identical product/variant pairs merge into one line; different sizes remain separate.
+Add directly from the product card: a single-price item has one labelled plus button; an item with sizes has one plus button per published size, with the localized size name visible. A brief checkmark confirms the addition and the persistent summary updates. These actions retain focus and do not open details. The rest of the card opens the existing detail dialog without a redundant arrow. Its Add to My Picks action remains available; adding there closes the dialog and restores focus. An accessible live message announces successful additions. Identical product/variant pairs merge into one line; different sizes remain separate.
 
 After the first addition, a compact fixed action shows the total quantity and estimated amount. It includes safe-area spacing and the page reserves bottom room for it. An empty My Picks action remains available beside the result count. Opening the list allows quantity changes (1–99 per variant) and removal. Removing the final item displays an empty state; closing returns focus to the launcher.
 
