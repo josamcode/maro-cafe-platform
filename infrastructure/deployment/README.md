@@ -1,6 +1,36 @@
 ﻿# API deployment
 
-MARO uses Vercel for the web application and the existing Coolify VPS for the API, PostgreSQL and Redis. The first remote deployment is being prepared; verify the live environment before treating it as available.
+MARO's presentation environment is deployed on Vercel, with the API, PostgreSQL and Redis on the existing Coolify VPS.
+
+## Live presentation
+
+- Website: https://maro-cafe.vercel.app
+- Administration: https://maro-cafe.vercel.app/admin
+- Branch QR downloads: https://maro-cafe.vercel.app/preview/qr
+- API: https://4591deozrzsk8nmixjvfdz5s.187.124.187.87.sslip.io
+- Coolify project: `MARO`, environment `production`, application `MARO API` (`ubdth5fufzhgfsmf7kashvl6`).
+
+The `production` hosting label does not change the presentation scope. The hosted catalog contains 126 source-listed products, six categories and three branches. No invented offers, customer accounts, orders or payment flows were added. The temporary API hostname has a valid HTTPS certificate; replace it with a MARO-owned domain when available and update Vercel's `API_BASE_URL`.
+
+The initial hosted `owner` account uses a separate generated password. Its bootstrap record is stored with mode `0600` at `/data/admin-access.json` inside the API container, outside the public uploads directory. Retrieve it through the authorized Coolify terminal and store it in the owner's password manager; the local development password does not apply. Do not put that record in Git, logs or public media storage.
+
+## Vercel
+
+The `maro-cafe` project imports `main` from the same repository, with Next.js and root directory `apps/web`. Build command:
+
+```sh
+cd ../.. && pnpm exec turbo run build --filter=@maro/web
+```
+
+Keep the framework's default output directory and workspace-aware install. Production and preview environment variables:
+
+| Variable                       | Value                                                      |
+| ------------------------------ | ---------------------------------------------------------- |
+| `ENABLE_EXPERIMENTAL_COREPACK` | `1`                                                        |
+| `API_BASE_URL`                 | `https://4591deozrzsk8nmixjvfdz5s.187.124.187.87.sslip.io` |
+| `WEB_ORIGIN`                   | `https://maro-cafe.vercel.app`                             |
+
+The web application calls the API on the server. Database and Redis credentials belong only in Coolify. Preview deployments currently share the presentation API; isolate their data before introducing production customer data. `WEB_ORIGIN` controls downloaded QR destinations and must match the intended public website.
 
 ## Coolify
 
@@ -61,6 +91,10 @@ The flag acknowledges that the source-listed preview catalog has not received co
 ## Verification and operation
 
 Before connecting Vercel, verify readiness, 126 source products and three branches, staff authentication and authorization, image upload and persistence after restart. Do not interpret deployment checks as real customer visits.
+
+The initial deployment passed valid-TLS readiness, catalog reads through both the API and Vercel, all six referenced catalog image URLs, staff login, rejection of unauthenticated staff access, authenticated image upload, and media delivery through Vercel after an API restart. The temporary upload used by that check was removed. All 126 products remained available after restart. Homepage, menu, branch directory/detail, in-store entry, QR SVG and admin sign-in routes returned successfully. Browser checks covered Arabic/English, menu search, quick add, saved picks across navigation and cashier display. Verification activity may appear in anonymous intent counts.
+
+Vercel deploys repository changes automatically. Coolify is currently configured for manual deployments; deploy `MARO API` from its Actions menu after API changes. Do not restart the shared proxy or modify unrelated VPS projects to deploy MARO.
 
 Back up PostgreSQL and the uploads volume off-host and test a restore before commercial launch. Keep Redis persistent with no eviction. Confirm current prices, media, branch information and offers with MARO. HTTPS, staff authorization and catalog audit records are implemented; shared rate limiting, branch-scoped roles, external monitoring, backups and a multi-replica release process need their own operational setup.
 

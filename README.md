@@ -2,6 +2,8 @@
 
 A TypeScript monorepo for MARO's outside experience, in-store menu, HTTP API, and background workers.
 
+Live presentation: [maro-cafe.vercel.app](https://maro-cafe.vercel.app). The hosted catalog includes 126 products, six categories and three branches. See the [deployment runbook](infrastructure/deployment/README.md) for the API, administration and hosting setup.
+
 ## Stack
 
 - pnpm workspaces + Turborepo
@@ -94,6 +96,6 @@ Browser tests start the API and web automatically; run `pnpm build`, `pnpm db:se
 
 This is a working customer presentation with a shared PostgreSQL/API catalog and authenticated product administration. `/admin` manages bilingual products, prices, photos, visibility, branch availability and editorial recommendations. Read [catalog administration](docs/architecture/catalog-administration.md) for setup, refresh behavior and deployment limits.
 
-Offers and anonymous intent reporting are implemented; no real promotion is seeded or automatically approved. Customer accounts, orders, payment, loyalty, POS and messaging remain later work. The worker runs a maintenance check. Uploaded photos use local API storage; deployment needs durable storage. Prices, imagery and branch facts still require MARO approval. QR destinations use WEB_ORIGIN; localhost codes require a reachable origin to open on another phone.
+Offers and anonymous intent reporting are implemented; no real promotion is seeded or automatically approved. Customer accounts, orders, payment, loyalty, POS and messaging remain later work. The worker has a maintenance check and is not needed by the current hosted features. Uploaded photos use a persistent API volume in the hosted presentation. Prices, imagery and branch facts still require MARO approval. QR destinations use WEB_ORIGIN; localhost codes require a reachable origin to open on another phone.
 
 Read [the architecture](docs/architecture/README.md) and [deployment notes](infrastructure/deployment/README.md) before extending the system. All project documentation and source copy are in English.
