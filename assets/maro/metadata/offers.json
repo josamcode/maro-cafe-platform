@@ -1,0 +1,53 @@
+{
+  "source": "https://maro-cafe-3.vercel.app/",
+  "capturedAt": "2026-09-27",
+  "status": "Historical/source-listed artwork only; none confirmed currently active",
+  "offers": [
+    {
+      "name": "Ice Matcha Strawberry",
+      "amount": 135,
+      "currency": "EGP",
+      "asset": "offers/ice-matcha-strawberry.jpg"
+    },
+    {
+      "name": "Blueberry Mojito",
+      "amount": 95,
+      "currency": "EGP",
+      "asset": "offers/blueberry-mojito.jpg",
+      "note": "Summer promotion"
+    },
+    {
+      "name": "Milkshakes buy 2 get 1",
+      "amount": 250,
+      "currency": "EGP",
+      "asset": "offers/milkshakes-buy-2-get-1.jpg"
+    },
+    {
+      "name": "Tuesday watermelon mint",
+      "amount": 50,
+      "currency": "EGP",
+      "asset": "offers/tuesday-watermelon-offer.jpg"
+    },
+    {
+      "name": "Iced drinks artwork",
+      "priceRange": {
+        "min": 70,
+        "max": 100
+      },
+      "currency": "EGP",
+      "asset": "offers/iced-drinks-menu.jpg"
+    },
+    {
+      "name": "Coffee promotional artwork",
+      "amount": 15,
+      "currency": "EGP",
+      "asset": "reference/maps/coffee-15-egp-promotion.jpg",
+      "source": "https://maps.app.goo.gl/7dMZ25kGE4Evoz8i7",
+      "note": "June 2026 upload. Drink type, size, eligible branch and validity not established."
+    }
+  ],
+  "notes": [
+    "Do not infer current offers from published graphics.",
+    "Menu prices, promotional prices and delivery-channel prices may differ; preserve each source separately."
+  ]
+}

@@ -1,0 +1,1927 @@
+{
+  "source": "https://maro-cafe-3.vercel.app/",
+  "sourceData": "https://maro-cafe-3.vercel.app/MARO.js",
+  "capturedAt": "2026-09-27T15:47:20.549Z",
+  "currency": "EGP",
+  "notes": [
+    "The source script describes this as a transcription of a printed menu; that PDF has not been obtained.",
+    "Sizes follow the source UI labels. Serving volumes and branch-specific availability are unconfirmed.",
+    "The source lists Avocado under Hot Coffee; confirm whether this is a naming/transcription error."
+  ],
+  "categories": [
+    {
+      "id": "herbs",
+      "name": "Hot Drinks & Herbal Tea",
+      "sourceServingNote": null,
+      "items": [
+        {
+          "name": "Tea",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 25,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Green Tea",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 28,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Matcha Tea",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 65,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Fruit Tea",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 35,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Tea with Milk",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 38,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Karak Tea",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Anise",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 25,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mint",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 25,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Lemon",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 25,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Lemon Mint",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 25,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Ginger",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 25,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Ginger with Milk",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Cinnamon",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 25,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Cinnamon with Milk",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Hot Cider",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mixed Herbs",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 35,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Sahlab",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Sahlab with Nuts",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 65,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Sahlab with Fruit",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 60,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Sahlab Mix (Nuts & Fruit)",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 80,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "name": "Hot Coffee",
+      "sourceServingNote": null,
+      "items": [
+        {
+          "name": "Turkish Coffee",
+          "prices": [
+            {
+              "label": "Single",
+              "amount": 35,
+              "currency": "EGP"
+            },
+            {
+              "label": "Double",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "French Coffee",
+          "prices": [
+            {
+              "label": "Single",
+              "amount": 45,
+              "currency": "EGP"
+            },
+            {
+              "label": "Double",
+              "amount": 55,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Hazelnut Coffee",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 50,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Nutella Coffee",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 60,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Espresso",
+          "prices": [
+            {
+              "label": "Single",
+              "amount": 45,
+              "currency": "EGP"
+            },
+            {
+              "label": "Double",
+              "amount": 60,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Macchiato",
+          "prices": [
+            {
+              "label": "Single",
+              "amount": 52,
+              "currency": "EGP"
+            },
+            {
+              "label": "Double",
+              "amount": 68,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Caramel Macchiato",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 58,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Cortado",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 58,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Americano",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 65,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Avocado",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 85,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Cappuccino",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 70,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Latte",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 60,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Flat White",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 70,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mocha",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Hot Chocolate",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 55,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Nescafé Black",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 35,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Nescafé Gold",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Nescafé with Milk",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 50,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Coffee Mix",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 35,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Coffee Mix with Milk",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 50,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        }
+      ]
+    },
+    {
+      "id": "fresh",
+      "name": "Fresh Juices",
+      "sourceServingNote": "🥫 All items served as canned/cold cups",
+      "items": [
+        {
+          "name": "Apple",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 60,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Avocado",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 105,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Prickly Pear",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 70,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Pomegranate",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 60,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Orange",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 60,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Guava",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 60,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Guava with Milk",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 90,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Banana with Milk",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 90,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Jujube",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 55,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Peach",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Dates with Milk",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 100,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Cantaloupe",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 60,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Watermelon Mint",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 65,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 85,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Blueberry",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Grape",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mango",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Pineapple",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mixed Berry",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Kiwi",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 95,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 120,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Lemon Mint",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 55,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 75,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Strawberry",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 75,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Passion Fruit",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 85,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 105,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        }
+      ]
+    },
+    {
+      "id": "iced",
+      "name": "Iced Coffee",
+      "sourceServingNote": "🥫 All items served as canned/cold cups",
+      "items": [
+        {
+          "name": "Iced Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 70,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Spanish Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 85,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 105,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Strawberry Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Berry Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Caramel Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 85,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 110,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Vanilla Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 85,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 110,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Americano",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 70,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Strawberry Matcha Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 110,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Matcha Latte",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Matcha Frappe",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 115,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Chocolate",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 70,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced White Chocolate",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 85,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 105,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Mocha",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Macchiato",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 80,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 105,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Iced Caramel Macchiato",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 95,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Hazelnut Frappe",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Caramel Frappe",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Chocolate Frappe",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Lotus Frappe",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Dolce de Leche Frappe",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Biscoffee",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        }
+      ]
+    },
+    {
+      "id": "milkshake",
+      "name": "Milkshakes",
+      "sourceServingNote": "🥫 All items served as canned/cold cups",
+      "items": [
+        {
+          "name": "Chocolate",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Chocolate Coconut",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 95,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 120,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "White Chocolate",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 95,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 120,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Oreo",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Nutella",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 110,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mango",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mango Pineapple Coconut",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 105,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Strawberry",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Watermelon",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Peach",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Kiwi",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Blueberry",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Date",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Coconut",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Caramel",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 90,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 115,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Lotus",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Pistachio",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 110,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mocha",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Snickers",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 110,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mixed Nuts",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 110,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Kinder",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 100,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 125,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Passion Fruit",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 95,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 120,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        }
+      ]
+    },
+    {
+      "id": "soft",
+      "name": "Soft & Energy Drinks",
+      "sourceServingNote": null,
+      "items": [
+        {
+          "name": "Cola V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Pineapple Coconut V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Berry V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Pomegranate V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Pink Lemon V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Pineapple V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Apple Malt V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Soda V7",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Fayrouz Peach",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Fayrouz Orange",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Malt Drink",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Sting",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 40,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Fury",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 50,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Twist",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 45,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Sunshine",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 80,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 100,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Mojito",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 65,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 85,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Red Bull",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Red Bull Mojito",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 135,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": true,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Monster",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Power Horse",
+          "prices": [
+            {
+              "label": "Standard",
+              "amount": 95,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        },
+        {
+          "name": "Water",
+          "prices": [
+            {
+              "label": "Small",
+              "amount": 10,
+              "currency": "EGP"
+            },
+            {
+              "label": "Large",
+              "amount": 17,
+              "currency": "EGP"
+            }
+          ],
+          "sourceCanBadge": false,
+          "verification": "Source-listed; requires owner confirmation before launch"
+        }
+      ]
+    }
+  ]
+}

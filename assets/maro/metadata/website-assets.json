@@ -1,0 +1,125 @@
+{
+  "capturedAt": "2026-09-27T15:47:52.956Z",
+  "assets": [
+    {
+      "path": "brand/maro-mini-cafe-logo.png",
+      "bytes": 96498,
+      "sha256": "bba4a59389e14c1ecd75f6d84472b9e98e311efc5593f136c7438d66c6819e42",
+      "title": "Maro Mini Café logo",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceKind": "embedded-website-image",
+      "mediaType": "image/png",
+      "approval": "Brand identity candidate; confirm preferred version"
+    },
+    {
+      "path": "offers/ice-matcha-strawberry.jpg",
+      "bytes": 141339,
+      "sha256": "7b6db879826fae8c5f28d6d04afe71f8f599a105b6774d08833dd97b5f22a3cb",
+      "title": "Ice Matcha Strawberry",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceKind": "embedded-website-image",
+      "mediaType": "image/jpeg",
+      "approval": "Historical promotional artwork; price and validity unconfirmed"
+    },
+    {
+      "path": "offers/blueberry-mojito.jpg",
+      "bytes": 181151,
+      "sha256": "0eb1a3316d109e296f0b3918ec4273bfe34c7b8db67545268930ae2878326edb",
+      "title": "Blueberry Mojito",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceKind": "embedded-website-image",
+      "mediaType": "image/jpeg",
+      "approval": "Historical promotional artwork; price and validity unconfirmed"
+    },
+    {
+      "path": "offers/milkshakes-buy-2-get-1.jpg",
+      "bytes": 168332,
+      "sha256": "97fec7d69f3447bc1a38dfd6da9742f4a0fedf6e3fef0c6d142e2caa7a5685ff",
+      "title": "Milkshakes Buy 2 Get 1",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceKind": "embedded-website-image",
+      "mediaType": "image/jpeg",
+      "approval": "Historical promotional artwork; price and validity unconfirmed"
+    },
+    {
+      "path": "offers/tuesday-watermelon-offer.jpg",
+      "bytes": 118658,
+      "sha256": "f86cbf352b247bd13319e3e62487f1ee4f5d7b9545f56f805357361e70e3d51d",
+      "title": "Tuesday Watermelon Offer",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceKind": "embedded-website-image",
+      "mediaType": "image/jpeg",
+      "approval": "Historical promotional artwork; price and validity unconfirmed"
+    },
+    {
+      "path": "offers/iced-drinks-menu.jpg",
+      "bytes": 238762,
+      "sha256": "9b0bf1917e2a1bbd648581eba60d39a298967955683c58668623e0277a418d99",
+      "title": "Iced Drinks Menu",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceKind": "embedded-website-image",
+      "mediaType": "image/jpeg",
+      "approval": "Historical promotional artwork; price and validity unconfirmed"
+    },
+    {
+      "path": "brand/maro-mini-cafe-logo.jpg",
+      "bytes": 34347,
+      "sha256": "e1afccce79cea4b27cab020480e7e22ee712042b13173f86eb17d3c491984bab",
+      "title": "Maro Mini Café logo",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceKind": "embedded-website-image",
+      "mediaType": "image/jpeg",
+      "approval": "Brand identity candidate; confirm preferred version"
+    },
+    {
+      "path": "reference/talabat.png",
+      "bytes": 4079,
+      "sha256": "07645bde89704ede60cd0da71d7d4f3a16faa34521381db14a2c2df5b25fa551",
+      "title": "talabat.png",
+      "sourcePage": "https://maro-cafe-3.vercel.app/",
+      "sourceUrl": "https://maro-cafe-3.vercel.app/talabat.png",
+      "sourceKind": "website-file",
+      "mediaType": "image/png",
+      "approval": "Third-party partner mark; use only for the appropriate delivery link"
+    },
+    {
+      "path": "video/video_project_7.mp4",
+      "bytes": 25051846,
+      "sha256": "ae73dcdceae69d3307bcd894dd912d2cbe5bd33cdd80ce354c113a609cfb0cd4",
+      "title": "Video_Project_7.mp4",
+      "sourcePage": "https://maro-cafe-3.vercel.app/stories.html",
+      "sourceUrl": "https://maro-cafe-3.vercel.app/Video_Project_7.mp4",
+      "sourceKind": "website-file",
+      "mediaType": "video/mp4",
+      "approval": "Review visual content and audio rights before publication"
+    },
+    {
+      "path": "video/video_project_8.mp4",
+      "bytes": 30668243,
+      "sha256": "abdbd47a7936a3737c15d1120d8f1d1f86de91f101deb5e0c4ff3cf976b1691e",
+      "title": "Video_Project_8.mp4",
+      "sourcePage": "https://maro-cafe-3.vercel.app/stories.html",
+      "sourceUrl": "https://maro-cafe-3.vercel.app/Video_Project_8.mp4",
+      "sourceKind": "website-file",
+      "mediaType": "video/mp4",
+      "approval": "Review visual content and audio rights before publication"
+    },
+    {
+      "path": "video/video_project_9.mp4",
+      "bytes": 36537375,
+      "sha256": "218e9a77e05794e50fe8173afdad0c33c088225ef49869445d837e49e6e41f2d",
+      "title": "Video_Project_9.mp4",
+      "sourcePage": "https://maro-cafe-3.vercel.app/stories.html",
+      "sourceUrl": "https://maro-cafe-3.vercel.app/Video_Project_9.mp4",
+      "sourceKind": "website-file",
+      "mediaType": "video/mp4",
+      "approval": "Review visual content and audio rights before publication"
+    }
+  ],
+  "knownMissing": [
+    {
+      "url": "https://maro-cafe-3.vercel.app/images/place-2.jpeg",
+      "status": "HTTP 404 during collection"
+    }
+  ]
+}

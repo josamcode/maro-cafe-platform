@@ -1,0 +1,34 @@
+{
+  "source": "https://maro-cafe-3.vercel.app/",
+  "status": "Observed existing website styling; not a formal brand guideline",
+  "palette": {
+    "ink": "#0c0b0a",
+    "ink2": "#151210",
+    "ink3": "#1e1a16",
+    "gold": "#c9a876",
+    "goldLight": "#e8d7b3",
+    "goldDeep": "#a3814f",
+    "cream": "#f4ecdf",
+    "muted": "#b9ae9f"
+  },
+  "fonts": {
+    "observed": ["Playfair Display", "Tajawal"],
+    "fallback": ["Cairo"],
+    "filesIncluded": false
+  },
+  "publicPositioning": [
+    "Coffee. Crafted Different.",
+    "Specialty Coffee",
+    "3 Locations | One Coffee Culture"
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/Marocaffe7/",
+    "instagram": "https://www.instagram.com/maro_mini_cafe/",
+    "tiktok": "https://www.tiktok.com/@maro.mini.cafe",
+    "delivery": "https://www.talabat.com/ar/egypt/maro-mini-cafe"
+  },
+  "notes": [
+    "TikTok and Talabat URLs were linked by the website; their content has not been archived.",
+    "Website logo PNG has transparency around a dark circular badge; this is not a transparent gold-only vector mark."
+  ]
+}

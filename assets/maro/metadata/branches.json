@@ -1,0 +1,62 @@
+{
+  "capturedAt": "2026-09-27",
+  "verification": "Source-listed, pending owner confirmation",
+  "contact": {
+    "phone": "+201158750004",
+    "sources": ["https://www.facebook.com/Marocaffe7/", "https://maps.app.goo.gl/7dMZ25kGE4Evoz8i7"]
+  },
+  "branches": [
+    {
+      "id": "faisal",
+      "name": "Faisal",
+      "address": "6 Al-Omara Street, Al-Ta'awon, Faisal",
+      "source": "https://maro-cafe-3.vercel.app/",
+      "maps": "https://maps.app.goo.gl/ZaSq4xeTkhSkxjcN6",
+      "hours": null
+    },
+    {
+      "id": "sahl-hamza",
+      "name": "Haram / Sahl Hamza",
+      "address": "13 Sahl Hamza Street, Haram, Giza",
+      "source": "https://maro-cafe-3.vercel.app/",
+      "maps": "https://maps.app.goo.gl/W1ksi3C4dRJuXTLk8",
+      "hours": null
+    },
+    {
+      "id": "main-haram",
+      "name": "Main Haram",
+      "addressCandidates": [
+        {
+          "address": "427 Main Haram Street, in front of Giza Governorate",
+          "source": "https://maro-cafe-3.vercel.app/"
+        },
+        {
+          "address": "427 El Haram Street, next to Hor Moheb Hotel, Giza",
+          "source": "https://www.facebook.com/Marocaffe7/"
+        },
+        {
+          "address": "430 El Haram, Al Omraneyah Al Gharbeyah, Al Omraneyah, Giza 3546120",
+          "source": "https://maps.app.goo.gl/7dMZ25kGE4Evoz8i7"
+        }
+      ],
+      "addressConflict": true,
+      "maps": "https://maps.app.goo.gl/7dMZ25kGE4Evoz8i7",
+      "coordinates": {
+        "latitude": 30.0082886,
+        "longitude": 31.1989034
+      },
+      "hours": "Open 24 hours as listed on Google Maps; confirm with owner",
+      "ratingSnapshot": {
+        "rating": 4.7,
+        "reviews": 12,
+        "observedOn": "2026-09-27",
+        "publishAsCurrent": false
+      }
+    }
+  ],
+  "notes": [
+    "The other two branch Maps links were collected from the website but their listings have not been independently verified.",
+    "Google Maps price range EGP 1-200 is based on four contributors; it is not an authoritative menu price.",
+    "Facebook lists reservations, pickup, delivery and takeout; operational availability is unconfirmed."
+  ]
+}

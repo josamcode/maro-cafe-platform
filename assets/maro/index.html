@@ -1,0 +1,2716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MARO Asset Library</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --gold: #c9a876;
+        --ink: #0c0b0a;
+        --cream: #f4ecdf;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--cream);
+        font:
+          15px/1.6 system-ui,
+          sans-serif;
+      }
+      header,
+      main {
+        max-width: 1500px;
+        margin: auto;
+        padding: 32px;
+      }
+      header {
+        padding-top: 56px;
+      }
+      h1 {
+        font:
+          clamp(38px, 6vw, 72px)/1.05 Georgia,
+          serif;
+        margin: 12px 0 20px;
+      }
+      h2 {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+        margin: 10px 0;
+      }
+      .eyebrow,
+      .tag {
+        color: var(--gold);
+        letter-spacing: 0.08em;
+      }
+      .intro {
+        max-width: 780px;
+        color: #b9ae9f;
+      }
+      a {
+        color: var(--gold);
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .controls {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: #151210f5;
+        padding: 18px 32px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        border-block: 1px solid #393025;
+      }
+      input,
+      select {
+        background: #201c17;
+        color: var(--cream);
+        border: 1px solid #665540;
+        padding: 12px;
+        border-radius: 6px;
+        font: inherit;
+      }
+      input {
+        flex: 1;
+        min-width: 210px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 22px;
+      }
+      article {
+        background: #151210;
+        border: 1px solid #332b21;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      article[hidden] {
+        display: none;
+      }
+      .preview {
+        height: 290px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #211d18;
+      }
+      .preview img,
+      .preview video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .details {
+        padding: 18px;
+      }
+      .tag {
+        font-size: 11px;
+        text-transform: uppercase;
+      }
+      p {
+        margin: 8px 0;
+      }
+      .note {
+        font-size: 12px;
+        color: #b9ae9f;
+        min-height: 58px;
+      }
+      footer {
+        padding: 32px;
+        text-align: center;
+        color: #b9ae9f;
+      }
+      #count {
+        white-space: nowrap;
+      }
+      a:focus-visible,
+      input:focus-visible,
+      select:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 3px;
+      }
+      @media (max-width: 600px) {
+        header,
+        main {
+          padding: 24px 16px;
+        }
+        .controls {
+          padding: 12px 16px;
+        }
+        .grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+        .preview {
+          height: 210px;
+        }
+        .details {
+          padding: 12px;
+        }
+        .note {
+          display: none;
+        }
+        h2 {
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="eyebrow">MARO / SOURCE LIBRARY / 27 SEP 2026</div>
+      <h1>Everything collected.<br />Ready to explore.</h1>
+      <p class="intro">
+        Branding, social imagery, offers and videos collected from MARO's public pages. Originals
+        are preserved without enhancement or upscaling. Check dimensions and source before choosing
+        an asset.
+      </p>
+      <nav>
+        <a href="README.md">Collection guide</a><a href="metadata/menu.json">Menu & prices</a
+        ><a href="metadata/branches.json">Branches</a><a href="metadata/offers.json">Offer notes</a
+        ><a href="metadata/asset-manifest.json">Full manifest</a>
+      </nav>
+    </header>
+    <div class="controls">
+      <input
+        id="search"
+        type="search"
+        placeholder="Search title or post ID"
+        aria-label="Search assets"
+      /><select id="kind" aria-label="Filter asset type">
+        <option value="">All asset types</option>
+        <option value="instagram-cover">instagram-cover</option>
+        <option value="facebook-photo">facebook-photo</option>
+        <option value="brand">brand</option>
+        <option value="facebook-preview">facebook-preview</option>
+        <option value="offers">offers</option>
+        <option value="reference">reference</option>
+        <option value="video">video</option>
+        <option value="offer-reference">offer-reference</option></select
+      ><span id="count" role="status">116 assets</span>
+    </div>
+    <main>
+      <div class="grid">
+        <article data-kind="instagram-cover" data-text="instagram post ddkkl5koxbp">
+          <a class="preview" href="social/instagram/ig-DdkkL5koxbP.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DdkkL5koxbP.jpg"
+              alt="Instagram post DdkkL5koxbP"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DdkkL5koxbP</h2>
+            <p>720 × 893 · 129 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DdkkL5koxbP.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DdkkL5koxbP/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ddflzsnoj7b">
+          <a class="preview" href="social/instagram/ig-DdfLZsnoj7b.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DdfLZsnoj7b.jpg"
+              alt="Instagram post DdfLZsnoj7b"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DdfLZsnoj7b</h2>
+            <p>1215 × 2160 · 56 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DdfLZsnoj7b.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DdfLZsnoj7b/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ddybnqtingz">
+          <a class="preview" href="social/instagram/ig-DdYbNqtINGZ.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DdYbNqtINGZ.jpg"
+              alt="Instagram post DdYbNqtINGZ"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DdYbNqtINGZ</h2>
+            <p>766 × 1366 · 208 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DdYbNqtINGZ.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DdYbNqtINGZ/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ddpqjl_iewf">
+          <a class="preview" href="social/instagram/ig-DdPqJl_IEWF.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DdPqJl_IEWF.jpg"
+              alt="Instagram post DdPqJl_IEWF"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DdPqJl_IEWF</h2>
+            <p>1215 × 2160 · 226 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DdPqJl_IEWF.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DdPqJl_IEWF/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ddkybw-or54">
+          <a class="preview" href="social/instagram/ig-DdKyBw-oR54.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DdKyBw-oR54.jpg"
+              alt="Instagram post DdKyBw-oR54"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DdKyBw-oR54</h2>
+            <p>720 × 1280 · 120 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DdKyBw-oR54.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DdKyBw-oR54/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ddc3ootp6yw">
+          <a class="preview" href="social/instagram/ig-DdC3oOTP6yw.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DdC3oOTP6yw.jpg"
+              alt="Instagram post DdC3oOTP6yw"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DdC3oOTP6yw</h2>
+            <p>1280 × 720 · 94 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DdC3oOTP6yw.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DdC3oOTP6yw/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ddadjecouxu">
+          <a class="preview" href="social/instagram/ig-DdADJecoUxu.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DdADJecoUxu.jpg"
+              alt="Instagram post DdADJecoUxu"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DdADJecoUxu</h2>
+            <p>720 × 1280 · 113 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DdADJecoUxu.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DdADJecoUxu/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dc9n7pubtrl">
+          <a class="preview" href="social/instagram/ig-Dc9N7PUBtrl.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-Dc9N7PUBtrl.jpg"
+              alt="Instagram post Dc9N7PUBtrl"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post Dc9N7PUBtrl</h2>
+            <p>2160 × 3840 · 474 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-Dc9N7PUBtrl.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/Dc9N7PUBtrl/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dc4vm4zhwmb">
+          <a class="preview" href="social/instagram/ig-Dc4VM4ZhWMB.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-Dc4VM4ZhWMB.jpg"
+              alt="Instagram post Dc4VM4ZhWMB"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post Dc4VM4ZhWMB</h2>
+            <p>1440 × 2560 · 715 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-Dc4VM4ZhWMB.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/Dc4VM4ZhWMB/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dcue3jvvdca">
+          <a class="preview" href="social/instagram/ig-Dcue3JvvDca.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-Dcue3JvvDca.jpg"
+              alt="Instagram post Dcue3JvvDca"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post Dcue3JvvDca</h2>
+            <p>4096 × 2123 · 659 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-Dcue3JvvDca.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/Dcue3JvvDca/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dcrdrqymi-g">
+          <a class="preview" href="social/instagram/ig-DcrDrQyMi-g.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DcrDrQyMi-g.jpg"
+              alt="Instagram post DcrDrQyMi-g"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DcrDrQyMi-g</h2>
+            <p>640 × 1136 · 34 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DcrDrQyMi-g.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DcrDrQyMi-g/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dcj4yxtmgop">
+          <a class="preview" href="social/instagram/ig-Dcj4yxtMGOp.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-Dcj4yxtMGOp.jpg"
+              alt="Instagram post Dcj4yxtMGOp"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post Dcj4yxtMGOp</h2>
+            <p>4096 × 2731 · 1229 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-Dcj4yxtMGOp.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/Dcj4yxtMGOp/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dchv1v8mm4x">
+          <a class="preview" href="social/instagram/ig-DchV1v8Mm4X.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DchV1v8Mm4X.jpg"
+              alt="Instagram post DchV1v8Mm4X"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DchV1v8Mm4X</h2>
+            <p>720 × 1280 · 80 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DchV1v8Mm4X.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DchV1v8Mm4X/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dcdfkbym9ss">
+          <a class="preview" href="social/instagram/ig-DcdfKBYM9sS.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DcdfKBYM9sS.jpg"
+              alt="Instagram post DcdfKBYM9sS"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DcdfKBYM9sS</h2>
+            <p>1215 × 2160 · 126 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DcdfKBYM9sS.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DcdfKBYM9sS/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dcybvnnmo7r">
+          <a class="preview" href="social/instagram/ig-DcYbVnNMo7r.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DcYbVnNMo7r.jpg"
+              alt="Instagram post DcYbVnNMo7r"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DcYbVnNMo7r</h2>
+            <p>720 × 1278 · 100 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DcYbVnNMo7r.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DcYbVnNMo7r/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dagyk_jsnvm">
+          <a class="preview" href="social/instagram/ig-DagYK_jsnVm.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DagYK_jsnVm.jpg"
+              alt="Instagram post DagYK_jsnVm"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DagYK_jsnVm</h2>
+            <p>1170 × 2080 · 354 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DagYK_jsnVm.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DagYK_jsnVm/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dabcyh0s3du">
+          <a class="preview" href="social/instagram/ig-DabcYH0s3DU.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DabcYH0s3DU.jpg"
+              alt="Instagram post DabcYH0s3DU"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DabcYH0s3DU</h2>
+            <p>1170 × 2080 · 232 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DabcYH0s3DU.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DabcYH0s3DU/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dawef8goapb">
+          <a class="preview" href="social/instagram/ig-DaWeF8goapB.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DaWeF8goapB.jpg"
+              alt="Instagram post DaWeF8goapB"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DaWeF8goapB</h2>
+            <p>720 × 1280 · 59 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DaWeF8goapB.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DaWeF8goapB/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dar6d98smkt">
+          <a class="preview" href="social/instagram/ig-DaR6D98smKt.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DaR6D98smKt.jpg"
+              alt="Instagram post DaR6D98smKt"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DaR6D98smKt</h2>
+            <p>720 × 1280 · 103 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DaR6D98smKt.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DaR6D98smKt/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dtfc5kqdi1d">
+          <a class="preview" href="social/instagram/ig-DTFc5kQDI1d.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DTFc5kQDI1d.jpg"
+              alt="Instagram post DTFc5kQDI1d"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DTFc5kQDI1d</h2>
+            <p>640 × 1138 · 33 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DTFc5kQDI1d.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DTFc5kQDI1d/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dtaxedbjlqc">
+          <a class="preview" href="social/instagram/ig-DTAxedBjLQc.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DTAxedBjLQc.jpg"
+              alt="Instagram post DTAxedBjLQc"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DTAxedBjLQc</h2>
+            <p>640 × 360 · 32 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DTAxedBjLQc.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DTAxedBjLQc/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ds5pijrdgbp">
+          <a class="preview" href="social/instagram/ig-DS5pIJRDGbp.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DS5pIJRDGbp.jpg"
+              alt="Instagram post DS5pIJRDGbp"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DS5pIJRDGbp</h2>
+            <p>640 × 1136 · 66 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DS5pIJRDGbp.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DS5pIJRDGbp/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post ds2pvgidchq">
+          <a class="preview" href="social/instagram/ig-DS2PvgiDChQ.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DS2PvgiDChQ.jpg"
+              alt="Instagram post DS2PvgiDChQ"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DS2PvgiDChQ</h2>
+            <p>640 × 1136 · 63 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DS2PvgiDChQ.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DS2PvgiDChQ/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dslkaq3demt">
+          <a class="preview" href="social/instagram/ig-DSLkaq3DEMt.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DSLkaq3DEMt.jpg"
+              alt="Instagram post DSLkaq3DEMt"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DSLkaq3DEMt</h2>
+            <p>640 × 1136 · 92 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DSLkaq3DEMt.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DSLkaq3DEMt/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post drrgxqxjjoy">
+          <a class="preview" href="social/instagram/ig-DRrgxqxjJoy.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DRrgxqxjJoy.jpg"
+              alt="Instagram post DRrgxqxjJoy"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DRrgxqxjJoy</h2>
+            <p>640 × 1136 · 62 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DRrgxqxjJoy.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DRrgxqxjJoy/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dropczndcoe">
+          <a class="preview" href="social/instagram/ig-DRoPcZnDCOe.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DRoPcZnDCOe.jpg"
+              alt="Instagram post DRoPcZnDCOe"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DRoPcZnDCOe</h2>
+            <p>640 × 1136 · 44 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DRoPcZnDCOe.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DRoPcZnDCOe/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dqk_wknimoj">
+          <a class="preview" href="social/instagram/ig-DQk_wKNiMOJ.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DQk_wKNiMOJ.jpg"
+              alt="Instagram post DQk_wKNiMOJ"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DQk_wKNiMOJ</h2>
+            <p>640 × 1136 · 69 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DQk_wKNiMOJ.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DQk_wKNiMOJ/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dpl94v-dhbo">
+          <a class="preview" href="social/instagram/ig-DPL94v-DHbo.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DPL94v-DHbo.jpg"
+              alt="Instagram post DPL94v-DHbo"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DPL94v-DHbo</h2>
+            <p>640 × 1136 · 64 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DPL94v-DHbo.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DPL94v-DHbo/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dpglq25dp-1">
+          <a class="preview" href="social/instagram/ig-DPgLQ25DP-1.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DPgLQ25DP-1.jpg"
+              alt="Instagram post DPgLQ25DP-1"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DPgLQ25DP-1</h2>
+            <p>640 × 1136 · 49 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DPgLQ25DP-1.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DPgLQ25DP-1/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dpgvp3gdnjj">
+          <a class="preview" href="social/instagram/ig-DPGvp3gDNJJ.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DPGvp3gDNJJ.jpg"
+              alt="Instagram post DPGvp3gDNJJ"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DPGvp3gDNJJ</h2>
+            <p>640 × 1136 · 78 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DPGvp3gDNJJ.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DPGvp3gDNJJ/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dpkwadtdnck">
+          <a class="preview" href="social/instagram/ig-DPKWADTDNck.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DPKWADTDNck.jpg"
+              alt="Instagram post DPKWADTDNck"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DPKWADTDNck</h2>
+            <p>1350 × 1688 · 282 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DPKWADTDNck.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DPKWADTDNck/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post do06udijiai">
+          <a class="preview" href="social/instagram/ig-DO06uDijIaI.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DO06uDijIaI.jpg"
+              alt="Instagram post DO06uDijIaI"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DO06uDijIaI</h2>
+            <p>1290 × 1276 · 69 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DO06uDijIaI.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DO06uDijIaI/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post do662zfjdse">
+          <a class="preview" href="social/instagram/ig-DO662zfjDsE.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DO662zfjDsE.jpg"
+              alt="Instagram post DO662zfjDsE"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DO662zfjDsE</h2>
+            <p>640 × 1136 · 54 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DO662zfjDsE.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DO662zfjDsE/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post do0uqmndac9">
+          <a class="preview" href="social/instagram/ig-DO0UqmnDAC9.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DO0UqmnDAC9.jpg"
+              alt="Instagram post DO0UqmnDAC9"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DO0UqmnDAC9</h2>
+            <p>1280 × 960 · 108 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DO0UqmnDAC9.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DO0UqmnDAC9/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post do0y_q5jjbs">
+          <a class="preview" href="social/instagram/ig-DO0Y_Q5jJbS.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DO0Y_Q5jJbS.jpg"
+              alt="Instagram post DO0Y_Q5jJbS"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DO0Y_Q5jJbS</h2>
+            <p>1440 × 1920 · 166 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DO0Y_Q5jJbS.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DO0Y_Q5jJbS/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dozz8viclf3">
+          <a class="preview" href="social/instagram/ig-DOzZ8VICLf3.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DOzZ8VICLf3.jpg"
+              alt="Instagram post DOzZ8VICLf3"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DOzZ8VICLf3</h2>
+            <p>640 × 1136 · 90 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DOzZ8VICLf3.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DOzZ8VICLf3/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dozokbgjgoy">
+          <a class="preview" href="social/instagram/ig-DOzOKBgjGoY.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DOzOKBgjGoY.jpg"
+              alt="Instagram post DOzOKBgjGoY"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DOzOKBgjGoY</h2>
+            <p>640 × 1136 · 22 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DOzOKBgjGoY.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DOzOKBgjGoY/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post doy5mwcjcse">
+          <a class="preview" href="social/instagram/ig-DOy5mWCjCse.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DOy5mWCjCse.jpg"
+              alt="Instagram post DOy5mWCjCse"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DOy5mWCjCse</h2>
+            <p>1440 × 1920 · 216 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DOy5mWCjCse.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DOy5mWCjCse/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post doy-i4fdm2k">
+          <a class="preview" href="social/instagram/ig-DOy-I4fDM2k.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DOy-I4fDM2k.jpg"
+              alt="Instagram post DOy-I4fDM2k"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DOy-I4fDM2k</h2>
+            <p>1280 × 1707 · 147 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DOy-I4fDM2k.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DOy-I4fDM2k/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post doy1u3hdmvg">
+          <a class="preview" href="social/instagram/ig-DOy1u3HDMvG.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DOy1u3HDMvG.jpg"
+              alt="Instagram post DOy1u3HDMvG"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DOy1u3HDMvG</h2>
+            <p>1440 × 1913 · 183 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DOy1u3HDMvG.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DOy1u3HDMvG/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post douudtqiool">
+          <a class="preview" href="social/instagram/ig-DOuudtqiOOL.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DOuudtqiOOL.jpg"
+              alt="Instagram post DOuudtqiOOL"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DOuudtqiOOL</h2>
+            <p>640 × 1136 · 60 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DOuudtqiOOL.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DOuudtqiOOL/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="instagram-cover" data-text="instagram post dovqy1_jdcz">
+          <a class="preview" href="social/instagram/ig-DOvqY1_jDcz.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/instagram/ig-DOvqY1_jDcz.jpg"
+              alt="Instagram post DOvqY1_jDcz"
+          /></a>
+          <div class="details">
+            <span class="tag">instagram-cover</span>
+            <h2>Instagram post DOvqY1_jDcz</h2>
+            <p>640 × 1138 · 31 KB</p>
+            <p class="note">
+              Post/reel cover; not the original reel video. Review crop and image quality.
+            </p>
+            <a href="social/instagram/ig-DOvqY1_jDcz.jpg" download>Download</a> ·
+            <a href="https://www.instagram.com/p/DOvqY1_jDcz/" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 312557217736962">
+          <a class="preview" href="social/facebook/full-size/fb-312557217736962.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-312557217736962.jpg"
+              alt="Facebook photo 312557217736962"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 312557217736962</h2>
+            <p>694 × 696 · 36 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-312557217736962.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=312557217736962"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 313265384332812">
+          <a class="preview" href="social/facebook/full-size/fb-313265384332812.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-313265384332812.jpg"
+              alt="Facebook photo 313265384332812"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 313265384332812</h2>
+            <p>726 × 720 · 48 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-313265384332812.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=313265384332812"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1077973387882190">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1077973387882190.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1077973387882190.jpg"
+              alt="Facebook photo 1077973387882190"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1077973387882190</h2>
+            <p>960 × 1280 · 94 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1077973387882190.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1077973387882190"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 314165900909427">
+          <a class="preview" href="social/facebook/full-size/fb-314165900909427.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-314165900909427.jpg"
+              alt="Facebook photo 314165900909427"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 314165900909427</h2>
+            <p>720 × 900 · 83 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-314165900909427.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=314165900909427"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1078060857873443">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1078060857873443.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1078060857873443.jpg"
+              alt="Facebook photo 1078060857873443"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1078060857873443</h2>
+            <p>960 × 1280 · 102 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1078060857873443.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1078060857873443"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1077975011215361">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1077975011215361.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1077975011215361.jpg"
+              alt="Facebook photo 1077975011215361"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1077975011215361</h2>
+            <p>1200 × 1600 · 179 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1077975011215361.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1077975011215361"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1077063554639840">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1077063554639840.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1077063554639840.jpg"
+              alt="Facebook photo 1077063554639840"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1077063554639840</h2>
+            <p>1536 × 2048 · 323 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1077063554639840.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1077063554639840"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1077973424548853">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1077973424548853.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1077973424548853.jpg"
+              alt="Facebook photo 1077973424548853"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1077973424548853</h2>
+            <p>960 × 1280 · 99 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1077973424548853.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1077973424548853"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969134635432733">
+          <a class="preview" href="social/facebook/full-size/fb-969134635432733.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969134635432733.jpg"
+              alt="Facebook photo 969134635432733"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969134635432733</h2>
+            <p>1284 × 864 · 112 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969134635432733.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969134635432733"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1078060874540108">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1078060874540108.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1078060874540108.jpg"
+              alt="Facebook photo 1078060874540108"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1078060874540108</h2>
+            <p>1600 × 1200 · 161 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1078060874540108.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1078060874540108"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969137745432422">
+          <a class="preview" href="social/facebook/full-size/fb-969137745432422.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969137745432422.jpg"
+              alt="Facebook photo 969137745432422"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969137745432422</h2>
+            <p>899 × 1599 · 220 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969137745432422.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969137745432422"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1080510667628462">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1080510667628462.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1080510667628462.jpg"
+              alt="Facebook photo 1080510667628462"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1080510667628462</h2>
+            <p>1536 × 2048 · 238 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1080510667628462.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1080510667628462"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969150208764509">
+          <a class="preview" href="social/facebook/full-size/fb-969150208764509.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969150208764509.jpg"
+              alt="Facebook photo 969150208764509"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969150208764509</h2>
+            <p>2048 × 1536 · 319 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969150208764509.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969150208764509"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 977202157959314">
+          <a class="preview" href="social/facebook/full-size/fb-977202157959314.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-977202157959314.jpg"
+              alt="Facebook photo 977202157959314"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 977202157959314</h2>
+            <p>1200 × 1600 · 180 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-977202157959314.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=977202157959314"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 977202147959315">
+          <a class="preview" href="social/facebook/full-size/fb-977202147959315.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-977202147959315.jpg"
+              alt="Facebook photo 977202147959315"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 977202147959315</h2>
+            <p>1200 × 1600 · 213 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-977202147959315.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=977202147959315"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 970961615250035">
+          <a class="preview" href="social/facebook/full-size/fb-970961615250035.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-970961615250035.jpg"
+              alt="Facebook photo 970961615250035"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 970961615250035</h2>
+            <p>1280 × 960 · 118 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-970961615250035.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=970961615250035"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 978448454501351">
+          <a class="preview" href="social/facebook/full-size/fb-978448454501351.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-978448454501351.jpg"
+              alt="Facebook photo 978448454501351"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 978448454501351</h2>
+            <p>1200 × 1600 · 141 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-978448454501351.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=978448454501351"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969136832099180">
+          <a class="preview" href="social/facebook/full-size/fb-969136832099180.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969136832099180.jpg"
+              alt="Facebook photo 969136832099180"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969136832099180</h2>
+            <p>960 × 1280 · 122 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969136832099180.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969136832099180"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 970331675313029">
+          <a class="preview" href="social/facebook/full-size/fb-970331675313029.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-970331675313029.jpg"
+              alt="Facebook photo 970331675313029"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 970331675313029</h2>
+            <p>1080 × 1920 · 103 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-970331675313029.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=970331675313029"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1355933763419483">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1355933763419483.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1355933763419483.jpg"
+              alt="Facebook photo 1355933763419483"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1355933763419483</h2>
+            <p>4096 × 2731 · 289 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1355933763419483.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1355933763419483"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1078581131154749">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1078581131154749.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1078581131154749.jpg"
+              alt="Facebook photo 1078581131154749"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1078581131154749</h2>
+            <p>960 × 1280 · 93 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1078581131154749.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1078581131154749"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969136912099172">
+          <a class="preview" href="social/facebook/full-size/fb-969136912099172.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969136912099172.jpg"
+              alt="Facebook photo 969136912099172"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969136912099172</h2>
+            <p>1200 × 1600 · 243 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969136912099172.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969136912099172"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 312562047736479">
+          <a class="preview" href="social/facebook/full-size/fb-312562047736479.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-312562047736479.jpg"
+              alt="Facebook photo 312562047736479"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 312562047736479</h2>
+            <p>960 × 544 · 32 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-312562047736479.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=312562047736479"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 314166010909416">
+          <a class="preview" href="social/facebook/full-size/fb-314166010909416.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-314166010909416.jpg"
+              alt="Facebook photo 314166010909416"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 314166010909416</h2>
+            <p>1280 × 960 · 87 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-314166010909416.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=314166010909416"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 970261065320090">
+          <a class="preview" href="social/facebook/full-size/fb-970261065320090.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-970261065320090.jpg"
+              alt="Facebook photo 970261065320090"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 970261065320090</h2>
+            <p>1536 × 2048 · 281 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-970261065320090.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=970261065320090"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 314165970909420">
+          <a class="preview" href="social/facebook/full-size/fb-314165970909420.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-314165970909420.jpg"
+              alt="Facebook photo 314165970909420"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 314165970909420</h2>
+            <p>1280 × 960 · 80 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-314165970909420.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=314165970909420"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1059792726366923">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1059792726366923.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1059792726366923.jpg"
+              alt="Facebook photo 1059792726366923"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1059792726366923</h2>
+            <p>1284 × 786 · 101 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1059792726366923.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1059792726366923"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969134158766114">
+          <a class="preview" href="social/facebook/full-size/fb-969134158766114.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969134158766114.jpg"
+              alt="Facebook photo 969134158766114"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969134158766114</h2>
+            <p>1200 × 1600 · 176 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969134158766114.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969134158766114"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969138292099034">
+          <a class="preview" href="social/facebook/full-size/fb-969138292099034.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969138292099034.jpg"
+              alt="Facebook photo 969138292099034"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969138292099034</h2>
+            <p>899 × 1599 · 165 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969138292099034.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969138292099034"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969134215432775">
+          <a class="preview" href="social/facebook/full-size/fb-969134215432775.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969134215432775.jpg"
+              alt="Facebook photo 969134215432775"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969134215432775</h2>
+            <p>960 × 1280 · 146 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969134215432775.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969134215432775"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969136968765833">
+          <a class="preview" href="social/facebook/full-size/fb-969136968765833.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969136968765833.jpg"
+              alt="Facebook photo 969136968765833"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969136968765833</h2>
+            <p>2048 × 1536 · 328 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969136968765833.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969136968765833"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 312788041047213">
+          <a class="preview" href="social/facebook/full-size/fb-312788041047213.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-312788041047213.jpg"
+              alt="Facebook photo 312788041047213"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 312788041047213</h2>
+            <p>960 × 640 · 31 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-312788041047213.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=312788041047213"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="brand" data-text="maro facebook profile logo">
+          <a class="preview" href="brand/facebook-1028688706143992.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="brand/facebook-1028688706143992.jpg"
+              alt="MARO Facebook profile logo"
+          /></a>
+          <div class="details">
+            <span class="tag">brand</span>
+            <h2>MARO Facebook profile logo</h2>
+            <p>960 × 960 · 46 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="brand/facebook-1028688706143992.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1028688706143992"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 313265357666148">
+          <a class="preview" href="social/facebook/full-size/fb-313265357666148.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-313265357666148.jpg"
+              alt="Facebook photo 313265357666148"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 313265357666148</h2>
+            <p>640 × 960 · 47 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-313265357666148.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=313265357666148"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969137798765750">
+          <a class="preview" href="social/facebook/full-size/fb-969137798765750.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969137798765750.jpg"
+              alt="Facebook photo 969137798765750"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969137798765750</h2>
+            <p>960 × 1280 · 149 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969137798765750.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969137798765750"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969691588710371">
+          <a class="preview" href="social/facebook/full-size/fb-969691588710371.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969691588710371.jpg"
+              alt="Facebook photo 969691588710371"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969691588710371</h2>
+            <p>1536 × 2048 · 179 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969691588710371.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969691588710371"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 972063891806474">
+          <a class="preview" href="social/facebook/full-size/fb-972063891806474.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-972063891806474.jpg"
+              alt="Facebook photo 972063891806474"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 972063891806474</h2>
+            <p>1536 × 2048 · 259 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-972063891806474.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=972063891806474"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 977201644626032">
+          <a class="preview" href="social/facebook/full-size/fb-977201644626032.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-977201644626032.jpg"
+              alt="Facebook photo 977201644626032"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 977201644626032</h2>
+            <p>1024 × 1536 · 140 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-977201644626032.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=977201644626032"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969691532043710">
+          <a class="preview" href="social/facebook/full-size/fb-969691532043710.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969691532043710.jpg"
+              alt="Facebook photo 969691532043710"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969691532043710</h2>
+            <p>1536 × 2048 · 277 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969691532043710.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969691532043710"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969150698764460">
+          <a class="preview" href="social/facebook/full-size/fb-969150698764460.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969150698764460.jpg"
+              alt="Facebook photo 969150698764460"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969150698764460</h2>
+            <p>2048 × 1536 · 264 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969150698764460.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969150698764460"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1034278575585005">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1034278575585005.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1034278575585005.jpg"
+              alt="Facebook photo 1034278575585005"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1034278575585005</h2>
+            <p>1024 × 1536 · 125 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1034278575585005.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1034278575585005"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 970231348656395">
+          <a class="preview" href="social/facebook/full-size/fb-970231348656395.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-970231348656395.jpg"
+              alt="Facebook photo 970231348656395"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 970231348656395</h2>
+            <p>960 × 1280 · 121 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-970231348656395.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=970231348656395"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1087238453622350">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1087238453622350.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1087238453622350.jpg"
+              alt="Facebook photo 1087238453622350"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1087238453622350</h2>
+            <p>1080 × 1350 · 112 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1087238453622350.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1087238453622350"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969150162097847">
+          <a class="preview" href="social/facebook/full-size/fb-969150162097847.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969150162097847.jpg"
+              alt="Facebook photo 969150162097847"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969150162097847</h2>
+            <p>2048 × 1536 · 263 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969150162097847.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969150162097847"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1077973464548849">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1077973464548849.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1077973464548849.jpg"
+              alt="Facebook photo 1077973464548849"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1077973464548849</h2>
+            <p>960 × 1280 · 93 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1077973464548849.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1077973464548849"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 970962115249985">
+          <a class="preview" href="social/facebook/full-size/fb-970962115249985.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-970962115249985.jpg"
+              alt="Facebook photo 970962115249985"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 970962115249985</h2>
+            <p>960 × 1280 · 137 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-970962115249985.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=970962115249985"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 972063908473139">
+          <a class="preview" href="social/facebook/full-size/fb-972063908473139.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-972063908473139.jpg"
+              alt="Facebook photo 972063908473139"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 972063908473139</h2>
+            <p>2048 × 1536 · 297 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-972063908473139.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=972063908473139"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969138115432385">
+          <a class="preview" href="social/facebook/full-size/fb-969138115432385.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969138115432385.jpg"
+              alt="Facebook photo 969138115432385"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969138115432385</h2>
+            <p>1284 × 2034 · 157 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969138115432385.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969138115432385"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 972063961806467">
+          <a class="preview" href="social/facebook/full-size/fb-972063961806467.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-972063961806467.jpg"
+              alt="Facebook photo 972063961806467"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 972063961806467</h2>
+            <p>1536 × 2048 · 260 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-972063961806467.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=972063961806467"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1077974971215365">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1077974971215365.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1077974971215365.jpg"
+              alt="Facebook photo 1077974971215365"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1077974971215365</h2>
+            <p>1600 × 900 · 98 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1077974971215365.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1077974971215365"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="brand" data-text="maro facebook cover">
+          <a class="preview" href="brand/facebook-1028690109477185.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="brand/facebook-1028690109477185.jpg"
+              alt="MARO Facebook cover"
+          /></a>
+          <div class="details">
+            <span class="tag">brand</span>
+            <h2>MARO Facebook cover</h2>
+            <p>812 × 457 · 26 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="brand/facebook-1028690109477185.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1028690109477185"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969691552043708">
+          <a class="preview" href="social/facebook/full-size/fb-969691552043708.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969691552043708.jpg"
+              alt="Facebook photo 969691552043708"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969691552043708</h2>
+            <p>844 × 776 · 53 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969691552043708.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969691552043708"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969136845432512">
+          <a class="preview" href="social/facebook/full-size/fb-969136845432512.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969136845432512.jpg"
+              alt="Facebook photo 969136845432512"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969136845432512</h2>
+            <p>1600 × 1200 · 230 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969136845432512.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969136845432512"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969136905432506">
+          <a class="preview" href="social/facebook/full-size/fb-969136905432506.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969136905432506.jpg"
+              alt="Facebook photo 969136905432506"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969136905432506</h2>
+            <p>1200 × 1600 · 205 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969136905432506.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969136905432506"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 313265320999485">
+          <a class="preview" href="social/facebook/full-size/fb-313265320999485.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-313265320999485.jpg"
+              alt="Facebook photo 313265320999485"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 313265320999485</h2>
+            <p>720 × 680 · 44 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-313265320999485.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=313265320999485"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 969134175432779">
+          <a class="preview" href="social/facebook/full-size/fb-969134175432779.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-969134175432779.jpg"
+              alt="Facebook photo 969134175432779"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 969134175432779</h2>
+            <p>1200 × 1600 · 149 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-969134175432779.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=969134175432779"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1033602538985942">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1033602538985942.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1033602538985942.jpg"
+              alt="Facebook photo 1033602538985942"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1033602538985942</h2>
+            <p>1170 × 825 · 89 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1033602538985942.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1033602538985942"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 977202197959310">
+          <a class="preview" href="social/facebook/full-size/fb-977202197959310.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-977202197959310.jpg"
+              alt="Facebook photo 977202197959310"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 977202197959310</h2>
+            <p>1600 × 1200 · 170 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-977202197959310.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=977202197959310"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 1078581087821420">
+          <a
+            class="preview"
+            href="social/facebook/full-size/fb-1078581087821420.jpg"
+            target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-1078581087821420.jpg"
+              alt="Facebook photo 1078581087821420"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 1078581087821420</h2>
+            <p>960 × 1280 · 90 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-1078581087821420.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=1078581087821420"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-photo" data-text="facebook photo 970961665250030">
+          <a class="preview" href="social/facebook/full-size/fb-970961665250030.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/full-size/fb-970961665250030.jpg"
+              alt="Facebook photo 970961665250030"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-photo</span>
+            <h2>Facebook photo 970961665250030</h2>
+            <p>960 × 1280 · 142 KB</p>
+            <p class="note">
+              Source-resolution download; review subject, crop, dates and publication rights.
+            </p>
+            <a href="social/facebook/full-size/fb-970961665250030.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=970961665250030"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-preview" data-text="facebook preview 372990391713830">
+          <a class="preview" href="social/facebook/previews/fb-372990391713830.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/previews/fb-372990391713830.jpg"
+              alt="Facebook preview 372990391713830"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-preview</span>
+            <h2>Facebook preview 372990391713830</h2>
+            <p>205 × 206 · 11 KB</p>
+            <p class="note">Reference only: low-resolution gallery preview.</p>
+            <a href="social/facebook/previews/fb-372990391713830.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=372990391713830"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="facebook-preview" data-text="facebook preview 372990381713831">
+          <a class="preview" href="social/facebook/previews/fb-372990381713831.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="social/facebook/previews/fb-372990381713831.jpg"
+              alt="Facebook preview 372990381713831"
+          /></a>
+          <div class="details">
+            <span class="tag">facebook-preview</span>
+            <h2>Facebook preview 372990381713831</h2>
+            <p>206 × 206 · 6 KB</p>
+            <p class="note">Reference only: low-resolution gallery preview.</p>
+            <a href="social/facebook/previews/fb-372990381713831.jpg" download>Download</a> ·
+            <a
+              href="https://www.facebook.com/photo/?fbid=372990381713831"
+              target="_blank"
+              rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="brand" data-text="maro mini cafã© logo">
+          <a class="preview" href="brand/maro-mini-cafe-logo.png" target="_blank"
+            ><img loading="lazy" src="brand/maro-mini-cafe-logo.png" alt="Maro Mini CafÃ© logo"
+          /></a>
+          <div class="details">
+            <span class="tag">brand</span>
+            <h2>Maro Mini CafÃ© logo</h2>
+            <p>400 × 500 · 94 KB</p>
+            <p class="note">Brand identity candidate; confirm preferred version</p>
+            <a href="brand/maro-mini-cafe-logo.png" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="offers" data-text="ice matcha strawberry">
+          <a class="preview" href="offers/ice-matcha-strawberry.jpg" target="_blank"
+            ><img loading="lazy" src="offers/ice-matcha-strawberry.jpg" alt="Ice Matcha Strawberry"
+          /></a>
+          <div class="details">
+            <span class="tag">offers</span>
+            <h2>Ice Matcha Strawberry</h2>
+            <p>759 × 1600 · 138 KB</p>
+            <p class="note">Historical promotional artwork; price and validity unconfirmed</p>
+            <a href="offers/ice-matcha-strawberry.jpg" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="offers" data-text="blueberry mojito">
+          <a class="preview" href="offers/blueberry-mojito.jpg" target="_blank"
+            ><img loading="lazy" src="offers/blueberry-mojito.jpg" alt="Blueberry Mojito"
+          /></a>
+          <div class="details">
+            <span class="tag">offers</span>
+            <h2>Blueberry Mojito</h2>
+            <p>759 × 1600 · 177 KB</p>
+            <p class="note">Historical promotional artwork; price and validity unconfirmed</p>
+            <a href="offers/blueberry-mojito.jpg" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="offers" data-text="milkshakes buy 2 get 1">
+          <a class="preview" href="offers/milkshakes-buy-2-get-1.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="offers/milkshakes-buy-2-get-1.jpg"
+              alt="Milkshakes Buy 2 Get 1"
+          /></a>
+          <div class="details">
+            <span class="tag">offers</span>
+            <h2>Milkshakes Buy 2 Get 1</h2>
+            <p>800 × 1600 · 164 KB</p>
+            <p class="note">Historical promotional artwork; price and validity unconfirmed</p>
+            <a href="offers/milkshakes-buy-2-get-1.jpg" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="offers" data-text="tuesday watermelon offer">
+          <a class="preview" href="offers/tuesday-watermelon-offer.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="offers/tuesday-watermelon-offer.jpg"
+              alt="Tuesday Watermelon Offer"
+          /></a>
+          <div class="details">
+            <span class="tag">offers</span>
+            <h2>Tuesday Watermelon Offer</h2>
+            <p>759 × 1600 · 116 KB</p>
+            <p class="note">Historical promotional artwork; price and validity unconfirmed</p>
+            <a href="offers/tuesday-watermelon-offer.jpg" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="offers" data-text="iced drinks menu">
+          <a class="preview" href="offers/iced-drinks-menu.jpg" target="_blank"
+            ><img loading="lazy" src="offers/iced-drinks-menu.jpg" alt="Iced Drinks Menu"
+          /></a>
+          <div class="details">
+            <span class="tag">offers</span>
+            <h2>Iced Drinks Menu</h2>
+            <p>900 × 1600 · 233 KB</p>
+            <p class="note">Historical promotional artwork; price and validity unconfirmed</p>
+            <a href="offers/iced-drinks-menu.jpg" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="brand" data-text="maro mini cafã© logo">
+          <a class="preview" href="brand/maro-mini-cafe-logo.jpg" target="_blank"
+            ><img loading="lazy" src="brand/maro-mini-cafe-logo.jpg" alt="Maro Mini CafÃ© logo"
+          /></a>
+          <div class="details">
+            <span class="tag">brand</span>
+            <h2>Maro Mini CafÃ© logo</h2>
+            <p>499 × 900 · 34 KB</p>
+            <p class="note">Brand identity candidate; confirm preferred version</p>
+            <a href="brand/maro-mini-cafe-logo.jpg" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="reference" data-text="talabat.png">
+          <a class="preview" href="reference/talabat.png" target="_blank"
+            ><img loading="lazy" src="reference/talabat.png" alt="talabat.png"
+          /></a>
+          <div class="details">
+            <span class="tag">reference</span>
+            <h2>talabat.png</h2>
+            <p>151 × 148 · 4 KB</p>
+            <p class="note">Third-party partner mark; use only for the appropriate delivery link</p>
+            <a href="reference/talabat.png" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+        </article>
+        <article data-kind="video" data-text="video_project_7.mp4">
+          <a class="preview" href="video/video_project_7.mp4" target="_blank"
+            ><video controls preload="metadata" src="video/video_project_7.mp4"></video
+          ></a>
+          <div class="details">
+            <span class="tag">video</span>
+            <h2>Video_Project_7.mp4</h2>
+            <p>Video · 24465 KB</p>
+            <p class="note">Review visual content and audio rights before publication</p>
+            <a href="video/video_project_7.mp4" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/stories.html" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="video" data-text="video_project_8.mp4">
+          <a class="preview" href="video/video_project_8.mp4" target="_blank"
+            ><video controls preload="metadata" src="video/video_project_8.mp4"></video
+          ></a>
+          <div class="details">
+            <span class="tag">video</span>
+            <h2>Video_Project_8.mp4</h2>
+            <p>Video · 29949 KB</p>
+            <p class="note">Review visual content and audio rights before publication</p>
+            <a href="video/video_project_8.mp4" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/stories.html" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="video" data-text="video_project_9.mp4">
+          <a class="preview" href="video/video_project_9.mp4" target="_blank"
+            ><video controls preload="metadata" src="video/video_project_9.mp4"></video
+          ></a>
+          <div class="details">
+            <span class="tag">video</span>
+            <h2>Video_Project_9.mp4</h2>
+            <p>Video · 35681 KB</p>
+            <p class="note">Review visual content and audio rights before publication</p>
+            <a href="video/video_project_9.mp4" download>Download</a> ·
+            <a href="https://maro-cafe-3.vercel.app/stories.html" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+        <article data-kind="offer-reference" data-text="coffee 15 egp promotion - june 2026 upload">
+          <a class="preview" href="reference/maps/coffee-15-egp-promotion.jpg" target="_blank"
+            ><img
+              loading="lazy"
+              src="reference/maps/coffee-15-egp-promotion.jpg"
+              alt="Coffee 15 EGP promotion - June 2026 upload"
+          /></a>
+          <div class="details">
+            <span class="tag">offer-reference</span>
+            <h2>Coffee 15 EGP promotion - June 2026 upload</h2>
+            <p>740 × 1600 · 85 KB</p>
+            <p class="note">
+              Historical promotional artwork in the Maps menu section, not a full menu. Uploaded by
+              Mrwan Ayman; reuse permission and price validity not established.
+            </p>
+            <a href="reference/maps/coffee-15-egp-promotion.jpg" download>Download</a> ·
+            <a href="https://maps.app.goo.gl/7dMZ25kGE4Evoz8i7" target="_blank" rel="noreferrer"
+              >Source</a
+            >
+          </div>
+        </article>
+      </div>
+    </main>
+    <footer>
+      Prices and promotions require owner confirmation. Instagram covers are still images, not reel
+      downloads. No editable design source files were obtained.
+    </footer>
+    <script>
+      const search = document.querySelector('#search');
+      const kind = document.querySelector('#kind');
+      const cards = [...document.querySelectorAll('article')];
+      function filter() {
+        let count = 0;
+        for (const card of cards) {
+          card.hidden = !(
+            card.dataset.text.includes(search.value.toLowerCase()) &&
+            (!kind.value || card.dataset.kind === kind.value)
+          );
+          if (!card.hidden) count++;
+        }
+        document.querySelector('#count').textContent = count + ' assets';
+      }
+      search.addEventListener('input', filter);
+      kind.addEventListener('change', filter);
+    </script>
+  </body>
+</html>
