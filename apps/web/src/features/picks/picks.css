@@ -1,0 +1,112 @@
+.menu-result-actions {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.picks-launcher[data-filled='true'] {
+  position: fixed;
+  inset-block-end: max(1rem, env(safe-area-inset-bottom));
+  inset-inline: 0;
+  margin-inline: auto;
+  width: min(36rem, calc(100% - 2rem));
+  z-index: 35;
+  min-height: 4rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  gap: 0.75rem;
+  box-shadow: 0 4px 24px #0002;
+}
+.picks-launcher[data-filled='true'] > span {
+  text-align: start;
+  flex: 1;
+}
+.picks-launcher small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+.picks-launcher > .maro-price {
+  font-size: 1.125rem;
+}
+body:has(.picks-launcher[data-filled='true']) {
+  padding-block-end: calc(6rem + env(safe-area-inset-bottom));
+}
+.picks-content.maro-stack {
+  gap: 1rem;
+}
+.picks-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.picks-item {
+  padding-block: 1rem;
+  border-block-end: 1px solid var(--maro-border);
+}
+.picks-item:first-child {
+  padding-block-start: 0;
+}
+.picks-item-heading,
+.picks-line-summary,
+.picks-total {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.picks-item-heading > .maro-stack {
+  flex: 1;
+  min-width: 0;
+  gap: 0.125rem;
+}
+.picks-item-heading .maro-heading {
+  font-size: 1.0625rem;
+  font-family: var(--maro-font-body);
+}
+.picks-item-heading .maro-heading:lang(ar) {
+  font-family: var(--maro-font-arabic);
+}
+.picks-item-heading .maro-text {
+  font-size: 0.8125rem;
+}
+.picks-item-heading .menu-photo {
+  width: 3.5rem;
+  height: 4rem;
+}
+.picks-line-summary {
+  justify-content: space-between;
+  margin-block-start: 0.875rem;
+}
+.picks-line-summary > .maro-price {
+  font-size: 1.125rem;
+}
+.picks-total {
+  justify-content: space-between;
+}
+.picks-total > .maro-price {
+  font-size: 1.5rem;
+}
+.picks-note {
+  font-size: 0.8125rem;
+}
+.picks-content[data-cashier='true'] .picks-item-heading .maro-heading {
+  font-size: 1.25rem;
+}
+.picks-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+@media (max-width: 48rem) {
+  .picks-launcher[data-filled='true'] {
+    min-height: 3.5rem;
+    padding: 0.625rem 1rem;
+  }
+  .menu-result-actions .maro-button {
+    font-size: 0.8125rem;
+    padding-inline: 0.5rem;
+  }
+}

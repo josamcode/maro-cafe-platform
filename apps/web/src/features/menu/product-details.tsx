@@ -16,21 +16,28 @@ import type { MenuCategory, MenuItem, PriceLabel } from './catalog';
 import { menuMessages } from './messages';
 import { getMenuMedia } from './media';
 import { MenuPhoto } from './menu-photo';
+import { picksMessages } from '../picks/messages';
 
 export function MenuProduct({
   item,
   category,
   locale,
   eager = false,
+  onAdd,
+  picksReady,
 }: {
   item: MenuItem;
   category: Pick<MenuCategory, 'id' | 'name'>;
   locale: Locale;
   eager?: boolean;
+  onAdd: (itemId: string, variant: string) => boolean;
+  picksReady: boolean;
 }) {
   const t = menuMessages[locale];
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(item.prices[0]!.label);
+  const [limitReached, setLimitReached] = useState(false);
+  const p = picksMessages[locale];
   const price = item.prices.find((option) => option.label === selected)!;
   const multiple = item.prices.length > 1;
   const media = getMenuMedia(category.id, item.id);
@@ -72,7 +79,10 @@ export function MenuProduct({
                 label={t.chooseSize}
                 name={`size-${item.id}`}
                 value={selected}
-                onChange={setSelected}
+                onChange={(value) => {
+                  setSelected(value);
+                  setLimitReached(false);
+                }}
                 options={item.prices.map((option) => ({
                   value: option.label,
                   label: (
@@ -93,7 +103,25 @@ export function MenuProduct({
             <Text tone="muted" className="home-note">
               {t.menuDescription}
             </Text>
-            <Button onClick={() => setOpen(false)}>{t.done}</Button>
+            {limitReached && (
+              <Text role="status" className="home-note">
+                {p.limit}
+              </Text>
+            )}
+            <Button
+              disabled={!picksReady}
+              onClick={() => {
+                if (onAdd(item.id, selected)) {
+                  setLimitReached(false);
+                  setOpen(false);
+                } else setLimitReached(true);
+              }}
+            >
+              {p.add}
+            </Button>
+            <Button variant="quiet" onClick={() => setOpen(false)}>
+              {t.done}
+            </Button>
           </Stack>
         </Dialog>
       }

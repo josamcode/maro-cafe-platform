@@ -1,6 +1,7 @@
 {
   "extends": "./packages/config/typescript/node.json",
   "compilerOptions": { "noEmit": true, "types": ["node"], "lib": ["ES2022", "DOM"] },
+  "exclude": ["apps/web/**/*.test.ts"],
   "include": [
     "apps/**/*.test.ts",
     "packages/**/*.test.ts",

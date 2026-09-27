@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Search, X, MapPin } from 'lucide-react';
 import {
@@ -20,9 +20,14 @@ import { menuMessages } from './messages';
 import { MenuProduct } from './product-details';
 import { getMenuMedia } from './media';
 import { MenuPhoto } from './menu-photo';
+import { usePicks } from '../picks/use-picks';
+import { PicksPanel } from '../picks/picks-panel';
+import { picksMessages } from '../picks/messages';
 
 export function MenuExperience({ locale }: { locale: Locale }) {
   const t = menuMessages[locale];
+  const picks = usePicks();
+  const [announcement, setAnnouncement] = useState({ item: '', revision: 0 });
   const params = useSearchParams();
   const requestedCategory = params.get('category');
   const category = catalog.some((group) => group.id === requestedCategory)
@@ -121,16 +126,24 @@ export function MenuExperience({ locale }: { locale: Locale }) {
         <Text tone="muted" role="status">
           {number.format(count)} {t.results}
         </Text>
-        {(query || category !== 'all') && (
-          <Button
-            variant="quiet"
-            size="sm"
-            onClick={() => update({ q: '', category: 'all' }, true)}
-          >
-            {t.reset}
-          </Button>
-        )}
+        <div className="menu-result-actions">
+          {(query || category !== 'all') && (
+            <Button
+              variant="quiet"
+              size="sm"
+              onClick={() => update({ q: '', category: 'all' }, true)}
+            >
+              {t.reset}
+            </Button>
+          )}
+          <PicksPanel picks={picks} locale={locale} />
+        </div>
       </div>
+      <span className="picks-announcement" role="status">
+        <span key={announcement.revision}>
+          {announcement.item && `${picksMessages[locale].added} — ${announcement.item}`}
+        </span>
+      </span>
       <div className="menu-results">
         {count > 0 && (
           <Text tone="muted" className="menu-photo-note">
@@ -168,6 +181,16 @@ export function MenuExperience({ locale }: { locale: Locale }) {
                     category={group}
                     locale={locale}
                     eager={groupIndex === 0 && itemIndex === 0}
+                    picksReady={picks.ready}
+                    onAdd={(itemId, variant) => {
+                      const added = picks.add(itemId, variant);
+                      if (added)
+                        setAnnouncement((previous) => ({
+                          item: item.name[locale],
+                          revision: previous.revision + 1,
+                        }));
+                      return added;
+                    }}
                   />
                 ))}
               </div>
