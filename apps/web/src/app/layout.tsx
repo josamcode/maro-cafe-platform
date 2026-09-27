@@ -1,6 +1,16 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { getLocale } from '../lib/locale';
+import { DM_Sans, IBM_Plex_Sans_Arabic, Newsreader } from 'next/font/google';
 import './globals.css';
+
+const latin = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
+const arabic = IBM_Plex_Sans_Arabic({
+  weight: ['400', '500', '600'],
+  subsets: ['arabic'],
+  variable: '--font-plex-arabic',
+  display: 'swap',
+});
+const display = Newsreader({ subsets: ['latin'], variable: '--font-newsreader', display: 'swap' });
 
 export const metadata: Metadata = {
   title: { default: 'MARO — Development Preview', template: '%s | MARO' },
@@ -8,20 +18,15 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const locale = await getLocale();
   return (
-    <html lang="en">
-      <body>
-        <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-7">
-          <Link href="/" className="text-2xl font-bold tracking-[0.25em]">
-            MARO
-          </Link>
-          <span className="text-xs uppercase tracking-widest text-stone-600">
-            Development preview
-          </span>
-        </header>
-        {children}
-      </body>
+    <html
+      lang={locale}
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      className={`${latin.variable} ${arabic.variable} ${display.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }

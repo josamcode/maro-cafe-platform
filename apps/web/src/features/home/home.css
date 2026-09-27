@@ -1,0 +1,204 @@
+.home-header {
+  border-block-end: 1px solid var(--maro-border);
+}
+.home-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 6.5rem;
+}
+.home-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--maro-font-body);
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  line-height: 1.1;
+}
+.home-wordmark span {
+  font-size: 0.55rem;
+  letter-spacing: 0.32em;
+  margin-block-start: 0.5rem;
+  text-align: center;
+}
+.home-skip {
+  position: fixed;
+  inset-block-start: -6rem;
+  inset-inline-start: 1rem;
+  z-index: 70;
+}
+.home-skip:focus {
+  inset-block-start: 1rem;
+}
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block: 3rem 5rem;
+}
+.home-hero-copy {
+  padding-block: 2rem;
+}
+.home-hero-copy .maro-text {
+  max-width: 34ch;
+}
+.home-title {
+  white-space: pre-line;
+}
+.home-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.home-section-heading > .maro-button {
+  flex-shrink: 0;
+}
+.home-collection {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.home-collection-image {
+  aspect-ratio: 4 / 4.5;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--maro-cream);
+}
+.home-collection-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+@media (hover: hover) {
+  .home-collection:hover img {
+    transform: scale(1.025);
+  }
+}
+.home-collection .maro-stack {
+  flex: 1;
+}
+.home-collection .maro-button {
+  align-self: flex-start;
+  margin-block-start: auto;
+}
+.home-note {
+  font-size: var(--maro-type-caption);
+}
+.home-atmosphere {
+  background: var(--maro-cream);
+  padding-block: 4rem;
+}
+.home-atmosphere-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+.home-atmosphere-image {
+  border-radius: 1rem 1rem 6rem 1rem;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.home-atmosphere-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding-block: 2rem;
+  border-block-start: 1px solid var(--maro-control-border);
+}
+.home-footer {
+  padding-block: 3rem 2rem;
+  background: var(--maro-cream);
+}
+.home-footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-block-end: 3rem;
+}
+.home-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.home-menu-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-block-end: 1px solid var(--maro-border);
+}
+.home-menu-prices {
+  display: flex;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+.home-menu-prices > span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.home-menu-prices small {
+  color: var(--maro-muted);
+}
+@media (max-width: 48rem) {
+  .home-nav {
+    flex-wrap: wrap;
+    padding-block: 1rem;
+    gap: 0.5rem;
+  }
+  .home-nav-links {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+  .home-nav-links .maro-button {
+    padding-inline: 1rem;
+  }
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 1rem 3rem;
+  }
+  .home-hero-copy {
+    padding-block: 1.5rem 0;
+  }
+  .home-hero .maro-hero-media {
+    max-width: 27rem;
+  }
+  .home-section-heading,
+  .home-footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .home-atmosphere-layout {
+    grid-template-columns: 1fr;
+  }
+  .home-atmosphere {
+    padding-block: 3rem;
+  }
+  .home-menu-list li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .maro-dialog[data-wide='true'] {
+    padding-inline: 1.25rem;
+  }
+}

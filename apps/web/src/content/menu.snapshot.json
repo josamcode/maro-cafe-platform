@@ -1,0 +1,1987 @@
+{
+  "source": "https://maro-cafe-3.vercel.app/MARO.js",
+  "capturedAt": "2026-09-27",
+  "status": "Source-listed; owner confirmation pending",
+  "categories": [
+    {
+      "id": "herbs",
+      "name": {
+        "ar": "المشروبات الساخنة والأعشاب",
+        "en": "Hot Drinks & Herbal Tea"
+      },
+      "items": [
+        {
+          "id": "herbs-0",
+          "name": {
+            "ar": "شاي",
+            "en": "Tea"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "id": "herbs-1",
+          "name": {
+            "ar": "شاي اخضر",
+            "en": "Green Tea"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 28
+            }
+          ]
+        },
+        {
+          "id": "herbs-2",
+          "name": {
+            "ar": "شاي الماتشا",
+            "en": "Matcha Tea"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 65
+            }
+          ]
+        },
+        {
+          "id": "herbs-3",
+          "name": {
+            "ar": "شاي فواكهه",
+            "en": "Fruit Tea"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 35
+            }
+          ]
+        },
+        {
+          "id": "herbs-4",
+          "name": {
+            "ar": "شاي بلبن",
+            "en": "Tea with Milk"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 38
+            }
+          ]
+        },
+        {
+          "id": "herbs-5",
+          "name": {
+            "ar": "شاي كرك",
+            "en": "Karak Tea"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "herbs-6",
+          "name": {
+            "ar": "ينسون",
+            "en": "Anise"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "id": "herbs-7",
+          "name": {
+            "ar": "نعناع",
+            "en": "Mint"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "id": "herbs-8",
+          "name": {
+            "ar": "لمون",
+            "en": "Lemon"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "id": "herbs-9",
+          "name": {
+            "ar": "لمون نعناع",
+            "en": "Lemon Mint"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "id": "herbs-10",
+          "name": {
+            "ar": "جنزبيل",
+            "en": "Ginger"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "id": "herbs-11",
+          "name": {
+            "ar": "جنزبيل حليب",
+            "en": "Ginger with Milk"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "herbs-12",
+          "name": {
+            "ar": "قرفه",
+            "en": "Cinnamon"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 25
+            }
+          ]
+        },
+        {
+          "id": "herbs-13",
+          "name": {
+            "ar": "قرفه حليب",
+            "en": "Cinnamon with Milk"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "herbs-14",
+          "name": {
+            "ar": "هوت سيدر",
+            "en": "Hot Cider"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "herbs-15",
+          "name": {
+            "ar": "ميكس اعشاب",
+            "en": "Mixed Herbs"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 35
+            }
+          ]
+        },
+        {
+          "id": "herbs-16",
+          "name": {
+            "ar": "سحلب",
+            "en": "Sahlab"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "herbs-17",
+          "name": {
+            "ar": "سحلب مكسرات",
+            "en": "Sahlab with Nuts"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 65
+            }
+          ]
+        },
+        {
+          "id": "herbs-18",
+          "name": {
+            "ar": "سحلب فواكهه",
+            "en": "Sahlab with Fruit"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 60
+            }
+          ]
+        },
+        {
+          "id": "herbs-19",
+          "name": {
+            "ar": "سحلب ميكس (مكسرات + فواكهه)",
+            "en": "Sahlab Mix (Nuts & Fruit)"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hot",
+      "name": {
+        "ar": "القهوة الساخنة",
+        "en": "Hot Coffee"
+      },
+      "items": [
+        {
+          "id": "hot-0",
+          "name": {
+            "ar": "قهوة تركي",
+            "en": "Turkish Coffee"
+          },
+          "prices": [
+            {
+              "label": "single",
+              "amount": 35
+            },
+            {
+              "label": "double",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "hot-1",
+          "name": {
+            "ar": "قهوة فرنساوي",
+            "en": "French Coffee"
+          },
+          "prices": [
+            {
+              "label": "single",
+              "amount": 45
+            },
+            {
+              "label": "double",
+              "amount": 55
+            }
+          ]
+        },
+        {
+          "id": "hot-2",
+          "name": {
+            "ar": "قهوة بندق",
+            "en": "Hazelnut Coffee"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 50
+            }
+          ]
+        },
+        {
+          "id": "hot-3",
+          "name": {
+            "ar": "قهوة نوتيلا",
+            "en": "Nutella Coffee"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 60
+            }
+          ]
+        },
+        {
+          "id": "hot-4",
+          "name": {
+            "ar": "اسبريسو",
+            "en": "Espresso"
+          },
+          "prices": [
+            {
+              "label": "single",
+              "amount": 45
+            },
+            {
+              "label": "double",
+              "amount": 60
+            }
+          ]
+        },
+        {
+          "id": "hot-5",
+          "name": {
+            "ar": "ميكاتو",
+            "en": "Macchiato"
+          },
+          "prices": [
+            {
+              "label": "single",
+              "amount": 52
+            },
+            {
+              "label": "double",
+              "amount": 68
+            }
+          ]
+        },
+        {
+          "id": "hot-6",
+          "name": {
+            "ar": "كراميل ميكاتو",
+            "en": "Caramel Macchiato"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 58
+            }
+          ]
+        },
+        {
+          "id": "hot-7",
+          "name": {
+            "ar": "كورتادو",
+            "en": "Cortado"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 58
+            }
+          ]
+        },
+        {
+          "id": "hot-8",
+          "name": {
+            "ar": "امريكان كوفي",
+            "en": "Americano"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 65
+            }
+          ]
+        },
+        {
+          "id": "hot-9",
+          "name": {
+            "ar": "أفوكادو",
+            "en": "Avocado"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 85
+            }
+          ]
+        },
+        {
+          "id": "hot-10",
+          "name": {
+            "ar": "كابتشينو",
+            "en": "Cappuccino"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 70
+            }
+          ]
+        },
+        {
+          "id": "hot-11",
+          "name": {
+            "ar": "لاتيه",
+            "en": "Latte"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 60
+            }
+          ]
+        },
+        {
+          "id": "hot-12",
+          "name": {
+            "ar": "فلات وايت",
+            "en": "Flat White"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 70
+            }
+          ]
+        },
+        {
+          "id": "hot-13",
+          "name": {
+            "ar": "موكا",
+            "en": "Mocha"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "hot-14",
+          "name": {
+            "ar": "هوت شوكلت",
+            "en": "Hot Chocolate"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 55
+            }
+          ]
+        },
+        {
+          "id": "hot-15",
+          "name": {
+            "ar": "نسكافيه بلاك",
+            "en": "Nescafé Black"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 35
+            }
+          ]
+        },
+        {
+          "id": "hot-16",
+          "name": {
+            "ar": "نسكافيه جولد",
+            "en": "Nescafé Gold"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "hot-17",
+          "name": {
+            "ar": "نسكافيه حليب",
+            "en": "Nescafé with Milk"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 50
+            }
+          ]
+        },
+        {
+          "id": "hot-18",
+          "name": {
+            "ar": "كوفي ميكس",
+            "en": "Coffee Mix"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 35
+            }
+          ]
+        },
+        {
+          "id": "hot-19",
+          "name": {
+            "ar": "كوفي ميكس حليب",
+            "en": "Coffee Mix with Milk"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fresh",
+      "name": {
+        "ar": "العصائر",
+        "en": "Fresh Juices"
+      },
+      "items": [
+        {
+          "id": "fresh-0",
+          "name": {
+            "ar": "تفاح",
+            "en": "Apple"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 60
+            },
+            {
+              "label": "large",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "fresh-1",
+          "name": {
+            "ar": "أفوكادو",
+            "en": "Avocado"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 105
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "fresh-2",
+          "name": {
+            "ar": "تين شوكي",
+            "en": "Prickly Pear"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 70
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-3",
+          "name": {
+            "ar": "رمان",
+            "en": "Pomegranate"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 60
+            },
+            {
+              "label": "large",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "fresh-4",
+          "name": {
+            "ar": "برتقال",
+            "en": "Orange"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 60
+            },
+            {
+              "label": "large",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "fresh-5",
+          "name": {
+            "ar": "جوافة",
+            "en": "Guava"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 60
+            },
+            {
+              "label": "large",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "fresh-6",
+          "name": {
+            "ar": "جوافة بلبن",
+            "en": "Guava with Milk"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 90
+            }
+          ]
+        },
+        {
+          "id": "fresh-7",
+          "name": {
+            "ar": "موز بلبن",
+            "en": "Banana with Milk"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 90
+            }
+          ]
+        },
+        {
+          "id": "fresh-8",
+          "name": {
+            "ar": "عناب",
+            "en": "Jujube"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 55
+            },
+            {
+              "label": "large",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "fresh-9",
+          "name": {
+            "ar": "خوخ",
+            "en": "Peach"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-10",
+          "name": {
+            "ar": "بلح بلبن",
+            "en": "Dates with Milk"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 100
+            }
+          ]
+        },
+        {
+          "id": "fresh-11",
+          "name": {
+            "ar": "كنتلوب",
+            "en": "Cantaloupe"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 60
+            },
+            {
+              "label": "large",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "fresh-12",
+          "name": {
+            "ar": "بطيخ نعناع",
+            "en": "Watermelon Mint"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 65
+            },
+            {
+              "label": "large",
+              "amount": 85
+            }
+          ]
+        },
+        {
+          "id": "fresh-13",
+          "name": {
+            "ar": "بلوبيري",
+            "en": "Blueberry"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-14",
+          "name": {
+            "ar": "عنب",
+            "en": "Grape"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-15",
+          "name": {
+            "ar": "مانجو",
+            "en": "Mango"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-16",
+          "name": {
+            "ar": "اناناس",
+            "en": "Pineapple"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-17",
+          "name": {
+            "ar": "ميكس بيري",
+            "en": "Mixed Berry"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-18",
+          "name": {
+            "ar": "كيوي",
+            "en": "Kiwi"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 95
+            },
+            {
+              "label": "large",
+              "amount": 120
+            }
+          ]
+        },
+        {
+          "id": "fresh-19",
+          "name": {
+            "ar": "لمون نعناع",
+            "en": "Lemon Mint"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 55
+            },
+            {
+              "label": "large",
+              "amount": 75
+            }
+          ]
+        },
+        {
+          "id": "fresh-20",
+          "name": {
+            "ar": "فراولة",
+            "en": "Strawberry"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 75
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "fresh-21",
+          "name": {
+            "ar": "باشون فروت",
+            "en": "Passion Fruit"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 85
+            },
+            {
+              "label": "large",
+              "amount": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iced",
+      "name": {
+        "ar": "القهوة المثلجة",
+        "en": "Iced Coffee"
+      },
+      "items": [
+        {
+          "id": "iced-0",
+          "name": {
+            "ar": "آيس لاتيه",
+            "en": "Iced Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 70
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "iced-1",
+          "name": {
+            "ar": "آيس سبانيش لاتيه",
+            "en": "Iced Spanish Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 85
+            },
+            {
+              "label": "large",
+              "amount": 105
+            }
+          ]
+        },
+        {
+          "id": "iced-2",
+          "name": {
+            "ar": "آيس لاتيه فراولة",
+            "en": "Iced Strawberry Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "iced-3",
+          "name": {
+            "ar": "آيس لاتيه توت",
+            "en": "Iced Berry Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "iced-4",
+          "name": {
+            "ar": "كراميل لاتيه",
+            "en": "Caramel Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 85
+            },
+            {
+              "label": "large",
+              "amount": 110
+            }
+          ]
+        },
+        {
+          "id": "iced-5",
+          "name": {
+            "ar": "فانيليا لاتيه",
+            "en": "Vanilla Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 85
+            },
+            {
+              "label": "large",
+              "amount": 110
+            }
+          ]
+        },
+        {
+          "id": "iced-6",
+          "name": {
+            "ar": "آيس أمريكانو",
+            "en": "Iced Americano"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 70
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "iced-7",
+          "name": {
+            "ar": "ماتشا لاتيه ستروبري",
+            "en": "Strawberry Matcha Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 110
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "iced-8",
+          "name": {
+            "ar": "آيس ماتشا لاتيه",
+            "en": "Iced Matcha Latte"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "iced-9",
+          "name": {
+            "ar": "فرابيه ماتشا",
+            "en": "Matcha Frappe"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 115
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "iced-10",
+          "name": {
+            "ar": "آيس شوكولاتة",
+            "en": "Iced Chocolate"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 70
+            },
+            {
+              "label": "large",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "iced-11",
+          "name": {
+            "ar": "آيس وايت شوكولاتة",
+            "en": "Iced White Chocolate"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 85
+            },
+            {
+              "label": "large",
+              "amount": 105
+            }
+          ]
+        },
+        {
+          "id": "iced-12",
+          "name": {
+            "ar": "آيس موكا",
+            "en": "Iced Mocha"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "iced-13",
+          "name": {
+            "ar": "آيس ماكياتو",
+            "en": "Iced Macchiato"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 80
+            },
+            {
+              "label": "large",
+              "amount": 105
+            }
+          ]
+        },
+        {
+          "id": "iced-14",
+          "name": {
+            "ar": "آيس كراميل ماكياتو",
+            "en": "Iced Caramel Macchiato"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 95
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "iced-15",
+          "name": {
+            "ar": "فرابيه بندق",
+            "en": "Hazelnut Frappe"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "iced-16",
+          "name": {
+            "ar": "فرابيه كراميل",
+            "en": "Caramel Frappe"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "iced-17",
+          "name": {
+            "ar": "فرابيه شوكولاتة",
+            "en": "Chocolate Frappe"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "iced-18",
+          "name": {
+            "ar": "فرابيه لوتس",
+            "en": "Lotus Frappe"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "iced-19",
+          "name": {
+            "ar": "فرابيه دي ليتشي",
+            "en": "Dolce de Leche Frappe"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "iced-20",
+          "name": {
+            "ar": "بيسكوفيه",
+            "en": "Biscoffee"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milkshake",
+      "name": {
+        "ar": "الميلك شيك",
+        "en": "Milkshakes"
+      },
+      "items": [
+        {
+          "id": "milkshake-0",
+          "name": {
+            "ar": "شوكلت",
+            "en": "Chocolate"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-1",
+          "name": {
+            "ar": "شوكلت جوز هند",
+            "en": "Chocolate Coconut"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 95
+            },
+            {
+              "label": "large",
+              "amount": 120
+            }
+          ]
+        },
+        {
+          "id": "milkshake-2",
+          "name": {
+            "ar": "وايت شوكلت",
+            "en": "White Chocolate"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 95
+            },
+            {
+              "label": "large",
+              "amount": 120
+            }
+          ]
+        },
+        {
+          "id": "milkshake-3",
+          "name": {
+            "ar": "اوريو",
+            "en": "Oreo"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "milkshake-4",
+          "name": {
+            "ar": "نوتيلا",
+            "en": "Nutella"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 110
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "milkshake-5",
+          "name": {
+            "ar": "مانجو",
+            "en": "Mango"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-6",
+          "name": {
+            "ar": "مانجو اناناس جوز هند",
+            "en": "Mango Pineapple Coconut"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 105
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "milkshake-7",
+          "name": {
+            "ar": "فراوله",
+            "en": "Strawberry"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-8",
+          "name": {
+            "ar": "بطيخ",
+            "en": "Watermelon"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-9",
+          "name": {
+            "ar": "خوخ",
+            "en": "Peach"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-10",
+          "name": {
+            "ar": "كيوي",
+            "en": "Kiwi"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "milkshake-11",
+          "name": {
+            "ar": "بلوبيري",
+            "en": "Blueberry"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-12",
+          "name": {
+            "ar": "بلح",
+            "en": "Date"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-13",
+          "name": {
+            "ar": "جوز هند",
+            "en": "Coconut"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-14",
+          "name": {
+            "ar": "كراميل",
+            "en": "Caramel"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 90
+            },
+            {
+              "label": "large",
+              "amount": 115
+            }
+          ]
+        },
+        {
+          "id": "milkshake-15",
+          "name": {
+            "ar": "لوتس",
+            "en": "Lotus"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "milkshake-16",
+          "name": {
+            "ar": "فستق",
+            "en": "Pistachio"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 110
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "milkshake-17",
+          "name": {
+            "ar": "موكا",
+            "en": "Mocha"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "milkshake-18",
+          "name": {
+            "ar": "سنيكرز",
+            "en": "Snickers"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 110
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "milkshake-19",
+          "name": {
+            "ar": "مكسرات",
+            "en": "Mixed Nuts"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 110
+            },
+            {
+              "label": "large",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "milkshake-20",
+          "name": {
+            "ar": "كيندر",
+            "en": "Kinder"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 100
+            },
+            {
+              "label": "large",
+              "amount": 125
+            }
+          ]
+        },
+        {
+          "id": "milkshake-21",
+          "name": {
+            "ar": "باشون فروت",
+            "en": "Passion Fruit"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 95
+            },
+            {
+              "label": "large",
+              "amount": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soft",
+      "name": {
+        "ar": "المشروبات الغازية والطاقة",
+        "en": "Soft & Energy Drinks"
+      },
+      "items": [
+        {
+          "id": "soft-0",
+          "name": {
+            "ar": "كولا V7",
+            "en": "Cola V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-1",
+          "name": {
+            "ar": "اناناس جوز هند V7",
+            "en": "Pineapple Coconut V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-2",
+          "name": {
+            "ar": "توت V7",
+            "en": "Berry V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-3",
+          "name": {
+            "ar": "رمان V7",
+            "en": "Pomegranate V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-4",
+          "name": {
+            "ar": "بينك ليمون V7",
+            "en": "Pink Lemon V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-5",
+          "name": {
+            "ar": "اناناس V7",
+            "en": "Pineapple V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-6",
+          "name": {
+            "ar": "شعير تفاح V7",
+            "en": "Apple Malt V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-7",
+          "name": {
+            "ar": "صودا V7",
+            "en": "Soda V7"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-8",
+          "name": {
+            "ar": "فيروز خوخ",
+            "en": "Fayrouz Peach"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "soft-9",
+          "name": {
+            "ar": "فيروز برتقال",
+            "en": "Fayrouz Orange"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "soft-10",
+          "name": {
+            "ar": "شعير",
+            "en": "Malt Drink"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "soft-11",
+          "name": {
+            "ar": "ستينج",
+            "en": "Sting"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 40
+            }
+          ]
+        },
+        {
+          "id": "soft-12",
+          "name": {
+            "ar": "فيوري",
+            "en": "Fury"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 50
+            }
+          ]
+        },
+        {
+          "id": "soft-13",
+          "name": {
+            "ar": "تويست",
+            "en": "Twist"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 45
+            }
+          ]
+        },
+        {
+          "id": "soft-14",
+          "name": {
+            "ar": "صن شاين",
+            "en": "Sunshine"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 80
+            },
+            {
+              "label": "large",
+              "amount": 100
+            }
+          ]
+        },
+        {
+          "id": "soft-15",
+          "name": {
+            "ar": "موهيتو",
+            "en": "Mojito"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 65
+            },
+            {
+              "label": "large",
+              "amount": 85
+            }
+          ]
+        },
+        {
+          "id": "soft-16",
+          "name": {
+            "ar": "ريدبول",
+            "en": "Red Bull"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "soft-17",
+          "name": {
+            "ar": "موهيتو ريدبول",
+            "en": "Red Bull Mojito"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 135
+            }
+          ]
+        },
+        {
+          "id": "soft-18",
+          "name": {
+            "ar": "مونستر",
+            "en": "Monster"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "soft-19",
+          "name": {
+            "ar": "باور هورس",
+            "en": "Power Horse"
+          },
+          "prices": [
+            {
+              "label": "standard",
+              "amount": 95
+            }
+          ]
+        },
+        {
+          "id": "soft-20",
+          "name": {
+            "ar": "مياه",
+            "en": "Water"
+          },
+          "prices": [
+            {
+              "label": "small",
+              "amount": 10
+            },
+            {
+              "label": "large",
+              "amount": 17
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
