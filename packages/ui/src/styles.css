@@ -872,3 +872,21 @@
     display: none;
   }
 }
+.maro-quantity {
+  display: inline-flex;
+  width: fit-content;
+  align-self: start;
+  align-items: center;
+  border: 1px solid var(--maro-control-border);
+  border-radius: var(--maro-radius-control);
+}
+.maro-quantity .maro-icon-button {
+  width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.5rem;
+}
+.maro-quantity output {
+  min-width: 2rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}

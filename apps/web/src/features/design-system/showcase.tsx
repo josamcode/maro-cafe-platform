@@ -23,6 +23,7 @@ import {
   Input,
   Label,
   ProductCard,
+  QuantityControl,
   RadioGroup,
   Section,
   Select,
@@ -43,6 +44,7 @@ export function DesignSystemShowcase() {
   const [size, setSize] = useState('small');
   const [picked, setPicked] = useState(false);
   const [query, setQuery] = useState('');
+  const [quantity, setQuantity] = useState(1);
   const options = [
     { value: 'faisal', label: t.faisal },
     { value: 'haram', label: t.haram },
@@ -241,6 +243,14 @@ export function DesignSystemShowcase() {
                 description="An action beside the summary, a prominent starting price and a mirrored direction arrow."
               />
               <Grid>
+                <QuantityControl
+                  value={quantity}
+                  onChange={setQuantity}
+                  locale={locale}
+                  label={locale === 'ar' ? 'الكمية' : 'Quantity'}
+                  increaseLabel={locale === 'ar' ? 'زوّد الكمية' : 'Increase quantity'}
+                  decreaseLabel={locale === 'ar' ? 'قلّل الكمية' : 'Decrease quantity'}
+                />
                 <Disclosure
                   title={t.coffee}
                   meta={locale === 'ar' ? 'افتح القسم' : 'Open category'}
