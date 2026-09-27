@@ -62,8 +62,8 @@ test('mobile navigation closes on selection and preserves bilingual destinations
       .getByRole('link', { name: locale === 'ar' ? 'الفروع' : 'Locations', exact: true })
       .click();
     await expect(dialog).not.toBeVisible();
-    await expect(page).toHaveURL(/#branches$/);
-    await expect(page.locator('.home-locations-intro')).toBeInViewport();
+    await expect(page).toHaveURL(/\/branches$/);
+    await expect(page.locator('.branches-intro')).toBeInViewport();
     await expect(page.locator('.home-header')).toBeInViewport();
     await expect(
       page.getByRole('link', {

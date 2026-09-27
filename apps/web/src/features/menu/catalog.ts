@@ -1,3 +1,4 @@
+import { branches, getBranch } from '../branches/data';
 import snapshot from '../../content/menu.snapshot.json';
 
 // Preview adapter. Replace with the authoritative catalog API before ordering.
@@ -29,14 +30,10 @@ export function filterCatalog(category: string, query: string) {
     .filter((group) => group.items.length > 0);
 }
 
-export const menuBranches = {
-  faisal: { ar: 'فيصل', en: 'Faisal' },
-  'sahl-hamza': { ar: 'سهل حمزة', en: 'Sahl Hamza' },
-  'main-haram': { ar: 'الهرم الرئيسي', en: 'Main Haram' },
-};
+export const menuBranches = Object.fromEntries(
+  branches.map((branch) => [branch.slug, branch.name]),
+);
 
 export function getMenuBranch(value: string | null) {
-  return value && Object.hasOwn(menuBranches, value)
-    ? menuBranches[value as keyof typeof menuBranches]
-    : undefined;
+  return getBranch(value)?.name;
 }

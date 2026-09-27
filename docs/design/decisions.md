@@ -142,6 +142,14 @@ Use `/in/[branchSlug]` for the three source-listed branches, with a correction s
 
 Generate preview QR SVGs from configured WEB_ORIGIN and provide them on `/preview/qr`, with an explicit localhost/phone limitation and a presentation walkthrough. QR entry never records a verified visit or purchase. The inside preview now uses the same snapshot adapter as the outside catalog; server packages and the authoritative API endpoint remain available for later shared adapter integration.
 
+## D019 — Complete public branch discovery and explicit inside entry
+
+Date: 2026-09-27. Status: implemented for presentation.
+
+Provide a bilingual directory and individual branch pages, linked from the homepage and public navigation. Retain immediate directions alongside the details link. Consolidate source-listed branch data so homepage, public menu, inside selector and QR generation agree. The old API branch demonstration is replaced by the preview registry; backend modules remain independent.
+
+Use an optional “At MARO right now?” control to choose a branch without a forced entry popup. Preserve menu filters and local picks when entering Inside; a subsequent general entry remains Outside. Retain honest content boundaries: no invented opening hours, amenities, branch-specific phone or photography, and no street number selected from conflicting sources. See [branch discovery](branch-experience.md).
+
 ## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.

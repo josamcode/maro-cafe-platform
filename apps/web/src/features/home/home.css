@@ -27,44 +27,6 @@
 .home-locations-intro .maro-text {
   max-width: 32ch;
 }
-.home-branch {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding-block: 1.75rem;
-  color: var(--maro-text);
-  text-decoration: none;
-  border-block-end: 1px solid var(--maro-border);
-}
-.home-branch-list article:last-child .home-branch {
-  border-block-end: 0;
-}
-.home-branch .maro-summary-row {
-  align-items: center;
-  flex: 1;
-}
-.home-branch-number {
-  color: var(--maro-gold);
-  font-size: 0.875rem;
-  font-variant-numeric: tabular-nums;
-}
-.home-branch-arrow {
-  width: 3rem;
-  height: 3rem;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--maro-border);
-  border-radius: 50%;
-  transition:
-    background var(--maro-duration),
-    color var(--maro-duration);
-}
-.home-branch:hover .home-branch-arrow,
-.home-branch:focus-visible .home-branch-arrow {
-  background: var(--maro-cream);
-  color: var(--maro-ink);
-}
-.home-branch:focus-visible,
 .home-wordmark:focus-visible {
   outline: 2px solid var(--maro-focus);
   outline-offset: 4px;
@@ -254,13 +216,7 @@
   .home-locations-intro .maro-heading {
     font-size: 1.75rem;
   }
-  .home-branch {
-    gap: 1rem;
-    padding-block: 1.5rem;
-  }
-  .home-branch .maro-heading {
-    font-size: 1.1875rem;
-  }
+
   .home-hero {
     grid-template-columns: 1fr;
     gap: 1.5rem;

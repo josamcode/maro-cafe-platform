@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { BranchList } from '../branches/branch-list';
+import { AtMaroPrompt } from '../branches/at-maro-prompt';
 import Image from 'next/image';
 import {
   Button,
@@ -8,9 +11,7 @@ import {
   Inline,
   CollectionCard,
   StartingPrice,
-  SummaryRow,
   Surface,
-  DirectionArrow,
   Section,
   Stack,
   Text,
@@ -46,11 +47,6 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
       image: '/home/milkshake.jpg',
       alt: t.photoShake,
     },
-  ];
-  const branches = [
-    { name: t.faisal, area: t.faisalArea, url: 'https://maps.app.goo.gl/ZaSq4xeTkhSkxjcN6' },
-    { name: t.sahl, area: t.sahlArea, url: 'https://maps.app.goo.gl/W1ksi3C4dRJuXTLk8' },
-    { name: t.haram, area: t.haramArea, url: 'https://maps.app.goo.gl/7dMZ25kGE4Evoz8i7' },
   ];
   return (
     <>
@@ -189,38 +185,12 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
                 <Text tone="eyebrow">{t.branchCount}</Text>
                 <Heading>{t.branchTitle}</Heading>
                 <Text>{t.branchIntro}</Text>
-                <Text tone="muted" className="home-note">
-                  {t.mapsHint}
-                </Text>
+                <Button asChild variant="outline">
+                  <Link href="/branches">{t.branches}</Link>
+                </Button>
+                <AtMaroPrompt locale={locale} />
               </Stack>
-              <div className="home-branch-list">
-                {branches.map((branch, index) => (
-                  <article key={branch.url}>
-                    <a
-                      className="home-branch"
-                      href={branch.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${t.directions} — ${branch.name}`}
-                    >
-                      <span className="home-branch-number" aria-hidden="true">
-                        {new Intl.NumberFormat(locale === 'ar' ? 'ar-EG' : 'en-EG', {
-                          minimumIntegerDigits: 2,
-                        }).format(index + 1)}
-                      </span>
-                      <SummaryRow
-                        name={branch.name}
-                        description={branch.area}
-                        action={
-                          <span className="home-branch-arrow">
-                            <DirectionArrow />
-                          </span>
-                        }
-                      />
-                    </a>
-                  </article>
-                ))}
-              </div>
+              <BranchList locale={locale} compact />
             </Surface>
           </Section>
         </Container>

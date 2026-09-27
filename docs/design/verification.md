@@ -86,3 +86,13 @@ September 27, 2026.
 - Coverage verifies branch correction preserving search, picks surviving locale/theme/reload and public-site navigation, exact cashier selections, localized unknown-branch recovery, three SVG responses and download filenames, and the header/search/picks flow at 360px and 1440px in both languages and appearances. The previous outside-menu scenarios also passed.
 - Lint, workspace type checking and production compilation passed. Live Chrome review inspected Arabic 390px navigation, the open branch selector and desktop QR presentation. The temporary viewport override was reset afterward.
 - QR destination URLs are configured with WEB_ORIGIN. The current localhost preview is not a phone-accessible deployment; physical phone scanning and print checks remain necessary after choosing a reachable origin. No scan is counted as a visit and no order is submitted.
+
+## Public branch discovery
+
+September 27, 2026.
+
+- The E2E suite now covers 31 scenarios. Twenty-six passed in the full run; five navigation/preference assertions timed out. All five passed unchanged on targeted rerun with two workers. This records the observed timing sensitivity rather than treating the original full run as a clean pass.
+- Five new branch scenarios cover homepage and directory entry, all detail routes, Maps/contact destinations, menu branch context, search and picks surviving explicit inside entry, optional branch-dialog Escape/focus behavior, unknown-branch recovery and the absence of unverified Main Haram street numbers or 24-hour claims.
+- Responsive checks cover 360px, 768px and 1440px in both languages and appearances. All three responsive branch scenarios passed again after moving the mobile directory list ahead of its photograph.
+- Lint, workspace and test TypeScript checks, and the final production web build passed. Live Chrome review inspected Arabic mobile branch details, the revised directory, its branch-choice dialog and desktop directory. The temporary viewport override was reset and the production preview left running on port 3100.
+- Source-listed addresses still need owner confirmation. General MARO photography and contact details are explicitly distinguished from branch-specific evidence; hours and services are not asserted. See [public branch discovery](branch-experience.md) and the [implementation status](../product/implementation-status.md) for remaining scope.

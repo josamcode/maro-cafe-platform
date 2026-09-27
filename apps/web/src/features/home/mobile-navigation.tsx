@@ -36,7 +36,7 @@ export function MobileNavigation({ locale }: { locale: Locale }) {
         <Stack gap="sm">
           {[
             { href: '/menu', label: t.menu },
-            { href: '/#branches', label: t.branches },
+            { href: '/branches', label: t.branches },
             { href: '/#at-maro', label: t.story },
           ].map((link) => (
             <Button key={link.href} asChild variant="quiet" className="home-mobile-link">

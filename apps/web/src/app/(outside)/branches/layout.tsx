@@ -1,7 +1,13 @@
-export default function Layout({ children }: { children: React.ReactNode }) {
+import { getLocale, getTheme } from '../../../lib/locale';
+import { SiteHeader, SiteFooter } from '../../../features/site/site-shell';
+import '../../../features/branches/branches.css';
+export default async function Layout({ children }: { children: React.ReactNode }) {
+  const [locale, theme] = await Promise.all([getLocale(), getTheme()]);
   return (
-    <div lang="en" dir="ltr">
+    <>
+      <SiteHeader locale={locale} theme={theme} />
       {children}
-    </div>
+      <SiteFooter locale={locale} />
+    </>
   );
 }

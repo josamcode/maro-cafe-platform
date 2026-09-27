@@ -34,8 +34,11 @@ Environment setup creates `.env` only when it does not already exist. The sample
 | URL                                | Purpose                                |
 | ---------------------------------- | -------------------------------------- |
 | http://localhost:3100              | Outside experience foundation          |
-| http://localhost:3100/branches     | Branches from the API                  |
-| http://localhost:3100/in/demo      | In-store sample menu from the database |
+| http://localhost:3100/branches     | Bilingual public branch directory     |
+| http://localhost:3100/branches/faisal | Branch details and directions      |
+| http://localhost:3100/menu         | Public menu and local My Picks        |
+| http://localhost:3100/in/faisal     | Branch-context menu preview           |
+| http://localhost:3100/preview/qr    | Branch QR downloads and walkthrough   |
 | http://127.0.0.1:4000/docs         | API documentation in development       |
 | http://127.0.0.1:4000/health/live  | Process liveness                       |
 | http://127.0.0.1:4000/health/ready | PostgreSQL and Redis readiness         |
@@ -84,6 +87,6 @@ The browser smoke test starts the web app automatically; build workspace package
 
 ## Scope
 
-This is an executable foundation, not the final cafe design. The initial read path is PostgreSQL -> API -> web. The worker runs a non-customer-facing maintenance check. Authentication, staff management, orders, payment, loyalty, POS, messaging, and object storage are deliberately not represented as finished features.
+This is a working customer presentation on an executable platform foundation. Public and inside menus currently share a source-derived snapshot; branch discovery uses one source-listed registry pending owner confirmation. The authoritative integration path remains PostgreSQL -> API -> web, with API/database packages already scaffolded. The worker runs a non-customer-facing maintenance check. Authentication, staff management, orders, payment, loyalty, POS, messaging, and object storage are not represented as finished features. Current QR destinations use WEB_ORIGIN; localhost codes cannot be opened from a different phone without a reachable preview origin.
 
 Read [the architecture](docs/architecture/README.md) and [deployment notes](infrastructure/deployment/README.md) before extending the system. All project documentation and source copy are in English.

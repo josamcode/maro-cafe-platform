@@ -17,6 +17,7 @@ import {
 import type { Locale, Theme } from '../../lib/locale';
 import { InsideHeader } from '../inside/inside-header';
 import { BranchSelector } from '../inside/branch-selector';
+import { AtMaroPrompt } from '../branches/at-maro-prompt';
 import { catalog, filterCatalog, getMenuBranch } from './catalog';
 import { menuMessages } from './messages';
 import { MenuProduct } from './product-details';
@@ -98,6 +99,7 @@ export function MenuExperience({
           </Text>
         )}
       </div>
+      {!inside && <AtMaroPrompt locale={locale} branchSlug={params.get('branch') ?? undefined} />}
       <div className="menu-tools">
         <Field label={t.search}>
           {(props) => (

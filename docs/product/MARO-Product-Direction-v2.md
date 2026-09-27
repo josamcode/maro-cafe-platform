@@ -6,6 +6,8 @@ This document records the direction defined by the project owner: **only two dig
 
 These are proposed implementation specifications, not a description of features already built or data currently available.
 
+For current progress, see [implementation status](implementation-status.md). The specifications and example routes below record product intent; completed preview journeys and remaining dependencies are tracked there.
+
 ## 1. The Approved Model
 
 | Component | Goal | Journey |

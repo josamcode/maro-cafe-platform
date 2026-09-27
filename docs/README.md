@@ -3,6 +3,7 @@
 ## Product
 
 - [Product direction v2](product/MARO-Product-Direction-v2.md): the two digital experiences and post-visit lifecycle.
+- [Implementation status](product/implementation-status.md): completed preview capabilities, remaining phase-one work and later dependencies.
 - [Digital experience and product strategy](<product/MARO-Digital-Experience-Product-Strategy - English.md>): the earlier, broader strategy document. Refer to v2 for the updated experience model.
 
 ## Research
@@ -21,6 +22,7 @@
 - [Menu photography](design/menu-photography.md): development image references, sources and replacement status.
 - [My Picks](design/my-picks.md): persistent local selections, quantity editing, cashier view and storage boundaries.
 - [Inside experience and QR preview](design/inside-experience.md): branch entry, correction, compact navigation, downloadable codes and presentation walkthrough.
+- [Public branch discovery](design/branch-experience.md): directory, location details, immediate directions, explicit inside entry and content provenance.
 
 - [Architecture](architecture/README.md): application boundaries, packages, and growth path.
 - [Foundation verification](architecture/verification.md): completed checks and local infrastructure limitations.
