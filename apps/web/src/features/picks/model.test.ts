@@ -1,38 +1,37 @@
 import { describe, expect, it } from 'vitest';
 import { makePick, readPicks, resolvePick } from './model';
-
-const tea = { itemId: 'herbs-0', itemName: 'Tea', variant: 'standard', quantity: 2 };
+import { testCatalog as catalog, teaId } from '../catalog/test-catalog';
+const tea = { itemId: teaId, itemName: 'Tea', variant: 'standard', quantity: 2 };
 const stored = (items: unknown[]) => JSON.stringify({ version: 1, items });
 
-describe('saved picks validation', () => {
-  it('discards malformed data, unsupported versions and invalid quantities', () => {
-    expect(readPicks('{broken')).toEqual([]);
-    expect(readPicks(JSON.stringify({ version: 2, items: [tea] }))).toEqual([]);
+describe('saved picks with authoritative data', () => {
+  it('rejects invalid storage, versions and quantities', () => {
+    expect(readPicks('{broken', catalog)).toEqual([]);
+    expect(readPicks(JSON.stringify({ version: 2, items: [tea] }), catalog)).toEqual([]);
     expect(
       readPicks(
         stored([null, {}, ...[-2, 0, 1.5, 100, '2'].map((quantity) => ({ ...tea, quantity }))]),
+        catalog,
       ),
     ).toEqual([]);
   });
-  it('rejects obsolete identities and unsupported options', () => {
+  it('migrates legacy identity once, and keeps stable identity through renaming', () => {
+    expect(readPicks(stored([{ ...tea, itemId: 'herbs-0' }]), catalog)).toEqual([tea]);
     expect(
-      readPicks(
-        stored([
-          { ...tea, itemName: 'Different product' },
-          { ...tea, itemId: 'missing' },
-          { ...tea, variant: 'large' },
-        ]),
-      ),
+      readPicks(stored([{ ...tea, itemId: 'herbs-0', itemName: 'Different product' }]), catalog),
     ).toEqual([]);
-    expect(makePick('missing', 'standard')).toBeNull();
+    expect(readPicks(stored([{ ...tea, itemName: 'Old name' }]), catalog)).toEqual([tea]);
+    expect(makePick('missing', 'standard', catalog)).toBeNull();
   });
-  it('merges duplicate variants and caps the recovered quantity', () => {
-    expect(readPicks(stored([tea, { ...tea, quantity: 3 }]))).toEqual([{ ...tea, quantity: 5 }]);
-    expect(readPicks(stored([{ ...tea, quantity: 98 }, tea]))[0]?.quantity).toBe(99);
+  it('merges variants, caps quantities and ignores stored prices', () => {
+    const saved = readPicks(stored([tea, { ...tea, quantity: 3, unitPrice: 1 }]), catalog);
+    expect(saved[0]!.quantity).toBe(5);
+    expect(resolvePick(saved[0]!, catalog)?.total).toBe(125);
+    expect(readPicks(stored([{ ...tea, quantity: 98 }, tea]), catalog)[0]!.quantity).toBe(99);
   });
-  it('ignores saved prices and calculates totals from the current catalog', () => {
-    const [pick] = readPicks(stored([{ ...tea, unitPrice: 1, total: 2 }]));
-    expect(resolvePick(pick!)?.unitPrice).toBe(25);
-    expect(resolvePick(pick!)?.total).toBe(50);
+  it('retains unavailable stable identities without charging stale prices', () => {
+    expect(readPicks(stored([tea]), [])).toEqual([tea]);
+    expect(resolvePick(tea, [])).toBeNull();
+    expect(resolvePick({ ...tea, variant: 'large' }, catalog)).toBeNull();
   });
 });

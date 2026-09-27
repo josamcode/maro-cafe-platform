@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button, Container, Grid, Heading, Inline, Stack, Text } from '@maro/ui';
-import { menuBranches } from '../../../features/menu/catalog';
+import { getPublicCatalog } from '../../../lib/catalog';
 import { branchUrl, qrOrigin } from '../../../features/inside/qr';
 import './qr.css';
 
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 };
 export const dynamic = 'force-dynamic';
 
-export default function QrPreview() {
+export default async function QrPreview() {
+  const { branches } = await getPublicCatalog();
   const origin = qrOrigin();
   const local = ['localhost', '127.0.0.1', '[::1]'].includes(new URL(origin).hostname);
   return (
@@ -33,7 +34,7 @@ export default function QrPreview() {
               : `QR destination: ${origin}. Confirm this address is reachable from your phone before sharing or printing.`}
           </Text>
           <Grid>
-            {Object.entries(menuBranches).map(([slug, name]) => (
+            {branches.map(({ slug, name }) => (
               <article className="qr-branch" key={slug}>
                 <Heading as="h2" size="title">
                   {name.en}

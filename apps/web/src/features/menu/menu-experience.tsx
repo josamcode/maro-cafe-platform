@@ -18,10 +18,10 @@ import type { Locale, Theme } from '../../lib/locale';
 import { InsideHeader } from '../inside/inside-header';
 import { BranchSelector } from '../inside/branch-selector';
 import { AtMaroPrompt } from '../branches/at-maro-prompt';
-import { catalog, filterCatalog, getMenuBranch } from './catalog';
+import { filterCatalog } from './catalog';
+import { useCatalog } from '../catalog/catalog-provider';
 import { menuMessages } from './messages';
 import { MenuProduct } from './product-details';
-import { getMenuMedia } from './media';
 import { MenuPhoto } from './menu-photo';
 import { usePickActions } from '../picks/use-pick-actions';
 import { PicksPanel } from '../picks/picks-panel';
@@ -34,6 +34,7 @@ export function MenuExperience({
   inside?: { branchSlug: string; theme: Theme };
 }) {
   const t = menuMessages[locale];
+  const { catalog, data, available } = useCatalog();
   const { picks, add, announcement } = usePickActions(locale);
   const params = useSearchParams();
   const requestedCategory = params.get('category');
@@ -41,8 +42,8 @@ export function MenuExperience({
     ? requestedCategory!
     : 'all';
   const query = params.get('q') ?? '';
-  const branch = getMenuBranch(params.get('branch'));
-  const groups = filterCatalog(category, query);
+  const branch = data.branches.find((b) => b.slug === params.get('branch'))?.name;
+  const groups = filterCatalog(catalog, category, query);
   const count = groups.reduce((total, group) => total + group.items.length, 0);
   const number = new Intl.NumberFormat(locale === 'ar' ? 'ar-EG' : 'en-EG');
   const categoryList = useRef<HTMLDivElement>(null);
@@ -81,6 +82,7 @@ export function MenuExperience({
           }}
         />
       )}
+      {!available && <Text role="alert">{t.unavailable}</Text>}
       <div className="menu-intro" id={inside ? 'inside-menu' : undefined}>
         <Stack gap="sm">
           {!inside && <Text tone="eyebrow">{t.menuTitle}</Text>}
@@ -187,9 +189,7 @@ export function MenuExperience({
               meta={`${number.format(group.items.length)} ${t.results}`}
               className="menu-group"
               defaultExpanded={Boolean(query.trim()) || category !== 'all'}
-              media={
-                <MenuPhoto media={getMenuMedia(group.id)} locale={locale} variant="category" />
-              }
+              media={<MenuPhoto media={group.media} locale={locale} variant="category" />}
             >
               <div className="menu-product-grid">
                 {group.items.map((item, itemIndex) => (

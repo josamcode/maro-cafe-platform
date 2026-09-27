@@ -1,5 +1,11 @@
 import { createDatabase } from '@maro/database';
-import { createBranchRepository, createCatalogRepository } from '@maro/backend';
+import {
+  createBranchRepository,
+  createCatalogRepository,
+  createCatalogEditor,
+  createStaffAuth,
+} from '@maro/backend';
+import { resolve } from 'node:path';
 import { createRedis } from '@maro/jobs';
 import { buildApp } from './app.js';
 import { apiEnvSchema } from './env.js';
@@ -15,6 +21,9 @@ const app = await buildApp(
   {
     branches: createBranchRepository(database.db),
     catalog: createCatalogRepository(database.db),
+    editor: createCatalogEditor(database.db),
+    staffAuth: createStaffAuth(database.db),
+    uploadDir: resolve(env.UPLOAD_DIR),
     async checkReady() {
       await Promise.all([database.pool.query('SELECT 1'), redis.ping()]);
     },

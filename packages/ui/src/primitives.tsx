@@ -90,7 +90,8 @@ export function Price({ amount, locale = 'ar' }: { amount: number; locale?: 'ar'
       {new Intl.NumberFormat(locale === 'ar' ? 'ar-EG' : 'en-EG', {
         style: 'currency',
         currency: 'EGP',
-        maximumFractionDigits: 0,
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2,
       }).format(amount)}
     </bdi>
   );

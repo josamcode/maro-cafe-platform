@@ -1,5 +1,7 @@
 export const picksMessages = {
   ar: {
+    unavailable:
+      'بعض اختياراتك مش متاحة حاليًا في الفرع ده، ومش داخلة في الإجمالي. لسه محفوظة لو رجعت متاحة.',
     title: 'اختياراتي',
     add: 'ضيف لاختياراتي',
     added: 'اتضاف لاختياراتك',
@@ -23,6 +25,8 @@ export const picksMessages = {
     limit: 'وصلت للحد الأقصى للصنف ده. تقدر تعدّل الكمية من اختياراتي.',
   },
   en: {
+    unavailable:
+      'Some saved choices are unavailable here and excluded from the total. They remain saved if availability returns.',
     title: 'My Picks',
     add: 'Add to My Picks',
     added: 'Added to your picks',

@@ -82,7 +82,10 @@ test('a whole product card opens real size prices and restores keyboard focus', 
   await dialog.getByRole('button', { name: 'Back to the menu' }).click();
   await expect(trigger).toBeFocused();
   await page.goto('/menu?q=green%20tea');
-  await page.locator('.maro-product').getByRole('button', { name: /Details/ }).click();
+  await page
+    .locator('.maro-product')
+    .getByRole('button', { name: /Details/ })
+    .click();
   await expect(dialog.getByRole('radio')).toHaveCount(0);
   await expect(dialog.locator('.menu-selection')).toContainText('28');
 });
@@ -112,7 +115,9 @@ for (const width of [360, 768, 1440]) {
         dialog.getByRole('button', { name: locale === 'ar' ? 'إغلاق' : 'Close', exact: true }),
       ).toBeInViewport();
       await page.keyboard.press('Escape');
-      await expect(card.getByRole('button', { name: locale === 'ar' ? /التفاصيل والمقاسات/ : /Details/ })).toBeFocused();
+      await expect(
+        card.getByRole('button', { name: locale === 'ar' ? /التفاصيل والمقاسات/ : /Details/ }),
+      ).toBeFocused();
     }
   });
 }

@@ -1,22 +1,25 @@
-import { branches, getBranch } from '../branches/data';
-import snapshot from '../../content/menu.snapshot.json';
-
-// Preview adapter. Replace with the authoritative catalog API before ordering.
-export const catalog = snapshot.categories;
-export type MenuCategory = (typeof catalog)[number];
-export type MenuItem = MenuCategory['items'][number];
-export type PriceLabel = 'small' | 'large' | 'single' | 'double' | 'standard';
-
-const items = new Map(
-  catalog.flatMap((category) =>
-    category.items.map((item) => [item.id, { item, category }] as const),
-  ),
-);
-
-export function getMenuItem(itemId: string) {
-  return items.get(itemId);
+import type { CatalogData, CatalogCategory, CatalogProduct } from '@maro/contracts';
+export type MenuItem = CatalogProduct;
+export type MenuCategory = CatalogCategory & { items: MenuItem[] };
+export type PriceLabel = MenuItem['prices'][number]['label'];
+export function toMenuCategories(data: CatalogData, branchSlug?: string): MenuCategory[] {
+  return data.categories.map((category) => ({
+    ...category,
+    items: data.products.filter(
+      (p) =>
+        p.active &&
+        p.categoryId === category.id &&
+        (!branchSlug || p.branchSlugs.includes(branchSlug)),
+    ),
+  }));
 }
-
+export function getMenuItem(catalog: MenuCategory[], id: string) {
+  for (const category of catalog) {
+    const item = category.items.find((p) => p.id === id);
+    if (item) return { item, category };
+  }
+  return undefined;
+}
 export function normalizeSearch(value: string) {
   return value
     .toLowerCase()
@@ -26,7 +29,7 @@ export function normalizeSearch(value: string) {
     .trim();
 }
 
-export function filterCatalog(category: string, query: string) {
+export function filterCatalog(catalog: MenuCategory[], category: string, query: string) {
   const terms = normalizeSearch(query).split(/\s+/).filter(Boolean);
   return catalog
     .filter((group) => category === 'all' || group.id === category)
@@ -38,12 +41,4 @@ export function filterCatalog(category: string, query: string) {
       }),
     }))
     .filter((group) => group.items.length > 0);
-}
-
-export const menuBranches = Object.fromEntries(
-  branches.map((branch) => [branch.slug, branch.name]),
-);
-
-export function getMenuBranch(value: string | null) {
-  return getBranch(value)?.name;
 }

@@ -2,10 +2,11 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Field, Select } from '@maro/ui';
 import type { Locale } from '../../lib/locale';
-import { menuBranches } from '../menu/catalog';
+import { useCatalog } from '../catalog/catalog-provider';
 import { insideMessages } from './messages';
 
 export function BranchSelector({ branchSlug, locale }: { branchSlug: string; locale: Locale }) {
+  const { data } = useCatalog();
   const router = useRouter();
   const params = useSearchParams();
   const t = insideMessages[locale];
@@ -18,9 +19,9 @@ export function BranchSelector({ branchSlug, locale }: { branchSlug: string; loc
             placeholder={t.branch}
             value={branchSlug}
             dir={locale === 'ar' ? 'rtl' : 'ltr'}
-            options={Object.entries(menuBranches).map(([value, name]) => ({
-              value,
-              label: name[locale],
+            options={data.branches.map((branch) => ({
+              value: branch.slug,
+              label: branch.name[locale],
             }))}
             onValueChange={(value) => {
               const next = new URLSearchParams(params);

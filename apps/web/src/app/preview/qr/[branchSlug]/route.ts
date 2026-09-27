@@ -1,4 +1,4 @@
-import { getMenuBranch } from '../../../../features/menu/catalog';
+import { getPublicBranch } from '../../../../lib/catalog';
 import { branchQr } from '../../../../features/inside/qr';
 
 export const dynamic = 'force-dynamic';
@@ -8,7 +8,7 @@ export async function GET(
   { params }: { params: Promise<{ branchSlug: string }> },
 ) {
   const { branchSlug } = await params;
-  if (!getMenuBranch(branchSlug)) return new Response('Unknown branch', { status: 404 });
+  if (!(await getPublicBranch(branchSlug))) return new Response('Unknown branch', { status: 404 });
   const download = new URL(request.url).searchParams.get('download') === '1';
   return new Response(await branchQr(branchSlug), {
     headers: {

@@ -15,7 +15,6 @@ import {
 import type { Locale } from '../../lib/locale';
 import { menuMessages } from '../menu/messages';
 import type { PriceLabel } from '../menu/catalog';
-import { getMenuMedia } from '../menu/media';
 import { MenuPhoto } from '../menu/menu-photo';
 import { MAX_PICK_QUANTITY, pickKey } from './model';
 import { picksMessages } from './messages';
@@ -74,6 +73,11 @@ export function PicksPanel({
       }
     >
       <Stack className="picks-content" data-cashier={cashier}>
+        {picks.unavailableCount > 0 && (
+          <Text role="status" className="picks-note">
+            {t.unavailable}
+          </Text>
+        )}
         {!picks.persistent && (
           <Text role="status" className="picks-note">
             {t.storageNotice}
@@ -95,11 +99,7 @@ export function PicksPanel({
                   <li className="picks-item" key={key}>
                     <div className="picks-item-heading">
                       {!cashier && (
-                        <MenuPhoto
-                          media={getMenuMedia(line.category.id, line.itemId)}
-                          locale={locale}
-                          variant="category"
-                        />
+                        <MenuPhoto media={line.item.media} locale={locale} variant="category" />
                       )}
                       <Stack gap="sm">
                         <Heading as="h3" size="title">

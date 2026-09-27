@@ -22,12 +22,18 @@ import {
   createCatalogService,
   type BranchRepository,
   type CatalogRepository,
+  type CatalogEditor,
+  type StaffAuth,
 } from '@maro/backend';
+import { registerCatalogRoutes } from './catalog-routes.js';
 
 export interface AppDependencies {
   branches: BranchRepository;
   catalog: CatalogRepository;
   checkReady: () => Promise<void>;
+  editor?: CatalogEditor;
+  staffAuth?: StaffAuth;
+  uploadDir?: string;
 }
 
 export async function buildApp(
@@ -121,6 +127,8 @@ export async function buildApp(
     async () => ({ data: await deps.branches.list() }),
   );
   const catalog = createCatalogService(deps.branches, deps.catalog);
+  if (deps.editor && deps.staffAuth && deps.uploadDir)
+    await registerCatalogRoutes(app, deps.editor, deps.staffAuth, deps.uploadDir);
   app.get(
     '/v1/branches/:slug/menu',
     {

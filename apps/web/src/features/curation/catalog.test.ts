@@ -1,32 +1,25 @@
 import { describe, expect, it } from 'vitest';
-import { getFeaturedProducts, getPairings, resolveReferences } from './catalog';
-import { featuredProducts, pairingRules } from './data';
-import { getMenuItem } from '../menu/catalog';
+import { getFeaturedProducts, getPairings } from './catalog';
+import { toMenuCategories } from '../menu/catalog';
+import { testData, teaId, waterId } from '../catalog/test-catalog';
 
-describe('editorial catalog references', () => {
-  it('rejects stale identities, missing entries, duplicates and self-pairings', () => {
-    const water = { id: 'soft-20', name: 'Water' };
-    expect(
-      resolveReferences([
-        water,
-        water,
-        { id: 'missing', name: 'Cake' },
-        { id: 'hot-4', name: 'Cake' },
-      ]),
-    ).toEqual([getMenuItem(water.id)]);
-    expect(resolveReferences([water], water.id)).toEqual([]);
-    expect(getPairings('missing')).toEqual([]);
-    expect(getPairings('soft-20')).toEqual([]);
-    expect(getPairings('iced-7')).toEqual([]);
+describe('live curation', () => {
+  it('removes hidden and branch-unavailable recommendations', () => {
+    const data = structuredClone(testData);
+    data.products[0]!.pairingIds = [waterId];
+    expect(getPairings(toMenuCategories(data), teaId)).toHaveLength(1);
+    data.products[1]!.branchSlugs = ['main-haram'];
+    expect(getPairings(toMenuCategories(data, 'faisal'), teaId)).toEqual([]);
+    data.products[0]!.active = false;
+    expect(getFeaturedProducts(toMenuCategories(data))).toEqual([]);
   });
-  it('keeps all configured previews resolvable and prices owned by the catalog', () => {
-    expect(getFeaturedProducts()).toHaveLength(featuredProducts.length);
-    for (const rule of pairingRules) {
-      expect(resolveReferences(rule.sources)).toHaveLength(rule.sources.length);
-      expect(resolveReferences(rule.targets)).toHaveLength(rule.targets.length);
-      for (const source of rule.sources) {
-        for (const entry of getPairings(source.id)) expect(entry).toBe(getMenuItem(entry.item.id));
-      }
-    }
+  it('omits stale and self references while deriving prices from the live catalog', () => {
+    const data = structuredClone(testData);
+    data.products[0]!.pairingIds = [teaId];
+    expect(getPairings(toMenuCategories(data), teaId)).toEqual([]);
+    data.products[0]!.pairingIds = ['missing'];
+    expect(getPairings(toMenuCategories(data), teaId)).toEqual([]);
+    data.products[0]!.prices[0]!.amount = 40;
+    expect(getFeaturedProducts(toMenuCategories(data))[0]!.item.prices[0]!.amount).toBe(40);
   });
 });

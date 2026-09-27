@@ -1,4 +1,4 @@
-import { branchesResponseSchema, menuResponseSchema } from '@maro/contracts';
+import { branchesResponseSchema, menuResponseSchema, catalogResponseSchema } from '@maro/contracts';
 import type { z } from 'zod';
 
 export class ApiError extends Error {
@@ -18,6 +18,7 @@ export function createApiClient(baseUrl: string, fetcher: typeof fetch = fetch) 
     return schema.parse(await response.json());
   }
   return {
+    getCatalog: () => get('/v1/catalog', catalogResponseSchema),
     listBranches: () => get('/v1/branches', branchesResponseSchema),
     getMenu: (slug: string) =>
       get(`/v1/branches/${encodeURIComponent(slug)}/menu`, menuResponseSchema),

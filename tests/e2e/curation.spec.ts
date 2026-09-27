@@ -11,7 +11,7 @@ test('featured products use exact variants and optional pairings survive the ins
   await page.getByRole('button', { name: 'Details & sizes — Espresso', exact: true }).click();
   const dialog = page.getByRole('dialog');
   await dialog.getByRole('radio', { name: /Double/ }).check();
-  const pairing = dialog.getByRole('region', { name: 'With your coffee' });
+  const pairing = dialog.getByRole('region', { name: 'Something alongside?' });
   await expect(pairing).toContainText('optional extra');
   const water = pairing.getByRole('button', {
     name: 'Add to My Picks — Water · Small',
@@ -45,7 +45,7 @@ test('featured products use exact variants and optional pairings survive the ins
   await expect(dialog).toContainText('Large');
   await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'Details & sizes — Espresso', exact: true }).click();
-  await expect(dialog.getByRole('region', { name: 'With your coffee' })).toBeVisible();
+  await expect(dialog.getByRole('region', { name: 'Something alongside?' })).toBeVisible();
   await page.keyboard.press('Escape');
   await page.reload();
   await page.getByRole('button', { name: 'My Picks', exact: true }).click();

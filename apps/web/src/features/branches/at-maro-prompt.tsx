@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Button, Dialog, DirectionArrow, Stack } from '@maro/ui';
 import type { Locale } from '../../lib/locale';
-import { branches, getBranch } from './data';
+import { useCatalog } from '../catalog/catalog-provider';
 import { branchMessages } from './messages';
 import './branches.css';
 
 export function AtMaroPrompt({ locale, branchSlug }: { locale: Locale; branchSlug?: string }) {
+  const {
+    data: { branches },
+  } = useCatalog();
   const t = branchMessages[locale];
   const [open, setOpen] = useState(false);
   const params = useSearchParams();
@@ -18,7 +21,7 @@ export function AtMaroPrompt({ locale, branchSlug }: { locale: Locale; branchSlu
     if (value) next.set(key, value);
   }
   const href = (slug: string) => `/in/${slug}${next.size ? `?${next}` : ''}`;
-  const branch = getBranch(branchSlug ?? null);
+  const branch = branches.find((b) => b.slug === branchSlug);
   if (branch)
     return (
       <Button asChild variant="quiet" size="sm" className="at-maro-prompt">

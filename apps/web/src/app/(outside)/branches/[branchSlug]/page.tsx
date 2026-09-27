@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Button, Container, Heading, Stack, Text } from '@maro/ui';
 import { getLocale } from '../../../../lib/locale';
-import { branches, getBranch } from '../../../../features/branches/data';
+import { getPublicBranch, getPublicCatalog } from '../../../../lib/catalog';
 import { branchMessages } from '../../../../features/branches/messages';
 import { BranchList } from '../../../../features/branches/branch-list';
 import { BranchMood } from '../../../../features/branches/branch-mood';
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ branchSlug: string }>;
 }): Promise<Metadata> {
   const [{ branchSlug }, locale] = await Promise.all([params, getLocale()]);
-  const branch = getBranch(branchSlug);
+  const branch = await getPublicBranch(branchSlug);
   return {
     title: branch
       ? `${branch.name[locale]} · ${branchMessages[locale].locations}`
@@ -26,8 +26,9 @@ export async function generateMetadata({
 
 export default async function BranchPage({ params }: { params: Promise<{ branchSlug: string }> }) {
   const [{ branchSlug }, locale] = await Promise.all([params, getLocale()]);
-  const branch = getBranch(branchSlug);
+  const branch = await getPublicBranch(branchSlug);
   if (!branch) notFound();
+  const { branches } = await getPublicCatalog();
   const t = branchMessages[locale];
   return (
     <main id="main-content" className="branches-page">

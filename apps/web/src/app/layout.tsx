@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { getLocale, getTheme } from '../lib/locale';
 import { DM_Sans, IBM_Plex_Sans_Arabic, Newsreader } from 'next/font/google';
 import './globals.css';
+import { CatalogProvider } from '../features/catalog/catalog-provider';
+import { getPublicCatalog } from '../lib/catalog';
 
 const latin = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans', display: 'swap' });
 const arabic = IBM_Plex_Sans_Arabic({
@@ -27,7 +29,11 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className={`${latin.variable} ${arabic.variable} ${display.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <CatalogProvider initial={await getPublicCatalog().catch(() => null)}>
+          {children}
+        </CatalogProvider>
+      </body>
     </html>
   );
 }

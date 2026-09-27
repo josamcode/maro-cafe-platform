@@ -5,6 +5,7 @@ import type { Locale } from '../../lib/locale';
 import { QuickAdd, type AddPick } from '../menu/quick-add';
 import { getPairings } from './catalog';
 import { curationMessages } from './messages';
+import { useCatalog } from '../catalog/catalog-provider';
 
 export function ProductPairing({
   itemId,
@@ -18,7 +19,8 @@ export function ProductPairing({
   onAdd: AddPick;
 }) {
   const id = useId();
-  const pairings = getPairings(itemId);
+  const { catalog } = useCatalog();
+  const pairings = getPairings(catalog, itemId);
   if (!pairings.length) return null;
   const t = curationMessages[locale];
   return (

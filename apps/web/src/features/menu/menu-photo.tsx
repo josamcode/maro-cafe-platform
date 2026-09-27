@@ -15,7 +15,8 @@ export function MenuPhoto({
   variant?: 'card' | 'category' | 'detail';
   eager?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
+  const [failedSource, setFailedSource] = useState<string | null>(null);
+  const failed = failedSource === media.src;
   return (
     <div className="menu-photo" data-variant={variant}>
       <Image
@@ -31,7 +32,7 @@ export function MenuPhoto({
               : '(max-width: 768px) 96px, (max-width: 1024px) 45vw, 400px'
         }
         style={{ objectPosition: failed ? 'center' : media.position }}
-        onError={() => setFailed(true)}
+        onError={() => setFailedSource(media.src)}
       />
     </div>
   );

@@ -39,6 +39,7 @@ jobs:
       - run: pnpm check
       - run: pnpm db:migrate
       - run: pnpm db:seed
+      - run: pnpm catalog:import
       - run: pnpm test:integration
       - run: pnpm exec playwright install --with-deps chrome
       - run: pnpm test:e2e

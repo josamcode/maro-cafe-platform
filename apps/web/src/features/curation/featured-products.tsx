@@ -9,11 +9,13 @@ import { picksMessages } from '../picks/messages';
 import { usePickActions } from '../picks/use-pick-actions';
 import { getFeaturedProducts } from './catalog';
 import { curationMessages } from './messages';
+import { useCatalog } from '../catalog/catalog-provider';
 import './curation.css';
 
 export function FeaturedProducts({ locale }: { locale: Locale }) {
   const { picks, add, announcement } = usePickActions(locale);
-  const items = getFeaturedProducts();
+  const { catalog } = useCatalog();
+  const items = getFeaturedProducts(catalog);
   const t = curationMessages[locale];
   if (!items.length) return null;
   return (

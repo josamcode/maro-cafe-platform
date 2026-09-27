@@ -1,5 +1,7 @@
 'use client';
 import { useMemo, useSyncExternalStore } from 'react';
+import { useCatalog } from '../catalog/catalog-provider';
+import { toMenuCategories } from '../menu/catalog';
 import {
   makePick,
   MAX_PICK_QUANTITY,
@@ -48,19 +50,23 @@ function save(items: SavedPick[]) {
 }
 
 export function usePicks() {
+  const { catalog, data, available } = useCatalog();
+  const all = useMemo(() => toMenuCategories(data), [data]);
   const raw = useSyncExternalStore(subscribe, snapshot, serverSnapshot);
-  const saved = useMemo(() => readPicks(raw), [raw]);
-  const lines = saved.map(resolvePick).filter((line) => line !== null);
+  const saved = useMemo(() => readPicks(raw, all), [raw, all]);
+  const lines = saved.map((pick) => resolvePick(pick, catalog)).filter((line) => line !== null);
   return {
-    ready: raw !== undefined,
+    ready: raw !== undefined && available,
+    unavailableCount: saved.length - lines.length,
     persistent: !memoryOnly,
     lines,
     count: lines.reduce((count, line) => count + line.quantity, 0),
     total: lines.reduce((total, line) => total + line.total, 0),
     add(itemId: string, variant: string) {
-      const pick = makePick(itemId, variant);
+      if (!available) return false;
+      const pick = makePick(itemId, variant, catalog);
       if (!pick) return false;
-      const current = readPicks(snapshot());
+      const current = readPicks(snapshot(), all);
       const existing = current.find((line) => pickKey(line) === pickKey(pick));
       if (existing && existing.quantity >= MAX_PICK_QUANTITY) return false;
       if (existing) existing.quantity += 1;
@@ -71,11 +77,13 @@ export function usePicks() {
     setQuantity(key: string, quantity: number) {
       if (!Number.isInteger(quantity) || quantity < 1 || quantity > MAX_PICK_QUANTITY) return;
       save(
-        readPicks(snapshot()).map((line) => (pickKey(line) === key ? { ...line, quantity } : line)),
+        readPicks(snapshot(), all).map((line) =>
+          pickKey(line) === key ? { ...line, quantity } : line,
+        ),
       );
     },
     remove(key: string) {
-      save(readPicks(snapshot()).filter((line) => pickKey(line) !== key));
+      save(readPicks(snapshot(), all).filter((line) => pickKey(line) !== key));
     },
   };
 }

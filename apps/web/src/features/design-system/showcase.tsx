@@ -318,7 +318,7 @@ export function DesignSystemShowcase() {
                   price={
                     <StartingPrice
                       label={locale === 'ar' ? 'يبدأ من' : 'From'}
-                      amount={85}
+                      amount={85.5}
                       locale={locale}
                     />
                   }

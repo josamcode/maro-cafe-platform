@@ -3,16 +3,18 @@ import { useState } from 'react';
 import type { Locale } from '../../lib/locale';
 import { getMenuItem } from '../menu/catalog';
 import { usePicks } from './use-picks';
+import { useCatalog } from '../catalog/catalog-provider';
 import { picksMessages } from './messages';
 
 export function usePickActions(locale: Locale) {
   const picks = usePicks();
+  const { catalog } = useCatalog();
   const [announcement, setAnnouncement] = useState({ item: '', revision: 0 });
   function add(itemId: string, variant: string) {
     const success = picks.add(itemId, variant);
     if (success)
       setAnnouncement((previous) => ({
-        item: getMenuItem(itemId)!.item.name[locale],
+        item: getMenuItem(catalog, itemId)!.item.name[locale],
         revision: previous.revision + 1,
       }));
     return success;

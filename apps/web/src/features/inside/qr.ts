@@ -1,5 +1,4 @@
 import QRCode from 'qrcode';
-import { getMenuBranch } from '../menu/catalog';
 
 export function qrOrigin() {
   const url = new URL(process.env.WEB_ORIGIN ?? 'http://localhost:3100');
@@ -19,7 +18,7 @@ export function qrOrigin() {
 }
 
 export function branchUrl(branchSlug: string) {
-  if (!getMenuBranch(branchSlug)) throw new Error('Unknown preview branch');
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(branchSlug)) throw new Error('Invalid branch slug');
   return `${qrOrigin()}/in/${branchSlug}`;
 }
 

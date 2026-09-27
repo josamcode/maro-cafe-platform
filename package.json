@@ -25,6 +25,8 @@
     "db:generate": "pnpm --filter @maro/database generate",
     "db:migrate": "dotenv -e .env -- pnpm --filter @maro/database migrate",
     "db:seed": "dotenv -e .env -- pnpm --filter @maro/database seed",
+    "catalog:import": "dotenv -e .env -- node scripts/import-catalog.mjs",
+    "admin:setup": "dotenv -e .env -- node scripts/setup-admin.mjs",
     "jobs:smoke": "dotenv -e .env -- pnpm --filter @maro/worker smoke",
     "start:web": "dotenv -e .env -- pnpm --filter @maro/web start",
     "start:api": "dotenv -e .env -- pnpm --filter @maro/api start",

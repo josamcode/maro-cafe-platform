@@ -2,6 +2,7 @@ import { homeMessages } from '../home/messages';
 
 export const menuMessages = {
   ar: {
+    unavailable: 'المنيو مش متاح للتحديث دلوقتي. حاول تفتح الصفحة تاني بعد شوية.',
     ...homeMessages.ar,
     title: 'اختار اللي على مزاجك.',
     intro: 'قهوة، حاجة باردة، أو مشروبك المعتاد. كل اختياراتك هنا.',
@@ -20,6 +21,7 @@ export const menuMessages = {
     photoReference: 'صورة توضيحية مؤقتة.',
   },
   en: {
+    unavailable: 'The menu cannot refresh right now. Please try reloading shortly.',
     ...homeMessages.en,
     title: 'Find your next favourite.',
     intro: 'Your everyday coffee, something chilled, or a little change of pace.',

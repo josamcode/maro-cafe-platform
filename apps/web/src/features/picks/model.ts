@@ -1,18 +1,18 @@
-import { getMenuItem } from '../menu/catalog';
+import { getMenuItem, type MenuCategory } from '../menu/catalog';
 
 export const MAX_PICK_QUANTITY = 99;
 export type SavedPick = { itemId: string; itemName: string; variant: string; quantity: number };
 export const pickKey = (pick: Pick<SavedPick, 'itemId' | 'variant'>) =>
   `${pick.itemId}:${pick.variant}`;
 
-export function resolvePick(pick: SavedPick) {
-  const entry = getMenuItem(pick.itemId);
+export function resolvePick(pick: SavedPick, catalog: MenuCategory[]) {
+  const entry = getMenuItem(catalog, pick.itemId);
   const option = entry?.item.prices.find((price) => price.label === pick.variant);
-  if (!entry || !option || pick.itemName !== entry.item.name.en) return null;
+  if (!entry || !option) return null;
   return { ...pick, ...entry, unitPrice: option.amount, total: option.amount * pick.quantity };
 }
 
-export function readPicks(raw: string | null | undefined): SavedPick[] {
+export function readPicks(raw: string | null | undefined, catalog: MenuCategory[]): SavedPick[] {
   if (!raw) return [];
   try {
     const data: unknown = JSON.parse(raw);
@@ -44,7 +44,13 @@ export function readPicks(raw: string | null | undefined): SavedPick[] {
         variant: value.variant,
         quantity: value.quantity,
       };
-      if (!resolvePick(pick)) continue;
+      const legacy = catalog
+        .flatMap((c) => c.items)
+        .find((item) => item.legacyId === pick.itemId && item.name.en === pick.itemName);
+      if (legacy) pick.itemId = legacy.id;
+      if (!/^[a-f0-9-]{36}$/.test(pick.itemId)) continue;
+      const entry = getMenuItem(catalog, pick.itemId);
+      if (entry) pick.itemName = entry.item.name.en;
       const key = pickKey(pick);
       pick.quantity = Math.min(MAX_PICK_QUANTITY, pick.quantity + (merged.get(key)?.quantity ?? 0));
       merged.set(key, pick);
@@ -55,8 +61,12 @@ export function readPicks(raw: string | null | undefined): SavedPick[] {
   }
 }
 
-export function makePick(itemId: string, variant: string): SavedPick | null {
-  const entry = getMenuItem(itemId);
+export function makePick(
+  itemId: string,
+  variant: string,
+  catalog: MenuCategory[],
+): SavedPick | null {
+  const entry = getMenuItem(catalog, itemId);
   if (!entry?.item.prices.some((price) => price.label === variant)) return null;
   return { itemId, itemName: entry.item.name.en, variant, quantity: 1 };
 }

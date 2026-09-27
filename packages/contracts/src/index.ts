@@ -1,4 +1,5 @@
 import { z } from 'zod';
+export * from './catalog.js';
 
 export const branchSchema = z.object({
   id: z.uuid(),

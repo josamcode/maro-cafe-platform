@@ -8,6 +8,13 @@
       "when": 1790522372243,
       "tag": "0000_ancient_sunfire",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790538688627,
+      "tag": "0001_green_bushwacker",
+      "breakpoints": true
     }
   ]
 }

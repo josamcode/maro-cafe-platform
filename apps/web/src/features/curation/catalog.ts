@@ -1,30 +1,21 @@
-import { getMenuItem } from '../menu/catalog';
-import { featuredProducts, pairingRules, type ProductReference } from './data';
-
-export function resolveReferences(references: ProductReference[], excludeId?: string) {
-  const seen = new Set<string>(excludeId ? [excludeId] : []);
-  return references.flatMap((reference) => {
-    const entry = getMenuItem(reference.id);
-    if (
-      seen.has(reference.id) ||
-      !entry ||
-      entry.item.name.en !== reference.name ||
-      entry.item.prices.length === 0 ||
-      entry.item.prices.some((price) => !Number.isFinite(price.amount) || price.amount <= 0)
+import { getMenuItem, type MenuCategory } from '../menu/catalog';
+export function getFeaturedProducts(catalog: MenuCategory[]) {
+  return catalog
+    .flatMap((category) =>
+      category.items
+        .filter((item) => item.featuredOrder !== null)
+        .map((item) => ({ item, category })),
     )
-      return [];
-    seen.add(reference.id);
-    return [entry];
-  });
+    .sort((a, b) => a.item.featuredOrder! - b.item.featuredOrder!)
+    .slice(0, 6);
 }
-
-export function getFeaturedProducts() {
-  return resolveReferences(featuredProducts);
-}
-
-export function getPairings(itemId: string) {
-  const references = pairingRules
-    .filter((rule) => resolveReferences(rule.sources).some(({ item }) => item.id === itemId))
-    .flatMap((rule) => rule.targets);
-  return resolveReferences(references, itemId).slice(0, 1);
+export function getPairings(catalog: MenuCategory[], itemId: string) {
+  const item = getMenuItem(catalog, itemId)?.item;
+  return (item?.pairingIds ?? [])
+    .filter((id) => id !== itemId)
+    .flatMap((id) => {
+      const entry = getMenuItem(catalog, id);
+      return entry ? [entry] : [];
+    })
+    .slice(0, 1);
 }

@@ -36,6 +36,7 @@ export function createCatalogRepository(db: Database): CatalogRepository {
             eq(branchVariants.branchId, branchId),
             eq(branchVariants.available, true),
             eq(products.active, true),
+            eq(productVariants.active, true),
             eq(branches.active, true),
           ),
         )

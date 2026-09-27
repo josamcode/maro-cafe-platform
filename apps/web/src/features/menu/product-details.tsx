@@ -4,7 +4,6 @@ import { Button, Dialog, Price, ProductCard, RadioGroup, Stack, Text } from '@ma
 import type { Locale } from '../../lib/locale';
 import type { MenuCategory, MenuItem, PriceLabel } from './catalog';
 import { menuMessages } from './messages';
-import { getMenuMedia } from './media';
 import { MenuPhoto } from './menu-photo';
 import { picksMessages } from '../picks/messages';
 import { QuickAdd, type AddPick } from './quick-add';
@@ -32,12 +31,12 @@ export function MenuProduct({
 }) {
   const t = menuMessages[locale];
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(item.prices[0]!.label);
+  const [selected, setSelected] = useState<string>(item.prices[0]!.label);
   const [limitReached, setLimitReached] = useState(false);
   const p = picksMessages[locale];
-  const price = item.prices.find((option) => option.label === selected)!;
+  const price = item.prices.find((option) => option.label === selected) ?? item.prices[0]!;
   const multiple = item.prices.length > 1;
-  const media = getMenuMedia(category.id, item.id);
+  const media = item.media;
   return (
     <ProductCard
       compact
@@ -74,7 +73,7 @@ export function MenuProduct({
               <RadioGroup
                 label={t.chooseSize}
                 name={`size-${item.id}`}
-                value={selected}
+                value={price.label}
                 onChange={(value) => {
                   setSelected(value);
                   setLimitReached(false);
@@ -108,7 +107,7 @@ export function MenuProduct({
             <Button
               disabled={!picksReady}
               onClick={() => {
-                if (onAdd(item.id, selected)) {
+                if (onAdd(item.id, price.label)) {
                   setLimitReached(false);
                   setOpen(false);
                 } else setLimitReached(true);
