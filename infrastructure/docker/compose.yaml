@@ -1,0 +1,32 @@
+name: maro-local
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: maro
+      POSTGRES_PASSWORD: maro_local_only
+      POSTGRES_DB: maro
+    ports:
+      - '127.0.0.1:15432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U maro -d maro']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+  redis:
+    image: redis:7.4-alpine
+    command: ['redis-server', '--appendonly', 'yes', '--maxmemory-policy', 'noeviction']
+    ports:
+      - '127.0.0.1:16379:6379'
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+volumes:
+  postgres_data:
+  redis_data:

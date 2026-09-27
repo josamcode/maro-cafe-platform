@@ -1,0 +1,30 @@
+{
+  "name": "@maro/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "generate": "drizzle-kit generate",
+    "migrate": "tsx src/migrate.ts",
+    "seed": "tsx src/seed.ts"
+  },
+  "dependencies": {
+    "pg": "8.23.0",
+    "drizzle-orm": "0.45.3"
+  },
+  "devDependencies": {
+    "@maro/config": "workspace:*",
+    "drizzle-kit": "0.31.11",
+    "@types/pg": "8.23.1",
+    "tsx": "4.23.15"
+  }
+}

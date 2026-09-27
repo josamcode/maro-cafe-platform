@@ -1,0 +1,51 @@
+{
+  "name": "maro",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.17.0",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "pnpm": ">=11 <12"
+  },
+  "scripts": {
+    "dev": "dotenv -e .env -- turbo run dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck && tsc -p tsconfig.tests.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "turbo run build --filter=./packages/* && vitest run",
+    "test:integration": "turbo run build --filter=./packages/* && dotenv -e .env -- vitest run --config vitest.integration.config.ts",
+    "test:e2e": "dotenv -e .env -- playwright test",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "env:setup": "node scripts/setup-env.mjs",
+    "infra:up": "docker compose -f infrastructure/docker/compose.yaml up -d --wait",
+    "infra:down": "docker compose -f infrastructure/docker/compose.yaml down",
+    "db:generate": "pnpm --filter @maro/database generate",
+    "db:migrate": "dotenv -e .env -- pnpm --filter @maro/database migrate",
+    "db:seed": "dotenv -e .env -- pnpm --filter @maro/database seed",
+    "jobs:smoke": "dotenv -e .env -- pnpm --filter @maro/worker smoke",
+    "start:web": "dotenv -e .env -- pnpm --filter @maro/web start",
+    "start:api": "dotenv -e .env -- pnpm --filter @maro/api start",
+    "start:worker": "dotenv -e .env -- pnpm --filter @maro/worker start"
+  },
+  "devDependencies": {
+    "@maro/backend": "workspace:*",
+    "@maro/database": "workspace:*",
+    "@maro/jobs": "workspace:*",
+    "bullmq": "6.3.9",
+    "drizzle-orm": "0.45.3",
+    "@eslint/js": "9.39.4",
+    "@playwright/test": "1.63.0",
+    "@types/node": "^24.0.0",
+    "dotenv-cli": "11.0.0",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.3.6",
+    "prettier": "3.9.9",
+    "turbo": "2.11.4",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.70.1",
+    "vitest": "5.0.2"
+  }
+}

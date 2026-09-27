@@ -1,0 +1,9 @@
+{
+  "extends": "@maro/config/typescript/react",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.test.ts"]
+}
