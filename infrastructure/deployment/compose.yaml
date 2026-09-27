@@ -1,0 +1,85 @@
+x-logging: &logging
+  driver: json-file
+  options:
+    max-size: '10m'
+    max-file: '3'
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: maro
+      POSTGRES_DB: maro
+      POSTGRES_PASSWORD: ${SERVICE_PASSWORD_POSTGRES:?Set SERVICE_PASSWORD_POSTGRES}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U maro -d maro']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    logging: *logging
+
+  redis:
+    image: redis:7.4-bookworm
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: ${SERVICE_PASSWORD_REDIS:?Set SERVICE_PASSWORD_REDIS}
+      REDISCLI_AUTH: ${SERVICE_PASSWORD_REDIS:?Set SERVICE_PASSWORD_REDIS}
+    command:
+      - sh
+      - -c
+      - exec redis-server --appendonly yes --maxmemory-policy noeviction --requirepass "$$REDIS_PASSWORD"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    logging: *logging
+
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/deployment/api.Dockerfile
+    restart: unless-stopped
+    init: true
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://maro:${SERVICE_PASSWORD_POSTGRES:?Set SERVICE_PASSWORD_POSTGRES}@postgres:5432/maro
+      REDIS_URL: redis://:${SERVICE_PASSWORD_REDIS:?Set SERVICE_PASSWORD_REDIS}@redis:6379
+      WEB_ORIGIN: ${WEB_ORIGIN:?Set the HTTPS frontend origin}
+      API_HOST: 0.0.0.0
+      PORT: '4000'
+      UPLOAD_DIR: /data/uploads
+    command:
+      - sh
+      - -c
+      - node node_modules/@maro/database/dist/migrate.js && exec node dist/server.js
+    expose:
+      - '4000'
+    volumes:
+      - uploads:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:4000/health/ready', {signal:AbortSignal.timeout(4000)}).then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+    logging: *logging
+
+volumes:
+  postgres_data:
+  redis_data:
+  uploads:

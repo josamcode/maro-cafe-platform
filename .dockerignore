@@ -1,0 +1,16 @@
+.git
+**/node_modules
+**/dist
+**/.next
+**/.turbo
+**/*.tsbuildinfo
+**/.env
+**/.env.*
+.local
+assets
+docs
+apps/web/public
+test-results
+playwright-report
+coverage
+.pnpm-store

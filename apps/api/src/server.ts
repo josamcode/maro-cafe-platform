@@ -55,7 +55,7 @@ async function shutdown() {
 process.once('SIGINT', () => void shutdown());
 process.once('SIGTERM', () => void shutdown());
 try {
-  await app.listen({ port: env.API_PORT, host: env.API_HOST });
+  await app.listen({ port: env.PORT ?? env.API_PORT, host: env.API_HOST });
 } catch (error) {
   app.log.error(error);
   await app.close();

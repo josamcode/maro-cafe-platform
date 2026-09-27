@@ -13,8 +13,10 @@ import { branches as sourceBranches } from './catalog-source/branches.ts';
 import { categoryMedia, getMenuMedia } from './catalog-source/media.ts';
 import { featuredProducts, pairingRules } from './catalog-source/curation.ts';
 
-if (process.env.NODE_ENV === 'production')
-  throw new Error('Preview import is disabled in production.');
+if (process.env.NODE_ENV === 'production' && !process.argv.includes('--allow-hosted-preview'))
+  throw new Error(
+    'Preview import requires --allow-hosted-preview in a deployed presentation environment.',
+  );
 if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is required.');
 const menu = JSON.parse(
   await readFile(new URL('./catalog-source/menu.snapshot.json', import.meta.url), 'utf8'),
