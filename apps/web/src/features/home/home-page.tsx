@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import {
   Button,
   Container,
@@ -18,12 +17,9 @@ import {
 } from '@maro/ui';
 import type { Locale, Theme } from '../../lib/locale';
 import menu from '../../content/menu.snapshot.json';
-import { changeLocale } from './actions';
 import { homeMessages } from './messages';
-import { MenuBrowser } from './menu-browser';
-import { MobileNavigation } from './mobile-navigation';
-import { ThemeControl } from './theme-control';
-import { SocialIcon } from './social-icon';
+import { MenuLink } from '../menu/menu-link';
+import { SiteHeader, SiteFooter } from '../site/site-shell';
 import './home.css';
 
 export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
@@ -58,42 +54,7 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
   ];
   return (
     <>
-      <a className="home-skip maro-button maro-button-primary" href="#main-content">
-        {t.skip}
-      </a>
-      <header className="home-header">
-        <Container>
-          <nav className="home-nav" aria-label={t.nav}>
-            <MobileNavigation locale={locale} />
-            <Link className="home-wordmark" href="/" aria-label="MARO" lang="en" dir="ltr">
-              MARO<span>MINI CAFÉ</span>
-            </Link>
-            <Inline className="home-nav-links">
-              <MenuBrowser locale={locale} label={t.menu} variant="quiet" />
-              <Button asChild variant="quiet">
-                <a href="#branches">{t.branches}</a>
-              </Button>
-              <Button asChild variant="quiet">
-                <a href="#at-maro">{t.story}</a>
-              </Button>
-            </Inline>
-            <Inline className="home-preferences">
-              <ThemeControl locale={locale} theme={theme} />
-              <form action={changeLocale} className="home-language">
-                <input type="hidden" name="locale" value={locale === 'ar' ? 'en' : 'ar'} />
-                <Button type="submit" variant="quiet" size="sm" aria-label={t.switchLabel}>
-                  <span className="home-language-full" lang={locale === 'ar' ? 'en' : 'ar'}>
-                    {t.language}
-                  </span>
-                  <span className="home-language-short" lang={locale === 'ar' ? 'en' : 'ar'}>
-                    {t.shortLanguage}
-                  </span>
-                </Button>
-              </form>
-            </Inline>
-          </nav>
-        </Container>
-      </header>
+      <SiteHeader locale={locale} theme={theme} />
       <main id="main-content">
         <Container>
           <section className="home-hero" aria-labelledby="home-title">
@@ -108,7 +69,7 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
                 <Text tone="muted">{t.intro}</Text>
               </Stack>
               <Inline className="home-hero-actions">
-                <MenuBrowser locale={locale} />
+                <MenuLink locale={locale} />
                 <Button asChild variant="outline">
                   <a href="#branches">{t.visit}</a>
                 </Button>
@@ -175,7 +136,7 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
                         />
                       }
                       action={
-                        <MenuBrowser
+                        <MenuLink
                           locale={locale}
                           initialCategory={collection.id}
                           label={collection.name}
@@ -188,7 +149,7 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
                 })}
               </Grid>
               <div className="home-menu-more">
-                <MenuBrowser locale={locale} label={t.fullMenu} variant="outline" />
+                <MenuLink locale={locale} label={t.fullMenu} variant="outline" />
                 <Text tone="muted" className="home-note">
                   {t.collectionNote} {t.menuDescription}
                 </Text>
@@ -264,54 +225,7 @@ export function HomePage({ locale, theme }: { locale: Locale; theme: Theme }) {
           </Section>
         </Container>
       </main>
-      <footer className="home-footer">
-        <Container>
-          <div className="home-footer-main">
-            <Stack gap="sm">
-              <span className="home-wordmark" lang="en" dir="ltr">
-                MARO
-              </span>
-              <Text>{t.footer}</Text>
-            </Stack>
-            <Stack gap="sm" className="home-footer-connect">
-              <Text tone="eyebrow">{t.keepInTouch}</Text>
-              <Inline>
-                <Button asChild variant="outline">
-                  <a href="tel:+201158750004">
-                    <SocialIcon kind="phone" />
-                    {t.contact}
-                  </a>
-                </Button>
-                <Button asChild variant="outline">
-                  <a
-                    href="https://www.instagram.com/maro_mini_cafe/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SocialIcon kind="instagram" />
-                    {t.instagram}
-                  </a>
-                </Button>
-                <Button asChild variant="outline">
-                  <a
-                    href="https://www.facebook.com/Marocaffe7/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <SocialIcon kind="facebook" />
-                    {t.facebook}
-                  </a>
-                </Button>
-              </Inline>
-            </Stack>
-          </div>
-          <div className="home-footer-bottom">
-            <Text tone="muted" className="home-note">
-              {t.preview}
-            </Text>
-          </div>
-        </Container>
-      </footer>
+      <SiteFooter locale={locale} />
     </>
   );
 }

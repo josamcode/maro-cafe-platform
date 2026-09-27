@@ -1,0 +1,221 @@
+.menu-intro {
+  padding-block: 3rem 2rem;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.menu-intro .maro-heading {
+  font-size: clamp(2rem, 3.6vw, 3.5rem);
+}
+.menu-branch-context {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.menu-branch-context svg {
+  flex-shrink: 0;
+}
+.menu-tools {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 20;
+  background: var(--maro-paper);
+  padding-block: 1rem;
+  border-block-end: 1px solid var(--maro-border);
+}
+.menu-tools .maro-field {
+  max-width: 36rem;
+}
+.menu-tools .maro-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.menu-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.menu-search > svg {
+  position: absolute;
+  inset-inline-start: 1rem;
+  color: var(--maro-muted);
+  pointer-events: none;
+}
+.menu-search .maro-input {
+  padding-inline: 2.875rem 3.25rem;
+}
+.menu-search .maro-icon-button {
+  position: absolute;
+  inset-inline-end: 0.125rem;
+}
+.menu-search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+.menu-categories {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0.125rem;
+  margin-block-start: 1rem;
+}
+.menu-categories .maro-chip {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+.menu-result-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+  gap: 1rem;
+}
+.menu-result-summary .maro-text {
+  font-size: 0.875rem;
+}
+.menu-results {
+  display: grid;
+  gap: 3rem;
+}
+.menu-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--maro-surface-soft);
+}
+.menu-photo img {
+  object-fit: cover;
+}
+.menu-photo[data-variant='category'] {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+}
+.menu-photo[data-variant='detail'] {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+}
+.menu-detail-photo {
+  margin: 0;
+}
+.menu-detail-photo figcaption,
+.menu-photo-note {
+  font-size: 0.75rem;
+  color: var(--maro-muted);
+}
+.menu-detail-photo figcaption {
+  margin-block-start: 0.5rem;
+}
+.menu-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.menu-product-grid .maro-product {
+  scroll-margin-block: 12rem 2rem;
+}
+@media (max-height: 600px) {
+  .menu-tools {
+    position: static;
+  }
+}
+.menu-source-note {
+  font-size: 0.8125rem;
+  padding-block: 2.5rem;
+}
+.menu-selection {
+  padding-block: 1rem;
+  border-block: 1px solid var(--maro-border);
+}
+.menu-product-details.maro-stack {
+  gap: 1rem;
+}
+.menu-selection .maro-price {
+  display: inline-block;
+  font-size: 2rem;
+  margin-block-start: 0.5rem;
+}
+.menu-product-details .maro-radio-group > .maro-inline {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.menu-product-details .maro-choice {
+  padding: 0.875rem;
+  border: 1px solid var(--maro-control-border);
+  border-radius: var(--maro-radius-control);
+}
+.menu-product-details .maro-choice:has(:checked) {
+  border-color: var(--maro-focus);
+  background: var(--maro-surface-soft);
+}
+@media (max-width: 64rem) {
+  .menu-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 48rem) {
+  .menu-intro {
+    padding-block: 1.5rem 1rem;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+  .menu-intro .maro-heading {
+    font-size: 1.875rem;
+    line-height: 1.3;
+  }
+  .menu-intro .maro-text {
+    font-size: 0.875rem;
+  }
+  .menu-tools {
+    inset-block-start: 4.5rem;
+    padding-block: 0.5rem;
+  }
+  .menu-categories {
+    display: none;
+  }
+  .menu-product-grid {
+    grid-template-columns: 1fr;
+    gap: 0.625rem;
+  }
+  .menu-results {
+    gap: 0.75rem;
+  }
+  .menu-group {
+    scroll-margin-block-start: 9rem;
+  }
+  .menu-group .maro-disclosure-header {
+    padding-block: 0.75rem;
+    border-block-end: 1px solid var(--maro-border);
+  }
+  .menu-group .maro-disclosure-header .maro-heading {
+    font-size: 1rem;
+  }
+  .menu-group .menu-photo[data-variant='category'] {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+  }
+  .menu-group .maro-disclosure-trigger {
+    gap: 0.5rem;
+    padding-block: 0.25rem;
+  }
+  .menu-group .maro-disclosure-trigger small {
+    font-size: 0.6875rem;
+  }
+  .menu-group .maro-product[data-compact='true'][data-has-image='true'] {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    padding: 0.625rem;
+  }
+}

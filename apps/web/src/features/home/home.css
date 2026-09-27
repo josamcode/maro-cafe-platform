@@ -190,32 +190,6 @@
 .home-footer-bottom .maro-button {
   font-size: 0.8125rem;
 }
-.home-menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.home-menu-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-block: 1rem;
-  border-block-end: 1px solid var(--maro-border);
-}
-.home-menu-prices {
-  display: flex;
-  gap: 1.5rem;
-  flex-shrink: 0;
-}
-.home-menu-prices > span {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-.home-menu-prices small {
-  color: var(--maro-muted);
-}
 @media (max-width: 48rem) {
   .home-header {
     position: sticky;
@@ -362,10 +336,6 @@
   }
   .home-atmosphere {
     padding-block: 2rem;
-  }
-  .home-menu-list li {
-    align-items: flex-start;
-    flex-direction: column;
   }
   .maro-dialog[data-wide='true'] {
     padding-inline: 1.25rem;

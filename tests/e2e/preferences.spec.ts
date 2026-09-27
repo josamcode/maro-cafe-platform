@@ -32,25 +32,26 @@ test('category image and keyboard action open the same menu; mobile hero actions
   await page.setViewportSize({ width: 360, height: 800 });
   await page.goto('/');
   const actions = page.locator('.home-hero-actions');
-  const menuBox = await actions.getByRole('button').boundingBox();
-  const visitBox = await actions.getByRole('link').boundingBox();
+  const menuBox = await actions.getByRole('link').first().boundingBox();
+  const visitBox = await actions.getByRole('link').last().boundingBox();
   expect(menuBox!.y).toBeCloseTo(visitBox!.y, 0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   const card = page.locator('.maro-collection').first();
   await card.click({ position: { x: 24, y: 24 } });
-  await expect(page.getByRole('dialog')).toBeVisible();
-  await expect(
-    page.getByRole('dialog').getByRole('button', { name: 'Hot Coffee', exact: true }),
-  ).toHaveAttribute('aria-pressed', 'true');
-  await page.keyboard.press('Escape');
-  const trigger = card.getByRole('button');
-  await expect(trigger).toBeFocused();
+  await expect(page).toHaveURL(/category=hot/);
+  await expect(page.locator('.menu-group .maro-disclosure-trigger')).toHaveAttribute(
+    'aria-expanded',
+    'true',
+  );
+  await page.goBack();
+  const trigger = card.getByRole('link');
+  await trigger.focus();
   await trigger.press('Enter');
-  await expect(page.getByRole('dialog')).toBeVisible();
-  await page.keyboard.press('Escape');
+  await expect(page).toHaveURL(/category=hot/);
+  await page.goBack();
   await page.getByRole('button', { name: 'Switch to Arabic' }).click();
-  const arMenu = await actions.getByRole('button').boundingBox();
-  const arVisit = await actions.getByRole('link').boundingBox();
+  const arMenu = await actions.getByRole('link').first().boundingBox();
+  const arVisit = await actions.getByRole('link').last().boundingBox();
   expect(arMenu!.y).toBeCloseTo(arVisit!.y, 0);
 });
 
