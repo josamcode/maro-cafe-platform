@@ -6,6 +6,8 @@ September 27, 2026. Route: `/`. Shared patterns: `/design-system`.
 
 The homepage moves from a welcoming first impression to menu discovery, atmosphere and branch directions. The primary hero action opens a searchable menu; the secondary action leads to the branch section. Category cards open the same menu component with the relevant category selected. Directions use the collected public Maps links. Contact and social links are functional.
 
+After UI review, collection actions sit beside the name/description and starting prices appear on opaque panels over the photographs. The locations section uses a dark rounded panel with whole-row direction links. A single-row sticky mobile header centers the wordmark between navigation and language actions; section navigation opens in the shared dialog. These patterns are documented in D010 and demonstrated in the workbench.
+
 The hero uses the shared `HeroMedia` component: an arched main photograph, a smaller rounded detail photograph, a plain caption and space between imagery and copy. It replaces the previous edge-to-edge rectangular split in both the homepage and workbench. Rounded media does not change the compact shape of functional controls.
 
 No active offer, bestseller ranking, customer review or opening-hours claim is displayed without supporting business data. Photography illustrates collections, not a verified SKU-to-photo mapping. The page is a private presentation preview, with search indexing disabled.
@@ -36,6 +38,6 @@ The mood image is reused from its existing public path to avoid duplicating the 
 
 ## Language and future work
 
-Arabic is the default. A server action stores an explicit English/Arabic preference in the functional `maro-locale` cookie; document language, direction and homepage metadata follow the selection. This makes routes dynamic during the preview. Dialog portals receive language and direction explicitly. The English workbench shell and legacy API scaffold routes have explicit English regions.
+Language follows the browser's highest-priority supported Accept-Language entry unless a valid `maro-locale` preference exists. Arabic is the unsupported-language fallback. Theme follows device color scheme unless a light/dark `maro-theme` preference exists. Server actions persist explicit choices. A single button toggles light/dark directly; device default is automatic before an explicit choice and is not a third UI option. Document language, direction and homepage metadata follow the resolved language. Routes remain dynamic during the preview. Dialog portals receive language and direction explicitly. The English workbench shell and legacy API scaffold routes have explicit English regions.
 
 Before a public launch, introduce addressable locale URLs and hreflang/canonical metadata, verified operational data, real product photography mappings and visit-conversion analytics. The QR inside experience, My Picks and subsequent purchase/loyalty integrations are separate next steps. POS integration remains undecided because the current provider is unknown.

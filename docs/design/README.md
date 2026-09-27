@@ -36,7 +36,7 @@ The executable source is [tokens.css](../../packages/ui/src/tokens.css). Styles 
 - Arabic has no letter spacing or forced uppercase. Use more generous line height and allow labels to wrap.
 - Body text is 16px. Main controls are 48px high; compact controls and chip targets are at least 44px.
 - Spacing uses a 4px base: 4, 8, 12, 16, 24, 32, 48, 64, 96px.
-- Controls have 4px corners; surfaces 8px; pills are reserved for filter chips and switches.
+- Controls have 4px corners; surfaces 8px; circular icon actions and filter/switch pills are explicit variants. Hero imagery now uses modest 24–32px corners rather than a deep arch.
 - Shadows identify floating layers only. Avoid shadows around every card.
 - Motion is limited to 160ms color/state transitions. No scroll hijacking, confetti, looping ornaments or animated counts. Respect reduced motion.
 
@@ -46,16 +46,16 @@ Fonts are loaded through Next's Google font integration, served locally by the b
 
 `packages/ui` owns presentation. Feature folders own orchestration and content. Server packages own business rules. The same presentational primitives can serve the outside experience, inside menu and future administration with appropriate density.
 
-| Layer                 | Implemented components                                       |
-| --------------------- | ------------------------------------------------------------ |
-| Layout                | Container, Stack, Inline, Grid, Section, Surface, Divider    |
-| Type and data         | Heading, Text, Label, Badge, Price                           |
-| Actions               | Button, IconButton, FilterChip                               |
-| Forms                 | Field, Input, Textarea, Select, Checkbox, Switch, RadioGroup |
-| Complex interactions  | Dialog, Tabs                                                 |
-| Patterns and feedback | ProductCard, EmptyState, Skeleton                            |
+| Layer                 | Implemented components                                                                  |
+| --------------------- | --------------------------------------------------------------------------------------- |
+| Layout                | Container, Stack, Inline, Grid, Section, Surface, Divider                               |
+| Type and data         | Heading, Text, Label, Badge, Price                                                      |
+| Actions               | Button, IconButton, FilterChip                                                          |
+| Forms                 | Field, Input, Textarea, Select, Checkbox, Switch, RadioGroup                            |
+| Complex interactions  | Dialog, Tabs                                                                            |
+| Patterns and feedback | ProductCard, CollectionCard, SummaryRow, StartingPrice, HeroMedia, EmptyState, Skeleton |
 
-Button keeps its existing `default`, `outline` and `asChild` API; `quiet` and size variants extend it. ProductCard accepts image and action slots, allowing Next Image and routing without coupling the shared package to Next.
+Button keeps its existing `default`, `outline` and `asChild` API; `quiet` and size variants extend it. ProductCard and CollectionCard accept image and action slots, allowing Next Image and routing without coupling the shared package to Next. CollectionCard places a round, labelled action beside its summary and a prominent StartingPrice on its photograph; this price is a collection minimum. SummaryRow also supports compact branch entries. Dialog supports controlled navigation dismissal as well as uncontrolled menu triggers.
 
 Use native labels, buttons, inputs, fieldsets and landmarks under custom visuals. A styled native checkbox remains preferable to a clickable div. Radix handles select keyboard/typeahead behavior, tabs and modal focus management; MARO supplies their appearance. See [Select](https://www.radix-ui.com/primitives/docs/components/select) and [Dialog](https://www.radix-ui.com/primitives/docs/components/dialog).
 
@@ -64,6 +64,8 @@ Do not add every conceivable component now. Date pickers, data tables, toasts, c
 ## Localization
 
 The workbench has an English editorial shell and an explicitly localized Arabic/English region. Portal direction and language must be explicit because portals leave that region. The outside homepage now has document-level `lang/dir`, translated metadata and a persisted preference; locale URLs and full application localization remain future work. See the [homepage handoff](outside-homepage.md).
+
+The first visit follows supported browser language preferences and device color scheme. Explicit selections take priority and persist in cookies. Theme changes use one light/dark toggle; device preference is only the automatic initial state, with no third UI choice. Shared semantic color tokens use CSS `light-dark()` with `color-scheme`; brand ink/cream/gold anchors remain constant. Review controls, menus and overlays in both appearances. Mobile typography uses a smaller responsive scale; native text inputs remain 16px for usability.
 
 - Keep UI copy outside component implementations in typed dictionaries.
 - Use logical properties: inline/block, start/end. Do not manually reverse array order to simulate RTL.

@@ -60,6 +60,38 @@ Extend D004 with server-rendered document language/direction, translated homepag
 
 See [outside homepage handoff](outside-homepage.md) for source provenance, data boundaries and next integration steps.
 
-## Change protocol
+## D010 — Compact discovery, visible prices and mobile navigation
+
+Date: 2026-09-27. Status: implemented for review.
+
+Following user review, move each collection action beside its name and description. Use a labelled circular icon button with an arrow that mirrors in RTL. Present the source-derived starting price in an opaque paper panel over the photograph, with a larger amount and an explicit “From” qualifier. This is a collection minimum, not the price of the pictured item.
+
+Add shared `CollectionCard`, `SummaryRow` and `StartingPrice` patterns; use the same summary layout in the locations section and demonstrate them in the workbench. `IconButton` gains a round variant and `Dialog` supports controlled open state.
+
+Replace the sparse three-column locations section with a dark, rounded panel: a short introduction beside three compact location rows. Each entire row opens its existing Maps destination. No approximate map, invented hours, travel times or branch-specific photographs are introduced.
+
+On mobile, use a single sticky header row with a centered wordmark, a compact language action and a labelled navigation control. Navigation uses the shared accessible dialog, closes after choosing a section and retains keyboard dismissal. Section scroll offsets account for the sticky header. Desktop navigation remains directly visible.
+
+The landing page is still under design/content review. Completion percentages communicated in conversation are subjective presentation-readiness estimates, not production acceptance criteria. Release still needs verified content, locale SEO, performance/accessibility review and conversion instrumentation.
+
+## D011 — Device defaults, persistent choices and a smaller mobile scale
+
+Date: 2026-09-27. Status: implemented for review. Supersedes D009's Arabic-by-default behavior and D008's deep arch treatment.
+
+Resolve language on the server from a valid explicit cookie first, then the highest-priority supported language in the browser's Accept-Language header. Arabic remains the fallback when no supported language is supplied. Detect theme using CSS color-scheme and light-dark tokens from the first paint; an explicit light/dark cookie overrides the device preference. The appearance control includes a device-default choice, and the footer can reset both preferences. Server actions validate and persist choices without adding localStorage or a competing client-side source of truth.
+
+Full-card collection activation uses a stretched semantic button hit area, with one keyboard stop, no nested interactive elements and a card-level focus outline. Keep the compact visible arrow beside the title. Move the full-menu CTA below the collection grid, centered with its supporting note.
+
+Reduce the mobile type scale, spacing and photo height while retaining 44px action targets and 16px input text. Hero actions share two equal columns at common phone widths. Replace the deep arch with modest rounded corners on the shared hero media. The footer now groups branded social/contact icons with labels and separates preview information from preference reset.
+
+The menu dialog remains a functional discovery preview. A final menu experience, verified item imagery/details and operational ordering are separate work, not implied by landing-page visual polish.
+
+## D012 — Direct light/dark toggle
+
+Date: 2026-09-27. Status: implemented. Supersedes D011's three-choice appearance dialog and preference reset control.
+
+The user requested a single-click toggle with only light and dark outcomes. Before an explicit choice, CSS follows the device scheme. The toggle reads that effective scheme, switches to its opposite and persists the result. Subsequent device changes do not override an explicit choice. A labelled sun/moon icon button exposes its dark-mode state with aria-pressed; no appearance dialog or device-default choice is presented. Language continues to follow the browser initially and retains manual changes.
+
+## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.
