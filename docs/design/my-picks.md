@@ -16,12 +16,12 @@ Arabic and English share product identities and stored data. Theme and locale ch
 
 - `features/picks/model.ts` validates the versioned payload, resolves current catalog entries and derives prices. The storage payload contains only item ID, English source identity, variant label and quantity; saved prices are never trusted.
 - `features/picks/use-picks.ts` owns localStorage persistence at `maro:picks:v1`, hydration-safe reads and same-origin tab notifications. Mutations read the latest stored list. Concurrent writes use normal localStorage last-write behavior; this is not a transactional cart.
-- Unknown items, changed source identities, unsupported variants, invalid quantities and unsupported payload versions are discarded. Duplicate recovered variants are merged and capped. The English identity check reduces the risk of reusing snapshot index IDs for a different product; production catalog integration still requires stable identifiers.
+- Valid legacy snapshot IDs migrate to stable product UUIDs using their original English name guard. UUID-based picks survive product renaming. Temporarily hidden products, unavailable branches and removed variants remain stored but are explained and omitted from the total. Malformed records and unsupported payload versions are rejected; duplicate variants merge with the quantity cap.
 - When device storage fails, the current tab continues with memory storage and a visible session-only notice. A reload cannot recover that memory-only list.
 - There is no local consent, account or marketing collection. Production totals, tax, modifiers, availability and order submission remain server responsibilities in later work.
 
 ## Reuse and boundaries
 
-`@maro/ui` owns the new QuantityControl and the existing Dialog, Price and actions. The design workbench includes a live quantity example. Product pictures reuse the existing media registry. Catalog and persistence logic stay outside the shared UI package.
+`@maro/ui` owns the new QuantityControl and the existing Dialog, Price and actions. The design workbench includes a live quantity example. Product pictures use media from the shared catalog. Catalog and persistence logic stay outside the shared UI package.
 
 Tests cover invalid or stale data, duplicate normalization, trusted price derivation, variant merging, refresh persistence, quantity edits, deletion, cashier presentation, localization, theme changes, tab synchronization and blocked storage.

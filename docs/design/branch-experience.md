@@ -12,13 +12,13 @@ September 27, 2026. Phase-one presentation: homepage → branch selection → br
 
 ## Shared data and components
 
-`features/branches/data.ts` is the single preview registry for branch names, areas, source-listed addresses, Maps destinations and the general contact number. Home, directory, details, menu context, inside selector and QR labels resolve this registry. It replaces repeated branch names in the menu adapter and homepage. `assets/maro/metadata/branches.json` retains source evidence and conflicts; it is not a second runtime source.
+Branch names, addresses and Maps destinations now resolve from the shared database/API catalog for Home, directory, details, inside selection and QR labels. `features/branches/data.ts` keeps only the shared type and general contact number. The original registry is archived in `scripts/catalog-source/branches.ts`; source conflicts remain in `assets/maro/metadata/branches.json`. Product administration does not yet include branch-address editing.
 
 BranchList, BranchActions, BranchMood and AtMaroPrompt are feature components composed from existing shared UI primitives. BranchActions reuses one Maps link policy and menu-context convention. Customer journeys continue to use one menu and picks implementation.
 
 The directory places its branch list before the atmosphere photograph on mobile, keeping location selection and directions close to the introduction. Desktop places the photograph beside the introduction, with the shared divided list below. Branch details keep directions and menu actions beside each other on narrow screens.
 
-The previous `/branches` API demonstration has been replaced with the source-listed preview, just as the inside route was in D018. The typed API client, database branch module and API endpoints remain intact. The next shared-data phase must introduce a common authoritative adapter and stable identities across public and inside experiences.
+The public and inside experiences use the same authoritative catalog adapter and stable product identities. Operational confirmation is separate from successful database integration.
 
 ## Content evidence and limits
 

@@ -6,7 +6,7 @@ The menu now shows category thumbnails, product photographs and an image inside 
 
 ## Central mapping
 
-`apps/web/src/features/menu/media.ts` owns the image references, source links, bilingual alternative text, crop positions and verification status. Item-specific references take priority over category fallbacks. Replacing an image does not require changing card, category or dialog components.
+Image references, bilingual alt text, source and verification status now live in the shared database/API catalog. `/admin` supports choosing existing images, uploading new photos and explicitly confirming product matches. The original item/category mapping is archived in `scripts/catalog-source/media.ts` for initial import. `features/menu/media.ts` only exposes the shared media type; card and dialog components require no content-specific edits.
 
 | Use                                    | Public file                     | Source Facebook photo ID | Status                                                |
 | -------------------------------------- | ------------------------------- | ------------------------ | ----------------------------------------------------- |

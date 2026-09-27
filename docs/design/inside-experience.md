@@ -32,8 +32,8 @@ Picks do not transfer between the presentation computer and a phone. Reuse is pe
 
 ## Architecture and next boundaries
 
-The inside route replaces the original plain API-backed scaffold with the same snapshot adapter used by the outside menu. It deliberately does not mix snapshot IDs/prices with API variant IDs. API, database and worker packages remain intact; the API menu endpoint continues to own authoritative branch availability and prices for future integration. Connect both customer experiences through one authoritative catalog adapter when stable bilingual product/variant identities are ready.
+The inside route reads the same PostgreSQL/API catalog as the public menu, filtered by branch. Staff visibility and branch selection control available products. Picks preserve stable product UUIDs and derive current names/prices, with unavailable choices excluded from the total. QR entry still supplies browsing context only, never a verified visit.
 
 `features/inside` owns the compact navigation, branch selection and QR generation. Shared site preferences were extracted once; menu rendering, quick-add behavior, product details and picks are reused. This phase introduces no separate menu tree, cart store or commerce rules in `@maro/ui`.
 
-Before operational ordering: confirm prices, photographs and branch names with MARO; agree how staff receive/acknowledge requests; connect server-authoritative catalog and stable identifiers; then implement actual order state and fulfillment. Retention and rewards need verified purchases later.
+Before operational ordering: confirm prices, photographs and branch names with MARO; agree how staff receive/acknowledge requests; then implement actual order state and fulfillment against the existing server catalog. Retention and rewards need verified purchases later.

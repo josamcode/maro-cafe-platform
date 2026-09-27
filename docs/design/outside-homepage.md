@@ -14,7 +14,7 @@ No active offer, bestseller ranking, customer review or opening-hours claim is d
 
 ## Sources and content boundaries
 
-The menu snapshot at `apps/web/src/content/menu.snapshot.json` contains 126 bilingual items in six categories, extracted as literal data from the public [MARO menu source](https://maro-cafe-3.vercel.app/MARO.js), captured September 27, 2026. The source script was parsed without execution. Prices remain subject to owner confirmation; the visible menu communicates this. Product prices and variants are derived from this snapshot, not repeated in editorial selections. Snapshot index IDs must not become ordering or database identifiers.
+The menu snapshot at `scripts/catalog-source/menu.snapshot.json` contains 126 bilingual items in six categories, extracted as literal data from the public [MARO menu source](https://maro-cafe-3.vercel.app/MARO.js), captured September 27, 2026. The source script was parsed without execution. Prices remain subject to owner confirmation; the visible menu communicates this. The snapshot is now import evidence only. Runtime prices, variants and editorial selections resolve from the shared database/API catalog with stable UUIDs.
 
 The published branch links are recorded in `assets/maro/metadata/branches.json`. Main Haram has conflicting street numbers across sources; the preview uses the general street/area and a Maps link. Other branch cards also use area-level descriptions consistently.
 
@@ -33,11 +33,11 @@ The mood image is reused from its existing public path to avoid duplicating the 
 
 - `@maro/ui`: visual tokens, typography, layout primitives, controls, `HeroMedia` and accessible dialogs. Dialog content scrolls separately so the close control remains reachable on long menus.
 - `features/home`: outside composition and preference actions. Shared header/footer composition lives in `features/site`; menu browsing lives in `features/menu`.
-- `content/menu.snapshot.json`: temporary source-listed content adapter for the presentation. No checkout, inventory or pricing authority is implied.
-- API, database and workers retain their existing independent architecture. Replace the snapshot at the feature/data boundary with validated catalog responses when content is approved. Do not move business logic into shared UI.
+- `features/catalog` and `lib/catalog.ts`: validated database/API catalog reads and client refresh for both experiences.
+- API, database and workers retain their independent architecture. Catalog edits and audit records belong to the backend; shared UI remains presentation-only.
 
 ## Language and future work
 
 Language follows the browser's highest-priority supported Accept-Language entry unless a valid `maro-locale` preference exists. Arabic is the unsupported-language fallback. Theme follows device color scheme unless a light/dark `maro-theme` preference exists. Server actions persist explicit choices. A single button toggles light/dark directly; device default is automatic before an explicit choice and is not a third UI option. Document language, direction and homepage metadata follow the resolved language. Routes remain dynamic during the preview. Dialog portals receive language and direction explicitly. The workbench shell has an explicit English region; customer journeys use the resolved locale.
 
-Before a public launch, introduce addressable locale URLs and hreflang/canonical metadata, verified operational data, real product photography mappings and visit-conversion analytics. QR entry, My Picks, public branch details and explicit inside entry are implemented for preview. Editorial product picks and an optional coffee/water pairing are implemented for preview; owner approval, wider pairing content, offers and shared content administration remain phase-one work. Purchase/loyalty integrations are later phases; the POS provider remains unknown.
+Before a public launch, introduce addressable locale URLs and hreflang/canonical metadata, verified operational data, real product photography mappings and visit-conversion analytics. QR entry, My Picks, public branch details and explicit inside entry are implemented for preview. Editorial product picks and an optional coffee/water pairing are implemented for preview; owner approval, wider pairing content, and offers remain phase-one work. Shared product administration is implemented. Purchase/loyalty integrations are later phases; the POS provider remains unknown.

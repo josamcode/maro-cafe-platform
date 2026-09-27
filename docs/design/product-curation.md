@@ -18,10 +18,8 @@ Product details for explicitly selected coffees offer water as a separately pric
 - Product photographs remain the same labelled development references. The pairing row uses text and actual prices rather than an unrelated photograph of a drink pretending to depict water.
 - Source-listed prices and this editorial selection still require owner approval before public launch. Add priced dessert records to the authoritative catalog before extending the pairing list.
 
-## Ownership and future administration
+## Shared data and administration
 
-`features/curation/data.ts` owns ordered product references and explicit pairing relationships; it contains no duplicated prices or image URLs. `features/curation/catalog.ts` resolves these references through `getMenuItem`, removes duplicates/self-references and omits missing or mismatched identities. The name guard protects the current positional snapshot IDs; production needs stable catalog identities.
+Ordered homepage placement and pairing relationships now live in PostgreSQL and can be edited in `/admin`. `features/curation/catalog.ts` resolves stable product UUIDs from the shared API catalog, omitting unavailable and self references. Prices and photos are never duplicated in curation rules. Initial demonstration selections are archived under `scripts/catalog-source/curation.ts` for import only.
 
-`MenuProduct`, `QuickAdd`, `ProductPairing` and `usePickActions` share presentation and selection behavior between the homepage and both menu contexts. `@maro/ui` remains presentation-only; no shared primitive API changes were necessary. Existing workbench ProductCard examples remain valid.
-
-The shared-data/admin phase should replace these preview references with ordered, publishable relationships to authoritative products. Publication must validate prices, variants, translations, image provenance and branch availability. Selection approval and availability must not be inferred from a valid snapshot reference. No learning algorithm, sales tracking, discount bundle or submitted order is introduced here.
+`MenuProduct`, `QuickAdd`, `ProductPairing` and `usePickActions` share presentation and selection behavior. Publication validates translations, positive prices and catalog references; staff explicitly confirms photo identity. No learning algorithm, sales tracking, discount bundle or submitted order is implied. Owner approval remains required.

@@ -26,6 +26,7 @@
 - [Product curation and pairings](design/product-curation.md): real featured products, shared quick additions, optional complements and editorial approval boundaries.
 
 - [Architecture](architecture/README.md): application boundaries, packages, and growth path.
+- [Catalog administration](architecture/catalog-administration.md): shared data, simple product editing, local access, authentication, images and deployment limits.
 - [Foundation verification](architecture/verification.md): completed checks and local infrastructure limitations.
 - [Deployment runbook](../infrastructure/deployment/README.md): deployment boundaries and operational requirements.
 - [Project setup](../README.md): installation and development commands.

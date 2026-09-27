@@ -161,3 +161,13 @@ Offer one separately priced complement in selected coffee details. The available
 ## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.
+
+## D021 - Shared catalog with a compact product editor
+
+Date: 2026-09-27. Status: implemented for development presentation.
+
+Move runtime content from web snapshots into one database/API catalog with stable product UUIDs. Keep source evidence in the import scripts and preserve staff edits on repeated import. Homepage picks, both menus, branch choices and images now resolve from this source. My Picks migrates legacy IDs, uses current prices and preserves unavailable choices without charging them in its estimate.
+
+Administration uses a searchable flat product list and one compact form. Show names, category, photo, pricing and visibility first; hide branch availability, homepage placement and optional pairings in a closed disclosure. Reuse the existing custom controls, dialogs, Arabic/English preferences and light/dark tokens. Protect cancel/back with a discard dialog and reject conflicting saves by product version. Staff access is owner-level, enforced by the API, with audit records in the same transaction.
+
+The shared Price primitive now retains up to two decimal places rather than rounding currency to whole pounds; the workbench includes a fractional starting price. The editor supports typed decimal and Arabic-number input. Image uploads are verified/re-encoded on the API and stored locally for development; durable shared storage is a deployment requirement. See [catalog administration](../architecture/catalog-administration.md). This decision supersedes snapshot/registry runtime boundaries in D018-D020.

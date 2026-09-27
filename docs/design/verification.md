@@ -106,3 +106,14 @@ September 27, 2026.
 - Six model checks passed across curation and saved picks, covering stale/missing/self/duplicate references, resolvable configured selections, catalog-owned prices and existing persistence validation. Lint, workspace/test type checking and the final production web build passed.
 - Live Chrome review inspected Arabic mobile flat product rows, the scrolled optional-pairing controls and desktop featured photographs. The homepage-specific dismiss label was checked in the final production preview. The viewport override was reset; the preview remains on port 3100.
 - These are editorial preview suggestions, not verified bestseller rankings or branch stock. Dessert pairings await priced catalog records and owner approval. See [product curation](product-curation.md).
+
+## Shared catalog and compact administration
+
+September 27, 2026.
+
+- All 36 browser scenarios passed together against the production build, including the existing outside/inside/branch journeys and the new staff-to-customer editing journey.
+- Reviewed captured 390px English/light and Arabic/dark forms. The form uses flat fields, compact spacing, a persistent save/cancel area and a closed optional disclosure. Fixed disclosure overflow instead of hiding it with page-level overflow clipping. Mobile preview access is a labelled eye icon; language and appearance controls remain visible.
+- Validated bilingual required fields, photo upload, decimal typing and display, current-price picks, branch-specific hiding, homepage placement, optional pairing, discard/keep-editing, RTL width and sign-out. Existing suites cover keyboard controls, focus restoration and customer layouts at 360/768/1440px.
+- Shared Price now preserves fractional EGP values. The workbench has a fractional starting-price example; no new visual primitive was needed for administration.
+- Nineteen unit/API checks, three real service integration checks, lint, type checking, formatting and production compilation passed. Technical details and current deployment limits are recorded in [catalog administration](../architecture/catalog-administration.md).
+- A final targeted admin run passed after adding 1440px list capture and width validation. Visual review confirmed the desktop list and both mobile forms; the production API and web preview remain running locally.

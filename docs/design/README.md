@@ -91,10 +91,10 @@ Preview image provenance:
 - `maro-mood.jpg`: [MARO Facebook photo 1355933763419483](https://www.facebook.com/photo/?fbid=1355933763419483).
 - `maro-drink.jpg`: [MARO Facebook photo 1078060874540108](https://www.facebook.com/photo/?fbid=1078060874540108).
 
-Sample product identity and EGP 85 price are explicitly marked as demonstration content; the photograph does not establish its recipe. Only selected preview copies are placed in public assets; the source archive remains separate.
+Sample product identities and prices are explicitly marked as demonstration content; the photograph does not establish a recipe. The starting-price example includes EGP 85.50 to exercise fractional currency. Only selected preview copies are placed in public assets; the source archive remains separate.
 
 Before accepting a component change, check focus, keyboard behavior, accessible naming, error association, disabled state, empty/loading behavior where relevant, long text, both directions, 360px mobile and desktop. Ensure overlays inherit typography and direction. Automated checks supplement a real visual review.
 
-The outside homepage is now composed from these foundations, including the shared rounded `HeroMedia` pattern. The standalone [menu preview](menu-experience.md) now reuses the shell and adds a compact ProductCard variant with optional media. Next: confirm catalog details and product photography mapping, then connect the inside journey to authoritative data.
+The outside homepage uses these foundations, including the shared rounded `HeroMedia` pattern. Both menus reuse the compact ProductCard and database/API catalog. The [product editor](../architecture/catalog-administration.md) composes the same form controls and overlays with denser spacing and optional advanced fields. Catalog details and photo mapping still require owner approval.
 
 See [verification results](verification.md) for completed checks and remaining coverage.

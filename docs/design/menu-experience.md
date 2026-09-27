@@ -14,9 +14,9 @@ On mobile the unfiltered menu starts with closed category rows. Each row include
 
 ## Data and integration boundary
 
-`features/menu/catalog.ts` adapts the existing local snapshot: 126 bilingual items, six categories and 198 price entries. All prices await owner confirmation. This is a menu presentation, not branch inventory or an operational ordering system. Indexed snapshot IDs must not become transaction identifiers.
+`features/menu/catalog.ts` adapts the shared API catalog, initially imported from 126 bilingual source-listed items in six categories. Products have stable UUIDs and current database prices. Staff can change products through `/admin`; both menu experiences refresh from the same source. Prices and source-listed availability still require owner confirmation; no order is submitted.
 
-`/menu?branch=faisal`, `?branch=sahl-hamza` and `?branch=main-haram` retain legacy branch-labelled preview links. Unknown values display no label. The dedicated [inside experience](inside-experience.md) now lives at `/in/[branchSlug]`, reusing this catalog and picks with compact navigation and branch correction. It replaces the earlier plain API-backed scaffold for presentation; API/database/worker modules remain independent. A supplied branch is browsing context only, not physical presence or verified availability. Both experiences need the same authoritative catalog adapter before commerce integration.
+`/menu?branch=faisal`, `?branch=sahl-hamza` and `?branch=main-haram` retain legacy branch-labelled preview links. Unknown values display no label. The dedicated [inside experience](inside-experience.md) now lives at `/in/[branchSlug]`, reusing this catalog and picks with compact navigation and branch correction. It replaces the earlier plain API-backed scaffold for presentation; API/database/worker modules remain independent. A supplied branch is browsing context only, not physical presence or verified availability. Both experiences now use the same database/API catalog adapter.
 
 At the user's request, products now use temporary illustrative photography, including repeated category images. Some item-specific visual candidates are mapped, with verification status retained in the central media registry. See the [photography mapping](menu-photography.md). Ingredient descriptions, availability and recommendations are not fabricated. The source's unusual Avocado entry under Hot Coffee is preserved for owner review. A launch-ready catalog needs confirmed item identities, classifications, variants, prices and photo mapping.
 
@@ -27,6 +27,6 @@ At the user's request, products now use temporary illustrative photography, incl
 - `@maro/ui`: ProductCard presentation, Price, controls and accessible Dialog. RadioGroup accepts a rendered label so option prices reuse Price formatting.
 - `features/site`: one shared homepage/menu header and footer; no duplicated preference forms or social controls.
 - `features/menu`: catalog adapter, URL filtering, messages and product-detail composition.
-- `content/menu.snapshot.json`: unchanged source evidence, replaceable by an authoritative adapter.
+- `scripts/catalog-source/menu.snapshot.json`: archived initial-import evidence, outside the runtime web bundle.
 
 Before connecting commerce, map stable API item/variant identifiers and server-authoritative prices; keep ordering and branch rules outside the UI package.

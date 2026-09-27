@@ -18,4 +18,6 @@ pnpm start:api
 pnpm start:worker
 ```
 
-Authentication, staff authorization, production observability, storage, transaction outbox, and provider-specific deployment manifests are subsequent milestones, not completed features of this scaffold.
+Owner-level staff authentication, per-request authorization and catalog audit records are implemented. Provision production staff accounts through a secured operational process; the local account generator and preview importer refuse production mode. HTTPS is required for production cookies. Preserve the frontend origin when proxying Next Server Actions.
+
+Set `UPLOAD_DIR` to durable storage, backed up alongside PostgreSQL. Multiple API instances need shared storage or an object-storage adapter; an ephemeral serverless filesystem is unsuitable. Shared rate limiting, branch-scoped roles, production observability, transaction outbox and provider-specific deployment manifests remain later work. See [catalog administration](../../docs/architecture/catalog-administration.md).
