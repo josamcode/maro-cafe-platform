@@ -20,7 +20,7 @@ On mobile the unfiltered menu starts with closed category rows. Each row include
 
 At the user's request, products now use temporary illustrative photography, including repeated category images. Some item-specific visual candidates are mapped, with verification status retained in the central media registry. See the [photography mapping](menu-photography.md). Ingredient descriptions, availability and recommendations are not fabricated. The source's unusual Avocado entry under Hot Coffee is preserved for owner review. A launch-ready catalog needs confirmed item identities, classifications, variants, prices and photo mapping.
 
-My Picks, pairing recommendations, accounts, checkout, rewards and POS integrations remain separate phases. No add-to-cart or order action is simulated here.
+[My Picks](my-picks.md) now saves product/variant choices locally, supports quantity editing and presents an unsent list to the cashier. Pairing recommendations, accounts, checkout, rewards and POS integrations remain later phases. No order action is simulated here.
 
 ## Ownership
 

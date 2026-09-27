@@ -118,6 +118,14 @@ Follow-up review rejected nested cards. Category disclosures therefore use flat 
 
 On mobile only the search input remains sticky below the header. Its label remains accessible but visually hidden; the hint and duplicate category chips no longer take vertical space. Shared scrollbars use slim rounded neutral thumbs, transparent tracks and no arrow buttons where the browser supports custom scrollbar styling; Firefox retains its thin native implementation.
 
+## D016 — Local picks before operational ordering
+
+Date: 2026-09-27. Status: implemented for private preview.
+
+Give guests a persistent shortlist of exact product/variant selections without requiring an account. Use one floating summary after the first addition, a shared quantity control and a focused editable dialog. A cashier view presents the same selections without editing controls and explicitly identifies them as unsent choices.
+
+Store validated identities and quantities locally, derive current prices from the catalog adapter, and retain selections through language/theme changes. Recover safely from invalid data and explain actual device-storage failures. No order or visit is inferred from the list. See [My Picks handoff](my-picks.md).
+
 ## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.

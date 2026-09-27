@@ -66,3 +66,10 @@ September 27, 2026.
 - All 18 E2E scenarios passed. New coverage verifies six initially closed mobile categories, Enter/Space toggling, hidden products staying out of the visible view, automatically expanded search matches, reset-to-closed behavior, and expanded desktop layout after resizing in both languages.
 - The mobile sticky search area is asserted below 75px high. Existing direct-category links, product detail focus restoration, theme preferences and 360/768/1440px layouts remain covered.
 - Lint and the production build/type check passed. Shared Disclosure is demonstrated in the workbench. Page and overlay scrollbars now share thin neutral styling; rendering details remain browser-dependent.
+
+## Local My Picks
+
+- All 21 Playwright scenarios passed, including adding separate sizes, merging repeated selections, quantity changes, removal, reload persistence, cross-tab updates, locale/theme changes, cashier presentation and unavailable browser storage. Four model tests passed for malformed storage, obsolete identities, duplicate quantities and current-catalog price resolution.
+- Lint, workspace type checking and production compilation passed. Web model tests use the web application's Bundler TypeScript configuration; the root NodeNext test configuration excludes those files to avoid applying the backend module resolver to frontend imports. They remain included in web type checking and Vitest execution.
+- Live Chrome review at 390px inspected the Arabic launcher, editable list, quantity/total updates and cashier view. The list uses divided rows without nested card surfaces. The fixed launcher has matching bottom document space, and the dialog keeps its close control accessible.
+- My Picks is a local planning list, not an order or a verified visit. Prices and availability require branch confirmation; storage may be cleared by the browser and concurrent tab edits are last-write-wins. See [My Picks](my-picks.md) for boundaries and future integration.

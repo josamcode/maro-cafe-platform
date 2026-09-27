@@ -19,6 +19,7 @@
 - [Outside homepage](design/outside-homepage.md): page composition, bilingual behavior, content sources and integration boundaries.
 - [Menu experience](design/menu-experience.md): standalone catalog browsing, product details, URL state and branch-context boundaries.
 - [Menu photography](design/menu-photography.md): development image references, sources and replacement status.
+- [My Picks](design/my-picks.md): persistent local selections, quantity editing, cashier view and storage boundaries.
 
 - [Architecture](architecture/README.md): application boundaries, packages, and growth path.
 - [Foundation verification](architecture/verification.md): completed checks and local infrastructure limitations.
