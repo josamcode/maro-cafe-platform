@@ -117,3 +117,9 @@ September 27, 2026.
 - Shared Price now preserves fractional EGP values. The workbench has a fractional starting-price example; no new visual primitive was needed for administration.
 - Nineteen unit/API checks, three real service integration checks, lint, type checking, formatting and production compilation passed. Technical details and current deployment limits are recorded in [catalog administration](../architecture/catalog-administration.md).
 - A final targeted admin run passed after adding 1440px list capture and width validation. Visual review confirmed the desktop list and both mobile forms; the production API and web preview remain running locally.
+
+# Offers and engagement review - September 28, 2026
+
+Reviewed captured mobile offer editing, public offer presentation and Arabic/dark engagement reporting. Forms use existing fields/controls, visible terms, grouped branch choices and shared discard protection. Dates accept eight numeric digits and insert day/month/year separators. Public promotions use flat divided rows and show their participating branches, full conditions and validity period. Empty eligibility results do not create a placeholder section.
+
+All 38 browser scenarios passed together, including the existing product editor after extraction of the shared exit guard. Customer journeys retain keyboard/focus, mobile width, bilingual and appearance coverage. The Arabic report screenshot waits for the actual final control color after theme transition. No new shared visual primitive was introduced.

@@ -171,3 +171,13 @@ Move runtime content from web snapshots into one database/API catalog with stabl
 Administration uses a searchable flat product list and one compact form. Show names, category, photo, pricing and visibility first; hide branch availability, homepage placement and optional pairings in a closed disclosure. Reuse the existing custom controls, dialogs, Arabic/English preferences and light/dark tokens. Protect cancel/back with a discard dialog and reject conflicting saves by product version. Staff access is owner-level, enforced by the API, with audit records in the same transaction.
 
 The shared Price primitive now retains up to two decimal places rather than rounding currency to whole pounds; the workbench includes a fractional starting price. The editor supports typed decimal and Arabic-number input. Image uploads are verified/re-encoded on the API and stored locally for development; durable shared storage is a deployment requirement. See [catalog administration](../architecture/catalog-administration.md). This decision supersedes snapshot/registry runtime boundaries in D018-D020.
+
+## D022 - Quiet offers and explicit intent reporting
+
+Date: 2026-09-28. Status: implemented for private preview.
+
+Use one bilingual offer form for titles, full terms, dates, participating branches and Inside/Outside placement. Keep publication off for a draft; require explicit staff confirmation of MARO approval before publishing. The server owns date/context/branch eligibility and transactional audit records. Never infer an active offer from research images. Use familiar day/month/year entry with Arabic digits supported, rather than an unstyled native date popup.
+
+Public offers use flat divided rows with visible terms and dates, without urgency decoration or nested cards. Hide the section when no offer qualifies. My Picks remains priced from the menu; offers are confirmed by staff, with no implied redemption or automatic discount calculation.
+
+Record anonymous, typed interaction events, not customer profiles. Debounce search and retain only its success flag. Keep offer views separate from actions, count a pairing addition as a subset of picks, and label reporting as interaction counts. Respect browser DNT/GPC; collection failure must not interrupt the customer journey. Reuse the existing UI library and extract the editor exit guard and API staff authorization once for both catalog and offers. See [offers and intent](../architecture/offers-and-intent.md).

@@ -51,6 +51,6 @@ Uploads require authentication and have a 5 MB decoded limit. Sharp accepts JPEG
 
 ## Boundaries and next work
 
-This step manages products, pricing, photographs, visibility and editorial relationships. Branch addresses and category metadata are shared database content but do not yet have editing screens. Offers, intent measurement, customer accounts, purchases, stamps and POS integration are not implemented by the editor. Product prices, imagery and branch facts still need owner approval before launch.
+This step manages products, pricing, photographs, visibility and editorial relationships. Branch addresses and category metadata are shared database content but do not yet have editing screens. Offers and intent measurement now have separate staff screens; see [their handoff](offers-and-intent.md). Customer accounts, purchases, stamps and POS integration remain later work. Product prices, imagery and branch facts still need owner approval before launch.
 
 Tests cover authentication and revocation, invalid uploads, database persistence, stale writes, audit records, real browser image upload, both menus, current-price picks, branch visibility, localized mobile layouts and discard protection. Run the normal unit/integration/browser suites after building workspace dependencies and importing the catalog.

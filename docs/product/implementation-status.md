@@ -1,6 +1,6 @@
 # Implementation status
 
-September 27, 2026. Use [Product Direction v2](MARO-Product-Direction-v2.md) for product intent and this record for progress. A working preview is not production acceptance.
+September 28, 2026. Use [Product Direction v2](MARO-Product-Direction-v2.md) for product intent and this record for progress. A working preview is not production acceptance.
 
 ## Phase one
 
@@ -14,13 +14,15 @@ September 27, 2026. Use [Product Direction v2](MARO-Product-Direction-v2.md) for
 | Public directory and branch details                             | Implemented with source-listed addresses, immediate directions, general contact and honest content limits                              |
 | Explicit outside-to-inside entry                                | Implemented via optional branch choice, preserving menu filters and local selections                                                   |
 | Curated products and relevant pairings                          | Implemented editorial preview; coffee/water pairing uses catalog prices. Selection approval and priced dessert data remain pending     |
-| Active offers                                                   | Pending approved terms, eligibility, branches and implementation                                                                       |
+| Active offers                                                   | Offer management and context/date/branch eligibility implemented; no real offer approved or published                                  |
 | Authoritative shared catalog and administration                 | Implemented: database/API catalog, authenticated product editor, image upload, prices, availability, recommendations and audit records |
-| Intent measurement                                              | Pending; selections/directions must not be reported as sales/visits                                                                    |
+| Intent measurement                                              | Implemented anonymous intent counts, search-result signals and staff filters; no sales/visit claims                                    |
 
 ## Next work
 
-Next: approved offers and intent measurement. Product administration and the shared catalog are implemented. Branch-address/category editing and branch-scoped staff roles are not part of this first editor. Curation and pairing need owner approval before launch; extend to desserts only after obtaining product and price data. Source-listed prices, branch facts and specific photography still require owner confirmation.
+The phase-one feature foundation is implemented, including offers and intent reporting. Next is a connected review with MARO, confirmation of catalog/branch facts and actual offer terms, plus deployment readiness. Product/offer administration is available; branch-address/category editing and branch-scoped staff roles remain optional management extensions. A production rollout still needs durable image storage, analytics environment isolation/retention and hosting configuration. Source-listed prices, photography and operational facts require owner confirmation.
+
+Do not begin purchase-linked accounts, stamps or ordering until the sales-verification source and pilot operating process are agreed. See [offers and intent](../architecture/offers-and-intent.md).
 
 ## Later phases
 

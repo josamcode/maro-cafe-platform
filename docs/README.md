@@ -25,6 +25,7 @@
 - [Public branch discovery](design/branch-experience.md): directory, location details, immediate directions, explicit inside entry and content provenance.
 - [Product curation and pairings](design/product-curation.md): real featured products, shared quick additions, optional complements and editorial approval boundaries.
 
+- [Offers and intent measurement](architecture/offers-and-intent.md): simple promotion management, eligibility, anonymous event counts and reporting boundaries.
 - [Architecture](architecture/README.md): application boundaries, packages, and growth path.
 - [Catalog administration](architecture/catalog-administration.md): shared data, simple product editing, local access, authentication, images and deployment limits.
 - [Foundation verification](architecture/verification.md): completed checks and local infrastructure limitations.

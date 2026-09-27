@@ -36,7 +36,7 @@ The optional demo seed is fictional development data. The separate catalog impor
 
 ## Growth path
 
-Add customers, orders, offers, and loyalty modules when implementing their use cases. Orders must snapshot purchased descriptions and prices. Loyalty must use an auditable transaction ledger; phone verification alone is not proof of purchase. Authenticated owner-level catalog endpoints are implemented. Introduce branch-scoped roles before granting branch employees access; current staff accounts manage the entire catalog.
+Offers and anonymous intent reporting are implemented in the growth module. Add customers, orders and loyalty when their operational prerequisites are agreed. Orders must snapshot purchased descriptions and prices. Loyalty must use an auditable transaction ledger; phone verification alone is not proof of purchase. Authenticated owner-level catalog endpoints are implemented. Introduce branch-scoped roles before granting branch employees access; current staff accounts manage the entire catalog.
 
 When orders begin emitting durable business events, implement a transactional outbox and idempotent handlers. Catalog edits and audit records commit in one database transaction, without queue events. The maintenance job does not implement an outbox. A successful database commit followed by a queue write is not sufficient delivery protection.
 
