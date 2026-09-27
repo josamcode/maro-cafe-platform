@@ -90,12 +90,6 @@
 .home-section-heading > .maro-button {
   flex-shrink: 0;
 }
-.home-menu-more {
-  display: grid;
-  justify-items: center;
-  gap: 1rem;
-  text-align: center;
-}
 .home-preferences {
   gap: 0.25rem;
   flex-wrap: nowrap;

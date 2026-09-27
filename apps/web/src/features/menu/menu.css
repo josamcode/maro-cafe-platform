@@ -135,6 +135,28 @@
 .menu-quick-add-note {
   flex-basis: 100%;
 }
+.product-pairing {
+  padding-block-start: 1rem;
+  border-block-start: 1px solid var(--maro-border);
+}
+.product-pairing .maro-heading {
+  font-size: 1.125rem;
+}
+.product-pairing .maro-text {
+  font-size: 0.8125rem;
+}
+.product-pairing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.product-pairing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 @media (max-height: 600px) {
   .menu-tools {
     position: static;

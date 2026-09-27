@@ -1,17 +1,12 @@
-import { catalog } from '../menu/catalog';
+import { getMenuItem } from '../menu/catalog';
 
 export const MAX_PICK_QUANTITY = 99;
 export type SavedPick = { itemId: string; itemName: string; variant: string; quantity: number };
 export const pickKey = (pick: Pick<SavedPick, 'itemId' | 'variant'>) =>
   `${pick.itemId}:${pick.variant}`;
-const items = new Map(
-  catalog.flatMap((category) =>
-    category.items.map((item) => [item.id, { item, category }] as const),
-  ),
-);
 
 export function resolvePick(pick: SavedPick) {
-  const entry = items.get(pick.itemId);
+  const entry = getMenuItem(pick.itemId);
   const option = entry?.item.prices.find((price) => price.label === pick.variant);
   if (!entry || !option || pick.itemName !== entry.item.name.en) return null;
   return { ...pick, ...entry, unitPrice: option.amount, total: option.amount * pick.quantity };
@@ -61,7 +56,7 @@ export function readPicks(raw: string | null | undefined): SavedPick[] {
 }
 
 export function makePick(itemId: string, variant: string): SavedPick | null {
-  const entry = items.get(itemId);
+  const entry = getMenuItem(itemId);
   if (!entry?.item.prices.some((price) => price.label === variant)) return null;
   return { itemId, itemName: entry.item.name.en, variant, quantity: 1 };
 }

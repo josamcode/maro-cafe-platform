@@ -96,3 +96,13 @@ September 27, 2026.
 - Responsive checks cover 360px, 768px and 1440px in both languages and appearances. All three responsive branch scenarios passed again after moving the mobile directory list ahead of its photograph.
 - Lint, workspace and test TypeScript checks, and the final production web build passed. Live Chrome review inspected Arabic mobile branch details, the revised directory, its branch-choice dialog and desktop directory. The temporary viewport override was reset and the production preview left running on port 3100.
 - Source-listed addresses still need owner confirmation. General MARO photography and contact details are explicitly distinguished from branch-specific evidence; hours and services are not asserted. See [public branch discovery](branch-experience.md) and the [implementation status](../product/implementation-status.md) for remaining scope.
+
+## Curated products and optional pairings
+
+September 27, 2026.
+
+- The suite now covers 35 E2E scenarios. Thirty-two passed in the full run. Two updated test locators contained an incorrectly encoded dash, and one keyboard test pressed a disabled add button before storage hydration completed. Correcting the locators and awaiting the existing enabled state restored all three on targeted rerun.
+- Four new scenarios verify actual featured products, exact variant additions, optional water with its own price, no automatic base-product addition, retained coffee size, consistent Inside selections, reload persistence and cashier presentation. Layouts cover 360px, 768px and 1440px in both languages and appearances. All four passed again after adding accessible price descriptions to complementary-item buttons.
+- Six model checks passed across curation and saved picks, covering stale/missing/self/duplicate references, resolvable configured selections, catalog-owned prices and existing persistence validation. Lint, workspace/test type checking and the final production web build passed.
+- Live Chrome review inspected Arabic mobile flat product rows, the scrolled optional-pairing controls and desktop featured photographs. The homepage-specific dismiss label was checked in the final production preview. The viewport override was reset; the preview remains on port 3100.
+- These are editorial preview suggestions, not verified bestseller rankings or branch stock. Dessert pairings await priced catalog records and owner approval. See [product curation](product-curation.md).

@@ -1,6 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { Check, Plus } from 'lucide-react';
+import { useState } from 'react';
 import { Button, Dialog, Price, ProductCard, RadioGroup, Stack, Text } from '@maro/ui';
 import type { Locale } from '../../lib/locale';
 import type { MenuCategory, MenuItem, PriceLabel } from './catalog';
@@ -8,6 +7,9 @@ import { menuMessages } from './messages';
 import { getMenuMedia } from './media';
 import { MenuPhoto } from './menu-photo';
 import { picksMessages } from '../picks/messages';
+import { QuickAdd, type AddPick } from './quick-add';
+import { ProductPairing } from '../curation/product-pairing';
+import './menu.css';
 
 export function MenuProduct({
   item,
@@ -16,24 +18,22 @@ export function MenuProduct({
   eager = false,
   onAdd,
   picksReady,
+  showCategory = false,
+  dismissLabel,
 }: {
   item: MenuItem;
   category: Pick<MenuCategory, 'id' | 'name'>;
   locale: Locale;
   eager?: boolean;
-  onAdd: (itemId: string, variant: string) => boolean;
+  onAdd: AddPick;
+  showCategory?: boolean;
+  dismissLabel?: string;
   picksReady: boolean;
 }) {
   const t = menuMessages[locale];
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(item.prices[0]!.label);
   const [limitReached, setLimitReached] = useState(false);
-  const [added, setAdded] = useState<{ variant: string; revision: number } | null>(null);
-  useEffect(() => {
-    if (!added) return;
-    const timeout = window.setTimeout(() => setAdded(null), 1200);
-    return () => window.clearTimeout(timeout);
-  }, [added]);
   const p = picksMessages[locale];
   const price = item.prices.find((option) => option.label === selected)!;
   const multiple = item.prices.length > 1;
@@ -43,44 +43,11 @@ export function MenuProduct({
       compact
       image={<MenuPhoto media={media} locale={locale} eager={eager} />}
       name={item.name[locale]}
+      description={showCategory ? category.name[locale] : undefined}
       locale={locale}
       price={Math.min(...item.prices.map((option) => option.amount))}
       pricePrefix={multiple ? t.from : undefined}
-      action={
-        <>
-          {item.prices.map((option) => (
-            <Button
-              key={option.label}
-              variant="outline"
-              size="sm"
-              className="menu-quick-add"
-              disabled={!picksReady}
-              aria-label={`${p.add} — ${item.name[locale]}${multiple ? ` · ${t[option.label as PriceLabel]}` : ''}`}
-              onClick={() => {
-                const success = onAdd(item.id, option.label);
-                setLimitReached(!success);
-                if (success)
-                  setAdded((previous) => ({
-                    variant: option.label,
-                    revision: (previous?.revision ?? 0) + 1,
-                  }));
-              }}
-            >
-              {added?.variant === option.label ? (
-                <Check size={18} aria-hidden="true" />
-              ) : (
-                <Plus size={18} aria-hidden="true" />
-              )}
-              {multiple && t[option.label as PriceLabel]}
-            </Button>
-          ))}
-          {limitReached && !open && (
-            <Text role="status" className="menu-quick-add-note">
-              {p.limit}
-            </Text>
-          )}
-        </>
-      }
+      action={<QuickAdd item={item} locale={locale} ready={picksReady} onAdd={onAdd} />}
       details={
         <Dialog
           open={open}
@@ -137,6 +104,7 @@ export function MenuProduct({
                 {p.limit}
               </Text>
             )}
+            <ProductPairing itemId={item.id} locale={locale} ready={picksReady} onAdd={onAdd} />
             <Button
               disabled={!picksReady}
               onClick={() => {
@@ -149,7 +117,7 @@ export function MenuProduct({
               {p.add}
             </Button>
             <Button variant="quiet" onClick={() => setOpen(false)}>
-              {t.done}
+              {dismissLabel ?? t.done}
             </Button>
           </Stack>
         </Dialog>

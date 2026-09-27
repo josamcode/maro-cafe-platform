@@ -14,6 +14,7 @@ test('card quick actions add exact variants without opening details in both lang
     const addName = locale === 'ar' ? /ضيف لاختياراتي/ : /Add to My Picks/;
     const card = page.locator('.maro-product');
     await expect(card.getByRole('button', { name: addName })).toHaveCount(1);
+    await expect(card.getByRole('button', { name: addName })).toBeEnabled();
     await card.getByRole('button', { name: addName }).press('Enter');
     await expect(page.getByRole('dialog')).not.toBeVisible();
     await expect(page.locator('.picks-launcher')).toHaveAttribute('data-filled', 'true');

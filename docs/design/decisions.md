@@ -150,6 +150,14 @@ Provide a bilingual directory and individual branch pages, linked from the homep
 
 Use an optional “At MARO right now?” control to choose a branch without a forced entry popup. Preserve menu filters and local picks when entering Inside; a subsequent general entry remains Outside. Retain honest content boundaries: no invented opening hours, amenities, branch-specific phone or photography, and no street number selected from conflicting sources. See [branch discovery](branch-experience.md).
 
+## D020 — Curated products and explicit optional complements
+
+Date: 2026-09-27. Status: implemented for private preview, editorial approval pending.
+
+Replace homepage category collections with three actual catalog products, using the menu's existing ProductCard, details, prices and direct additions. Keep desktop photography prominent and mobile rows flat. Consolidate quick additions and announcements so homepage, Inside and Outside behave identically.
+
+Offer one separately priced complement in selected coffee details. The available catalog has no priced desserts, so use its water product for the initial journey rather than invent a dessert or price. Keep the extra optional, never add the base product automatically, and omit unconfigured relationships. Editorial references use both snapshot ID and expected name to reject mismatches; authoritative catalog identities and owner approval remain prerequisites for launch. See [product curation](product-curation.md).
+
 ## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.

@@ -11,13 +11,13 @@ test('outside discovery links to the menu and real directions', async ({ page })
   await page.getByRole('link', { name: 'MARO', exact: true }).click();
   await page.getByRole('button', { name: 'Switch to English' }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await page.getByRole('link', { name: 'Iced coffee', exact: true }).click();
-  await expect(page).toHaveURL(/category=iced/);
-  await expect(page.getByRole('button', { name: 'Iced Coffee', exact: true })).toHaveAttribute(
-    'aria-pressed',
-    'true',
-  );
-  await page.getByRole('link', { name: 'MARO', exact: true }).click();
+  await page
+    .getByRole('button', { name: 'Details & sizes — Iced Spanish Latte', exact: true })
+    .click();
+  await expect(
+    page.getByRole('dialog').getByRole('heading', { name: 'Iced Spanish Latte', exact: true }),
+  ).toBeVisible();
+  await page.keyboard.press('Escape');
   await expect(page.getByRole('link', { name: 'Get directions — Faisal' })).toHaveAttribute(
     'href',
     'https://maps.app.goo.gl/ZaSq4xeTkhSkxjcN6',

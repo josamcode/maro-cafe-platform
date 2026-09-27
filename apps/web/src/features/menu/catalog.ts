@@ -7,6 +7,16 @@ export type MenuCategory = (typeof catalog)[number];
 export type MenuItem = MenuCategory['items'][number];
 export type PriceLabel = 'small' | 'large' | 'single' | 'double' | 'standard';
 
+const items = new Map(
+  catalog.flatMap((category) =>
+    category.items.map((item) => [item.id, { item, category }] as const),
+  ),
+);
+
+export function getMenuItem(itemId: string) {
+  return items.get(itemId);
+}
+
 export function normalizeSearch(value: string) {
   return value
     .toLowerCase()

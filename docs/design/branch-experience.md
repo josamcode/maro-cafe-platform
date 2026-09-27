@@ -31,4 +31,4 @@ The previous `/branches` API demonstration has been replaced with the source-lis
 
 ## Remaining phase-one scope
 
-Branch discovery and explicit context switching are implemented. Product curation, approved pairing data, offers, shared authoritative content management and intent measurement remain separate work. No confirmed visit, purchase or entitlement is inferred from navigation or Maps clicks. Public launch still needs owner-approved details, branch-specific photography where available and browser/device release checks.
+Branch discovery and explicit context switching are implemented. [Product curation and optional pairings](product-curation.md) are now implemented as a separate editorial preview. Content approval, offers, shared authoritative content management and intent measurement remain. No confirmed visit, purchase or entitlement is inferred from navigation or Maps clicks. Public launch still needs owner-approved details, branch-specific photography where available and browser/device release checks.

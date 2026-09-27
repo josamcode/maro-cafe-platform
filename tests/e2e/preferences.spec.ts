@@ -26,7 +26,7 @@ test('device preferences apply initially and the one-click theme choice persists
   await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(251, 248, 242)');
 });
 
-test('category image and keyboard action open the same menu; mobile hero actions share one row', async ({
+test('featured image and keyboard action open the same product; mobile hero actions share one row', async ({
   page,
 }) => {
   await page.setViewportSize({ width: 360, height: 800 });
@@ -36,19 +36,19 @@ test('category image and keyboard action open the same menu; mobile hero actions
   const visitBox = await actions.getByRole('link').last().boundingBox();
   expect(menuBox!.y).toBeCloseTo(visitBox!.y, 0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  const card = page.locator('.maro-collection').first();
+  const card = page.locator('.featured-products .maro-product').first();
   await card.click({ position: { x: 24, y: 24 } });
-  await expect(page).toHaveURL(/category=hot/);
-  await expect(page.locator('.menu-group .maro-disclosure-trigger')).toHaveAttribute(
-    'aria-expanded',
-    'true',
-  );
-  await page.goBack();
-  const trigger = card.getByRole('link');
-  await trigger.focus();
+  await expect(
+    page.getByRole('dialog').getByRole('heading', { name: 'Espresso', exact: true }),
+  ).toBeVisible();
+  await page.keyboard.press('Escape');
+  const trigger = card.getByRole('button', { name: 'Details & sizes — Espresso', exact: true });
+  await expect(trigger).toBeFocused();
   await trigger.press('Enter');
-  await expect(page).toHaveURL(/category=hot/);
-  await page.goBack();
+  await expect(
+    page.getByRole('dialog').getByRole('heading', { name: 'Espresso', exact: true }),
+  ).toBeVisible();
+  await page.keyboard.press('Escape');
   await page.getByRole('button', { name: 'Switch to Arabic' }).click();
   const arMenu = await actions.getByRole('link').first().boundingBox();
   const arVisit = await actions.getByRole('link').last().boundingBox();

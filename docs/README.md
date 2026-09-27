@@ -23,6 +23,7 @@
 - [My Picks](design/my-picks.md): persistent local selections, quantity editing, cashier view and storage boundaries.
 - [Inside experience and QR preview](design/inside-experience.md): branch entry, correction, compact navigation, downloadable codes and presentation walkthrough.
 - [Public branch discovery](design/branch-experience.md): directory, location details, immediate directions, explicit inside entry and content provenance.
+- [Product curation and pairings](design/product-curation.md): real featured products, shared quick additions, optional complements and editorial approval boundaries.
 
 - [Architecture](architecture/README.md): application boundaries, packages, and growth path.
 - [Foundation verification](architecture/verification.md): completed checks and local infrastructure limitations.
