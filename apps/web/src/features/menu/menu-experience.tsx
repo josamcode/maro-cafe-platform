@@ -14,7 +14,9 @@ import {
   Stack,
   Text,
 } from '@maro/ui';
-import type { Locale } from '../../lib/locale';
+import type { Locale, Theme } from '../../lib/locale';
+import { InsideHeader } from '../inside/inside-header';
+import { BranchSelector } from '../inside/branch-selector';
 import { catalog, filterCatalog, getMenuBranch } from './catalog';
 import { menuMessages } from './messages';
 import { MenuProduct } from './product-details';
@@ -24,7 +26,13 @@ import { usePicks } from '../picks/use-picks';
 import { PicksPanel } from '../picks/picks-panel';
 import { picksMessages } from '../picks/messages';
 
-export function MenuExperience({ locale }: { locale: Locale }) {
+export function MenuExperience({
+  locale,
+  inside,
+}: {
+  locale: Locale;
+  inside?: { branchSlug: string; theme: Theme };
+}) {
   const t = menuMessages[locale];
   const picks = usePicks();
   const [announcement, setAnnouncement] = useState({ item: '', revision: 0 });
@@ -39,6 +47,7 @@ export function MenuExperience({ locale }: { locale: Locale }) {
   const count = groups.reduce((total, group) => total + group.items.length, 0);
   const number = new Intl.NumberFormat(locale === 'ar' ? 'ar-EG' : 'en-EG');
   const categoryList = useRef<HTMLDivElement>(null);
+  const searchInput = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const list = categoryList.current;
@@ -55,22 +64,34 @@ export function MenuExperience({ locale }: { locale: Locale }) {
       if (value && value !== 'all') next.set(key, value);
       else next.delete(key);
     }
-    const url = `/menu${next.size ? `?${next}` : ''}`;
+    const url = `${window.location.pathname}${next.size ? `?${next}` : ''}`;
     if (push) window.history.pushState(null, '', url);
     else window.history.replaceState(null, '', url);
   }
 
   return (
     <>
-      <div className="menu-intro">
+      {inside && (
+        <InsideHeader
+          locale={locale}
+          theme={inside.theme}
+          picks={picks}
+          onSearch={() => {
+            searchInput.current?.focus();
+            searchInput.current?.scrollIntoView({ block: 'center' });
+          }}
+        />
+      )}
+      <div className="menu-intro" id={inside ? 'inside-menu' : undefined}>
         <Stack gap="sm">
-          <Text tone="eyebrow">{t.menuTitle}</Text>
+          {!inside && <Text tone="eyebrow">{t.menuTitle}</Text>}
           <Heading as="h1" size="section">
             {t.title}
           </Heading>
-          <Text tone="muted">{t.intro}</Text>
+          {!inside && <Text tone="muted">{t.intro}</Text>}
         </Stack>
-        {branch && (
+        {inside && <BranchSelector branchSlug={inside.branchSlug} locale={locale} />}
+        {!inside && branch && (
           <Text className="menu-branch-context">
             <MapPin size={18} aria-hidden="true" />
             {t.inside} · {branch[locale]}
@@ -84,6 +105,7 @@ export function MenuExperience({ locale }: { locale: Locale }) {
               <Search size={20} aria-hidden="true" />
               <Input
                 {...props}
+                ref={searchInput}
                 type="search"
                 value={query}
                 placeholder={t.searchPlaceholder}
@@ -136,7 +158,7 @@ export function MenuExperience({ locale }: { locale: Locale }) {
               {t.reset}
             </Button>
           )}
-          <PicksPanel picks={picks} locale={locale} />
+          {!inside && <PicksPanel picks={picks} locale={locale} />}
         </div>
       </div>
       <span className="picks-announcement" role="status">

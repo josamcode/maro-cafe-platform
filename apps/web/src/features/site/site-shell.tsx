@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { Button, Container, Inline, Stack, Text } from '@maro/ui';
 import type { Locale, Theme } from '../../lib/locale';
-import { changeLocale } from '../home/actions';
 import { homeMessages } from '../home/messages';
 import { MenuLink } from '../menu/menu-link';
 import { MobileNavigation } from '../home/mobile-navigation';
-import { ThemeControl } from '../home/theme-control';
+import { SitePreferences } from './site-preferences';
 import { SocialIcon } from '../home/social-icon';
 import '../home/home.css';
 
@@ -32,20 +31,7 @@ export function SiteHeader({ locale, theme }: { locale: Locale; theme: Theme }) 
                 <Link href="/#at-maro">{t.story}</Link>
               </Button>
             </Inline>
-            <Inline className="home-preferences">
-              <ThemeControl locale={locale} theme={theme} />
-              <form action={changeLocale} className="home-language">
-                <input type="hidden" name="locale" value={locale === 'ar' ? 'en' : 'ar'} />
-                <Button type="submit" variant="quiet" size="sm" aria-label={t.switchLabel}>
-                  <span className="home-language-full" lang={locale === 'ar' ? 'en' : 'ar'}>
-                    {t.language}
-                  </span>
-                  <span className="home-language-short" lang={locale === 'ar' ? 'en' : 'ar'}>
-                    {t.shortLanguage}
-                  </span>
-                </Button>
-              </form>
-            </Inline>
+            <SitePreferences locale={locale} theme={theme} />
           </nav>
         </Container>
       </header>

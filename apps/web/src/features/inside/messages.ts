@@ -1,0 +1,26 @@
+export const insideMessages = {
+  ar: {
+    title: 'اختار اللي على مزاجك.',
+    menu: 'منيو MARO',
+    search: 'ابحث في المنيو',
+    branch: 'فرعك',
+    branchHint: 'في فرع تاني؟ غيّره من هنا.',
+    website: 'موقع MARO والفروع',
+    skip: 'روح للمنيو',
+    footer: 'اختار براحتك، واعرض اختياراتك للكاشير لما تكون جاهز.',
+    unavailable: 'مش لاقيين الفرع ده',
+    chooseBranch: 'افتح المنيو واختار فرعك من الموقع.',
+  },
+  en: {
+    title: 'Find your favourite.',
+    menu: 'MARO menu',
+    search: 'Search the menu',
+    branch: 'Your branch',
+    branchHint: 'At another branch? Change it here.',
+    website: 'MARO website & branches',
+    skip: 'Skip to the menu',
+    footer: 'Take your time, then show your picks to the cashier when you’re ready.',
+    unavailable: 'We couldn’t find that branch',
+    chooseBranch: 'Open the menu and find your branch on our website.',
+  },
+} as const;

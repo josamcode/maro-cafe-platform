@@ -30,6 +30,16 @@
 .picks-launcher > .maro-price {
   font-size: 1.125rem;
 }
+.picks-header-launcher.maro-button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.5rem;
+  gap: 0.25rem;
+}
+.picks-header-count {
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
 body:has(.picks-launcher[data-filled='true']) {
   padding-block-end: calc(6rem + env(safe-area-inset-bottom));
 }

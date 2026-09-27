@@ -1,0 +1,33 @@
+.qr-preview {
+  padding-block: 3rem;
+}
+.qr-preview .maro-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.qr-branch {
+  min-width: 0;
+  padding-block: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  border-block-start: 1px solid var(--maro-border);
+}
+.qr-branch img {
+  max-width: 100%;
+  height: auto;
+  background: white;
+}
+.qr-destination {
+  overflow-wrap: anywhere;
+  font-size: 0.875rem;
+}
+.qr-origin-note {
+  border-inline-start: 3px solid var(--maro-focus);
+  padding-inline-start: 1rem;
+}
+@media (max-width: 64rem) {
+  .qr-preview .maro-grid {
+    grid-template-columns: 1fr;
+  }
+}

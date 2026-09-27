@@ -22,7 +22,15 @@ import { picksMessages } from './messages';
 import type { PicksState } from './use-picks';
 import './picks.css';
 
-export function PicksPanel({ picks, locale }: { picks: PicksState; locale: Locale }) {
+export function PicksPanel({
+  picks,
+  locale,
+  compact = false,
+}: {
+  picks: PicksState;
+  locale: Locale;
+  compact?: boolean;
+}) {
   const t = picksMessages[locale];
   const [open, setOpen] = useState(false);
   const [cashier, setCashier] = useState(false);
@@ -42,22 +50,26 @@ export function PicksPanel({ picks, locale }: { picks: PicksState; locale: Local
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
       trigger={
         <Button
-          className="picks-launcher"
+          className={compact ? 'picks-header-launcher' : 'picks-launcher'}
           data-filled={picks.count > 0}
           variant={picks.count ? 'default' : 'quiet'}
           disabled={!picks.ready}
           aria-label={t.title}
         >
           <Bookmark size={20} aria-hidden="true" />
-          <span>
-            {t.title}
-            {picks.count > 0 && (
-              <small>
-                {number.format(picks.count)} {t.count}
-              </small>
-            )}
-          </span>
-          {picks.count > 0 && <Price amount={picks.total} locale={locale} />}
+          {compact ? (
+            <span className="picks-header-count">{number.format(picks.count)}</span>
+          ) : (
+            <span>
+              {t.title}
+              {picks.count > 0 && (
+                <small>
+                  {number.format(picks.count)} {t.count}
+                </small>
+              )}
+            </span>
+          )}
+          {!compact && picks.count > 0 && <Price amount={picks.total} locale={locale} />}
         </Button>
       }
     >
