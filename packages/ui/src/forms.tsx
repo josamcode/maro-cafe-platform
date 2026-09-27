@@ -81,7 +81,7 @@ export function RadioGroup({
 }: {
   label: string;
   name: string;
-  options: { value: string; label: string }[];
+  options: { value: string; label: ReactNode }[];
   value: string;
   onChange: (value: string) => void;
   disabled?: boolean;

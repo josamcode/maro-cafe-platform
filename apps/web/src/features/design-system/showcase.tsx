@@ -12,6 +12,7 @@ import {
   SummaryRow,
   Container,
   Dialog,
+  Disclosure,
   EmptyState,
   Field,
   FilterChip,
@@ -240,6 +241,45 @@ export function DesignSystemShowcase() {
                 description="An action beside the summary, a prominent starting price and a mirrored direction arrow."
               />
               <Grid>
+                <Disclosure
+                  title={t.coffee}
+                  meta={locale === 'ar' ? 'افتح القسم' : 'Open category'}
+                >
+                  <Text>{t.productDescription}</Text>
+                </Disclosure>
+                <ProductCard
+                  compact
+                  image={
+                    <Image
+                      src="/home/iced-coffee.jpg"
+                      alt={t.product}
+                      width={960}
+                      height={1280}
+                      sizes="(max-width: 768px) 88px, 400px"
+                    />
+                  }
+                  name={t.product}
+                  description={t.productDescription}
+                  price={85}
+                  pricePrefix={locale === 'ar' ? 'يبدأ من' : 'From'}
+                  locale={locale}
+                  action={
+                    <Dialog
+                      title={t.dialogTitle}
+                      description={t.previewNotice}
+                      closeLabel={t.close}
+                      dir={dir}
+                      lang={locale}
+                      trigger={
+                        <IconButton round variant="outline" label={t.details}>
+                          <DirectionArrow />
+                        </IconButton>
+                      }
+                    >
+                      <Text>{t.previewNotice}</Text>
+                    </Dialog>
+                  }
+                />
                 <CollectionCard
                   name={t.coffee}
                   description={t.productDescription}

@@ -102,25 +102,32 @@ export function ProductCard({
   price,
   locale,
   action,
+  pricePrefix,
+  compact = false,
 }: {
-  image: ReactNode;
+  image?: ReactNode;
   name: string;
-  description: string;
+  description?: string;
   price: number;
   locale: 'ar' | 'en';
   action: ReactNode;
+  pricePrefix?: string;
+  compact?: boolean;
 }) {
   return (
-    <article className="maro-product">
-      <div className="maro-product-image">{image}</div>
+    <article className="maro-product" data-compact={compact} data-has-image={Boolean(image)}>
+      {image && <div className="maro-product-image">{image}</div>}
       <Stack gap="sm">
         <Inline>
           <Heading as="h3" size="title">
             {name}
           </Heading>
-          <Price amount={price} locale={locale} />
+          <span className="maro-product-price">
+            {pricePrefix && <small>{pricePrefix}</small>}
+            <Price amount={price} locale={locale} />
+          </span>
         </Inline>
-        <Text tone="muted">{description}</Text>
+        {description && <Text tone="muted">{description}</Text>}
         {action}
       </Stack>
     </article>
