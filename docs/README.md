@@ -20,6 +20,7 @@
 - [Menu experience](design/menu-experience.md): standalone catalog browsing, product details, URL state and branch-context boundaries.
 - [Menu photography](design/menu-photography.md): development image references, sources and replacement status.
 - [My Picks](design/my-picks.md): persistent local selections, quantity editing, cashier view and storage boundaries.
+- [Inside experience and QR preview](design/inside-experience.md): branch entry, correction, compact navigation, downloadable codes and presentation walkthrough.
 
 - [Architecture](architecture/README.md): application boundaries, packages, and growth path.
 - [Foundation verification](architecture/verification.md): completed checks and local infrastructure limitations.

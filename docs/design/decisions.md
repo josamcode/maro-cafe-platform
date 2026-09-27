@@ -134,6 +134,14 @@ Remove the menu card's redundant details arrow. Single-price products expose a p
 
 Extend ProductCard with a separate details slot for its full-card semantic trigger. Quick actions are sibling buttons layered above that trigger, never nested buttons or whole-card click handlers. Keep the existing dialog accessible from the image, title and remaining card area. Demonstrate the split interaction in the shared workbench.
 
+## D018 — Branch QR as context, with one shared menu
+
+Date: 2026-09-27. Status: implemented for presentation. Supersedes D013's untouched inside-route scaffold.
+
+Use `/in/[branchSlug]` for the three source-listed branches, with a correction selector and compact navigation. Reuse the menu, direct addition and local picks; keep language/theme controls in a single shared component. Branch navigation retains filters and picks. The inside header owns the picks action and count, while the outside menu retains its floating summary.
+
+Generate preview QR SVGs from configured WEB_ORIGIN and provide them on `/preview/qr`, with an explicit localhost/phone limitation and a presentation walkthrough. QR entry never records a verified visit or purchase. The inside preview now uses the same snapshot adapter as the outside catalog; server packages and the authoritative API endpoint remain available for later shared adapter integration.
+
 ## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.

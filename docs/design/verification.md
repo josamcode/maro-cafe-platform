@@ -79,3 +79,10 @@ September 27, 2026.
 - The 22-scenario E2E suite now covers keyboard addition of single-price products and direct addition of exact sizes without opening a dialog, in both languages with a theme change. The new journey also verifies merged quantities and continued whole-card detail access.
 - Nineteen scenarios passed in the full run. Three existing responsive scenarios initially used an ambiguous button locator after the cards gained multiple actions; naming the details trigger explicitly restored all three on targeted rerun at 360px, 768px and 1440px in both languages and appearances.
 - Lint, workspace type checking and the production build passed. Live Chrome review at 390px confirmed side-by-side Arabic size actions without duplicated size text or a details arrow. Product details and quick additions remain separate sibling controls with shared styling and no nested buttons.
+
+## Inside branch entry and QR preview
+
+- The suite now contains 26 scenarios. Twenty-five passed in the full run; the long multi-route inside journey reached its final branch but exceeded the 30-second development-run budget. With a 60-second budget for that journey, all four inside/QR scenarios passed on targeted rerun, including that journey in 9.6 seconds.
+- Coverage verifies branch correction preserving search, picks surviving locale/theme/reload and public-site navigation, exact cashier selections, localized unknown-branch recovery, three SVG responses and download filenames, and the header/search/picks flow at 360px and 1440px in both languages and appearances. The previous outside-menu scenarios also passed.
+- Lint, workspace type checking and production compilation passed. Live Chrome review inspected Arabic 390px navigation, the open branch selector and desktop QR presentation. The temporary viewport override was reset afterward.
+- QR destination URLs are configured with WEB_ORIGIN. The current localhost preview is not a phone-accessible deployment; physical phone scanning and print checks remain necessary after choosing a reachable origin. No scan is counted as a visit and no order is submitted.

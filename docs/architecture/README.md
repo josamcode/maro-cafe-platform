@@ -10,7 +10,7 @@ Web / future administration -> API -> PostgreSQL
                                +-> Queue -> Worker -> PostgreSQL / future providers
 ```
 
-The Next.js web application fetches public information through the typed API client, including during server rendering. It never imports database or backend packages. API contracts contain explicit public DTOs, not database rows. ESLint enforces the client/server package boundary.
+The Next.js web application uses the typed API client for authoritative public information, including server rendering. The current customer presentation at `/menu` and `/in/[branchSlug]` uses one source-derived snapshot adapter while catalog identities, bilingual content and branch prices are being confirmed; it does not submit orders. Both experiences will move to the same authoritative adapter. The web app never imports database or backend packages. API contracts contain explicit public DTOs, not database rows. ESLint enforces the client/server package boundary.
 
 `packages/backend` owns business use cases and repositories. `apps/api` owns HTTP validation, serialization, CORS, rate limiting, and error translation. `apps/worker` owns queue processing and lifecycle management. Server processes use explicit constructors and injected dependencies; importing a shared module does not open a database connection.
 
