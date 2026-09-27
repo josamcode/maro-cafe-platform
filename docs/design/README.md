@@ -95,6 +95,6 @@ Sample product identity and EGP 85 price are explicitly marked as demonstration 
 
 Before accepting a component change, check focus, keyboard behavior, accessible naming, error association, disabled state, empty/loading behavior where relevant, long text, both directions, 360px mobile and desktop. Ensure overlays inherit typography and direction. Automated checks supplement a real visual review.
 
-The outside homepage is now composed from these foundations, including the shared arched `HeroMedia` pattern. Next: review the page, confirm catalog details and product photography mapping, then build the QR inside journey on the same components.
+The outside homepage is now composed from these foundations, including the shared rounded `HeroMedia` pattern. The standalone [menu preview](menu-experience.md) now reuses the shell and adds a compact ProductCard variant with optional media. Next: confirm catalog details and product photography mapping, then connect the inside journey to authoritative data.
 
 See [verification results](verification.md) for completed checks and remaining coverage.

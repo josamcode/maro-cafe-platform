@@ -17,6 +17,8 @@
 - [Design system](design/README.md): visual foundations, shared components, bilingual behavior and voice.
 - [Design decisions](design/decisions.md): recorded choices and rationale for future work.
 - [Outside homepage](design/outside-homepage.md): page composition, bilingual behavior, content sources and integration boundaries.
+- [Menu experience](design/menu-experience.md): standalone catalog browsing, product details, URL state and branch-context boundaries.
+- [Menu photography](design/menu-photography.md): development image references, sources and replacement status.
 
 - [Architecture](architecture/README.md): application boundaries, packages, and growth path.
 - [Foundation verification](architecture/verification.md): completed checks and local infrastructure limitations.

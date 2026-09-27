@@ -43,3 +43,26 @@ September 27, 2026, subsequent implementation.
 The appearance dialog and reset control were removed at the user's request. Preference tests now exercise a single click in both directions, ensure no dialog opens, verify the pressed state and confirm persistence after reload. Device scheme remains the initial fallback and language behavior is unchanged.
 
 All three targeted preference/card tests passed, along with lint and the production build. The toggle stays disabled until the browser preference is available during hydration so an early click cannot be lost or invert an assumed scheme.
+
+## Standalone menu and product details
+
+September 27, 2026.
+
+- All 17 Playwright scenarios passed after updating homepage entry points and adding menu coverage. Tests exercise Arabic/English search, diacritics, empty-state recovery, category links, history/reload persistence, locale changes, valid/invalid branch context, whole-card activation, actual variant price changes, single-price products, Escape and restored focus.
+- Menu, detail dialogs, homepage and workbench fit 360px, 768px and 1440px in both languages. Menu coverage also toggles appearances; existing preference tests continue to verify initial device defaults and manual persistence.
+- Lint, workspace type checking, test TypeScript checking and the final production web build passed. The initial suite run exposed an incorrectly encoded dash in a test locator; correcting that locator restored the directions check.
+- Live Chrome review covered Arabic dark-mode menu and product details at 390px and English light-mode desktop. The review prompted automatic horizontal positioning of the active category and a themed scrollbar. The temporary viewport override was reset afterward.
+- Development runs logged an interrupted response during rapid navigation; it did not fail the completed journeys. Checks do not establish POS integration, verified branch availability, authoritative prices or release-wide performance/accessibility acceptance.
+- The production preview is available at `/menu`. See the [menu handoff](menu-experience.md) for data ownership and remaining scope.
+
+## Development photography
+
+- Ten affected menu, homepage-entry and workbench scenarios passed with photographs enabled. Coverage includes whole-card activation, variant selection, focus restoration and both languages at 360px, 768px and 1440px, including dark/light menu layouts.
+- Lint and production compilation/type checking passed. The first product image loads eagerly; remaining catalog images load lazily at responsive sizes. Detail images load when the dialog mounts.
+- Live Chrome review inspected Arabic dark-mode mobile thumbnails and the strawberry-matcha candidate inside its product dialog. Detail spacing was tightened to preserve room for price options alongside the photograph. Image sources and temporary mappings are recorded in [menu photography](menu-photography.md).
+
+## Mobile category disclosures
+
+- All 18 E2E scenarios passed. New coverage verifies six initially closed mobile categories, Enter/Space toggling, hidden products staying out of the visible view, automatically expanded search matches, reset-to-closed behavior, and expanded desktop layout after resizing in both languages.
+- The mobile sticky search area is asserted below 75px high. Existing direct-category links, product detail focus restoration, theme preferences and 360/768/1440px layouts remain covered.
+- Lint and the production build/type check passed. Shared Disclosure is demonstrated in the workbench. Page and overlay scrollbars now share thin neutral styling; rendering details remain browser-dependent.

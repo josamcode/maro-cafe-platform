@@ -4,11 +4,11 @@ September 27, 2026. Route: `/`. Shared patterns: `/design-system`.
 
 ## Visitor journey
 
-The homepage moves from a welcoming first impression to menu discovery, atmosphere and branch directions. The primary hero action opens a searchable menu; the secondary action leads to the branch section. Category cards open the same menu component with the relevant category selected. Directions use the collected public Maps links. Contact and social links are functional.
+The homepage moves from a welcoming first impression to menu discovery, atmosphere and branch directions. The primary hero action links to the standalone searchable `/menu` page; the secondary action leads to the branch section. Whole category cards link to that page with the relevant category selected. See the [menu handoff](menu-experience.md). Directions use the collected public Maps links. Contact and social links are functional.
 
 After UI review, collection actions sit beside the name/description and starting prices appear on opaque panels over the photographs. The locations section uses a dark rounded panel with whole-row direction links. A single-row sticky mobile header centers the wordmark between navigation and language actions; section navigation opens in the shared dialog. These patterns are documented in D010 and demonstrated in the workbench.
 
-The hero uses the shared `HeroMedia` component: an arched main photograph, a smaller rounded detail photograph, a plain caption and space between imagery and copy. It replaces the previous edge-to-edge rectangular split in both the homepage and workbench. Rounded media does not change the compact shape of functional controls.
+The hero uses the shared `HeroMedia` component: a main photograph with modest rounded corners, a smaller rounded detail photograph, a plain caption and space between imagery and copy. It replaces the previous edge-to-edge rectangular split in both the homepage and workbench. Rounded media does not change the compact shape of functional controls.
 
 No active offer, bestseller ranking, customer review or opening-hours claim is displayed without supporting business data. Photography illustrates collections, not a verified SKU-to-photo mapping. The page is a private presentation preview, with search indexing disabled.
 
@@ -32,7 +32,7 @@ The mood image is reused from its existing public path to avoid duplicating the 
 ## Implementation ownership
 
 - `@maro/ui`: visual tokens, typography, layout primitives, controls, `HeroMedia` and accessible dialogs. Dialog content scrolls separately so the close control remains reachable on long menus.
-- `features/home`: outside composition, localized copy, menu discovery and language action.
+- `features/home`: outside composition and preference actions. Shared header/footer composition lives in `features/site`; menu browsing lives in `features/menu`.
 - `content/menu.snapshot.json`: temporary source-listed content adapter for the presentation. No checkout, inventory or pricing authority is implied.
 - API, database and workers retain their existing independent architecture. Replace the snapshot at the feature/data boundary with validated catalog responses when content is approved. Do not move business logic into shared UI.
 

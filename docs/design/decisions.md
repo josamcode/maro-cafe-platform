@@ -92,6 +92,32 @@ Date: 2026-09-27. Status: implemented. Supersedes D011's three-choice appearance
 
 The user requested a single-click toggle with only light and dark outcomes. Before an explicit choice, CSS follows the device scheme. The toggle reads that effective scheme, switches to its opposite and persists the result. Subsequent device changes do not override an explicit choice. A labelled sun/moon icon button exposes its dark-mode state with aria-pressed; no appearance dialog or device-default choice is presented. Language continues to follow the browser initially and retains manual changes.
 
+## D013 — A standalone menu with focused product details
+
+Date: 2026-09-27. Status: implemented for private preview. Supersedes the full-menu modal described in D008 and D011.
+
+Route all homepage menu entry points to `/menu`, preserving collection selection in the URL. Keep category and bilingual search state shareable and persistent through locale changes. Use focused accessible dialogs for published product sizes and prices. Extend ProductCard with optional media and a compact presentation, rather than create a second card system; demonstrate it in the workbench. Extract the existing header/footer into one shared site composition.
+
+Use typographic cards until item photography can be reliably mapped. Do not reuse a category photograph as evidence of a specific recipe. A branch query parameter supplies preview context only, not verified presence or stock. My Picks and operational ordering remain later stages. See [menu handoff](menu-experience.md).
+
+## D014 — Illustrative photography during development
+
+Date: 2026-09-27. Status: implemented for preview. Supersedes D013's decision to keep unmatched product cards text-only.
+
+The user explicitly requested images on categories and products and authorized repeating suitable temporary photographs. Use existing MARO archive images, item-specific visual candidates where available, and category fallbacks elsewhere. Keep sources and verification status in a central feature mapping; do not misclassify a plausible match as an approved SKU photograph. Extend the existing ProductCard's compact media layout and demonstrate it in the workbench. Mobile uses side thumbnails to protect browsing density; desktop uses landscape images. See [photography mapping](menu-photography.md).
+
+## D015 — Collapsed mobile categories and a compact search bar
+
+Date: 2026-09-27. Status: implemented for preview.
+
+The unfiltered mobile menu starts with six closed category disclosures. Each photo/title/count row toggles its own products. Direct category links and search matches open the relevant sections automatically; clearing the filters returns to the closed overview. Desktop keeps its expanded catalog and category chips. One product tree serves both layouts.
+
+The shared Disclosure component uses labelled semantic buttons with expanded state and controlled panel IDs. CSS applies the mobile-only behavior from the first paint, without viewport hydration changes. The menu demonstrates it alongside an interactive workbench example.
+
+Follow-up review rejected nested cards. Category disclosures therefore use flat thumbnail/title rows with a bottom divider, without an enclosing border or surface; the product cards appear beneath the row when opened.
+
+On mobile only the search input remains sticky below the header. Its label remains accessible but visually hidden; the hint and duplicate category chips no longer take vertical space. Shared scrollbars use slim rounded neutral thumbs, transparent tracks and no arrow buttons where the browser supports custom scrollbar styling; Firefox retains its thin native implementation.
+
 ## Record maintenance
 
 Append a dated decision when changing identity, typography, reusable behavior, locale strategy or component ownership. Update the workbench and relevant verification. Supersede previous records explicitly instead of silently overwriting rationale.
